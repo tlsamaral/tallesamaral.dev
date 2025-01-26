@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 interface IPropsBtn {
-  variant: string;
+  variant: string
 }
 
 export const Button = styled.button<IPropsBtn>`
@@ -20,4 +20,4 @@ export const Button = styled.button<IPropsBtn>`
     gap: 8px;
     font-weight: 600;
   }
-`;
+`

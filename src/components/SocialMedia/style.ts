@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 const SocialMediaContainer = styled.div`
   ul {
     li {
@@ -14,6 +14,6 @@ const SocialMediaContainer = styled.div`
       }
     }
   }
-`;
+`
 
-export { SocialMediaContainer };
+export { SocialMediaContainer }

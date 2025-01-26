@@ -1,7 +1,7 @@
-import propTypes from 'prop-types';
+import propTypes from 'prop-types'
 
 interface IIconProps {
-  className?: string;
+  className?: string
 }
 
 function LinkedinIcon({ className }: IIconProps) {
@@ -30,11 +30,11 @@ function LinkedinIcon({ className }: IIconProps) {
         </clipPath>
       </defs>
     </svg>
-  );
+  )
 }
 
-export default LinkedinIcon;
+export default LinkedinIcon
 
 LinkedinIcon.propTypes = {
   className: propTypes.string,
-};
+}

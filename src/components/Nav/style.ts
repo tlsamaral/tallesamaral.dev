@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const NavMenu = styled.nav`
   @media (max-width: 568px) {
@@ -23,4 +23,4 @@ export const NavMenu = styled.nav`
       transform: translate(0%);
     }
   }
-`;
+`

@@ -1,23 +1,23 @@
-import { SocialMediaContainer } from './style';
-import GithubIcon from '../icons/GithubIcon';
-import InstagramIcon from '../icons/InstagramIcon';
-import TwitterIcon from '../icons/TwitterIcon';
-import LinkedinIcon from '../icons/LinkedinIcon';
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { SocialMediaContainer } from './style'
+import GithubIcon from '../icons/GithubIcon'
+import InstagramIcon from '../icons/InstagramIcon'
+import TwitterIcon from '../icons/TwitterIcon'
+import LinkedinIcon from '../icons/LinkedinIcon'
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
 
 interface ISocialMediaProps {
-  className?: string;
+  className?: string
 }
 
 function SocialMedia({ className }: ISocialMediaProps) {
-  const githubIconRef = useRef(null);
-  const instagramIconRef = useRef(null);
-  const twitterIconRef = useRef(null);
-  const linkedinIconRef = useRef(null);
+  const githubIconRef = useRef(null)
+  const instagramIconRef = useRef(null)
+  const twitterIconRef = useRef(null)
+  const linkedinIconRef = useRef(null)
 
   useEffect(() => {
-    const tl = gsap.timeline({ defaults: { duration: 0.3 } });
+    const tl = gsap.timeline({ defaults: { duration: 0.3 } })
 
     tl.fromTo(
       githubIconRef.current,
@@ -38,8 +38,8 @@ function SocialMedia({ className }: ISocialMediaProps) {
         linkedinIconRef.current,
         { opacity: 0, y: 10, x: -5, scale: 0.5 },
         { opacity: 1, y: 0, x: 0, scale: 1 },
-      );
-  }, []);
+      )
+  }, [])
 
   return (
     <SocialMediaContainer className={className}>
@@ -66,7 +66,7 @@ function SocialMedia({ className }: ISocialMediaProps) {
         </li>
       </ul>
     </SocialMediaContainer>
-  );
+  )
 }
 
-export default SocialMedia;
+export default SocialMedia

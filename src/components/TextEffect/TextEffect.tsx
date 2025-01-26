@@ -1,17 +1,17 @@
-import { Text } from './style';
-import PropTypes from 'prop-types';
-import React from 'react';
+import { Text } from './style'
+import PropTypes from 'prop-types'
+import React from 'react'
 
 interface IChildrenText {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const TextEffect: React.FC<IChildrenText> = ({ children }) => {
-  return <Text>{children}</Text>;
-};
+  return <Text>{children}</Text>
+}
 
-export default TextEffect;
+export default TextEffect
 
 TextEffect.propTypes = {
   children: PropTypes.node.isRequired,
-};
+}

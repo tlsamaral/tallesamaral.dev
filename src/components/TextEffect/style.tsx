@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Text = styled.span`
   font-size: 36px;
@@ -12,6 +12,6 @@ const Text = styled.span`
   @media (max-width: 835px) {
     font-size: 20px;
   }
-`;
+`
 
-export { Text };
+export { Text }

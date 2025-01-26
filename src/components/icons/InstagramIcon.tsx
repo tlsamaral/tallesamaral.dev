@@ -1,7 +1,7 @@
-import propTypes from 'prop-types';
+import propTypes from 'prop-types'
 
 interface IIconProps {
-  className?: string;
+  className?: string
 }
 
 function InstagramIcon({ className }: IIconProps) {
@@ -30,11 +30,11 @@ function InstagramIcon({ className }: IIconProps) {
         </clipPath>
       </defs>
     </svg>
-  );
+  )
 }
 
-export default InstagramIcon;
+export default InstagramIcon
 
 InstagramIcon.propTypes = {
   className: propTypes.string,
-};
+}

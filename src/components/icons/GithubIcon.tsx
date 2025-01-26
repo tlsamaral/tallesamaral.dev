@@ -1,7 +1,7 @@
-import propTypes from 'prop-types';
+import propTypes from 'prop-types'
 
 interface IIconProps {
-  className?: string;
+  className?: string
 }
 
 function GithubIcon({ className }: IIconProps) {
@@ -30,11 +30,11 @@ function GithubIcon({ className }: IIconProps) {
         </clipPath>
       </defs>
     </svg>
-  );
+  )
 }
 
-export default GithubIcon;
+export default GithubIcon
 
 GithubIcon.propTypes = {
   className: propTypes.string,
-};
+}

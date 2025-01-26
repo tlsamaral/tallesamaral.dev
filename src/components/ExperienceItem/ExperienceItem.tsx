@@ -1,13 +1,13 @@
-import TagList from '../TagList/TagList';
+import TagList from '../TagList/TagList'
 
 interface ExperienceItemProps {
-  company: string;
-  position: string;
-  description: string;
-  tags: string[];
-  allSpace: boolean;
-  startDate: string;
-  endDate: string;
+  company: string
+  position: string
+  description: string
+  tags: string[]
+  allSpace: boolean
+  startDate: string
+  endDate: string
 }
 
 function ExperienceItem({
@@ -57,7 +57,7 @@ function ExperienceItem({
         <TagList taglist={tags} className={allSpace ? 'justify-center' : ''} />
       </div>
     </div>
-  );
+  )
 }
 
-export default ExperienceItem;
+export default ExperienceItem

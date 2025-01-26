@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Input = styled.input`
   width: 100%;
@@ -10,11 +10,11 @@ export const Input = styled.input`
     border: none;
     border-bottom: solid 1px #fff;
   }
-`;
+`
 
 export const Label = styled.label`
   font-size: 24px;
-`;
+`
 
 export const TextArea = styled.textarea`
   width: 100%;
@@ -28,4 +28,4 @@ export const TextArea = styled.textarea`
     border: none;
     border-bottom: solid 1px #fff;
   }
-`;
+`

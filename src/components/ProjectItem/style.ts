@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 interface GridContainerProps {
-  direction: 'left' | 'right';
+  direction: 'left' | 'right'
 }
 
 interface ImgContentProps {
-  imgUrl: string;
+  imgUrl: string
 }
 
 export const GridContainer = styled.div<GridContainerProps>`
@@ -23,7 +23,7 @@ export const GridContainer = styled.div<GridContainerProps>`
       'image image image image image image image image image image'
       'content content content content content content content content content content';
   }
-`;
+`
 
 export const ContentProject = styled.div`
   grid-area: content;
@@ -32,7 +32,7 @@ export const ContentProject = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-`;
+`
 
 export const ImageProject = styled.div`
   grid-area: image;
@@ -45,7 +45,7 @@ export const ImageProject = styled.div`
   @media (max-width: 835px) {
     height: 322px;
   }
-`;
+`
 
 export const ImgContent = styled.div<ImgContentProps>`
   width: 100%;
@@ -54,13 +54,13 @@ export const ImgContent = styled.div<ImgContentProps>`
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-`;
+`
 
 export const MainContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-`;
+`
 
 export const Title = styled.h4`
   font-size: 1.5rem;
@@ -69,7 +69,7 @@ export const Title = styled.h4`
   @media (max-width: 430px) {
     text-align: center;
   }
-`;
+`
 
 export const Description = styled.p`
   font-size: 1rem;
@@ -79,7 +79,7 @@ export const Description = styled.p`
   @media (max-width: 430px) {
     text-align: justify;
   }
-`;
+`
 
 export const ButtonList = styled.div`
   display: flex;
@@ -90,4 +90,4 @@ export const ButtonList = styled.div`
   @media (max-width: 430px) {
     justify-content: center;
   }
-`;
+`
