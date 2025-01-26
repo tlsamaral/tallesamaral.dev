@@ -37,7 +37,7 @@ function AboutMe() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const [imageSrc, setImageSrc] = useState('/my-profile-g.png') // Imagem padrão
+  const [imageSrc, setImageSrc] = useState('/my-profile-g.png')
 
   useEffect(() => {
     const updateImage = () => {
@@ -68,8 +68,8 @@ function AboutMe() {
               src={imageSrc}
               alt="Profile Image"
               className="w-full h-full object-cover sm:rounded-lg"
-              width={500} // Ajuste conforme necessário
-              height={500} // Ajuste conforme necessário
+              width={500}
+              height={500}
               sizes="(max-width: 530px) 100vw, (max-width: 834px) 50vw, (max-width: 1050px) 33vw"
               priority
             />
@@ -119,7 +119,7 @@ function AboutMe() {
             </p>
           </SubTextArea>
           <FooterTextArea>
-            <code className="code-font text-xs sm:text-base opacity-50 sm:text-start">
+            <code className="code-font text-xs sm:text-base opacity-50 text-center sm:text-start">
               &lt;p&gt;
               <StrongText>
                 Building the future, one line of code at a time
