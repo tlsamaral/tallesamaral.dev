@@ -1,25 +1,18 @@
-import { Button } from './style';
+import { Button } from './style'
 
-type BtnVariants = 'default' | 'leaked';
+type BtnVariants = 'default' | 'leaked'
 
-interface IBtnProps {
-  children: React.ReactNode | string;
-  variant: BtnVariants;
-  type: 'submit' | 'button';
-  onClick?: () => void;
+interface IBtnProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode | string
+  variant: BtnVariants
 }
 
-function Btn({
-  children,
-  variant = 'default',
-  type = 'button',
-  onClick,
-}: IBtnProps) {
+function Btn({ children, variant = 'default', ...props }: IBtnProps) {
   return (
-    <Button variant={variant} onClick={onClick} type={type}>
-      <span className="poppins-medium">{children}</span>
+    <Button variant={variant} {...props}>
+      <span className="poppins-regular">{children}</span>
     </Button>
-  );
+  )
 }
 
-export default Btn;
+export default Btn
