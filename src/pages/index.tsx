@@ -7,6 +7,7 @@ import Initial from '@/components/Initial/Initial'
 // import Projects from '@/components/Projects/Projects'
 import AppProvider from '@/context/AppContext'
 import { Toaster } from 'sonner'
+import { GetServerSideProps } from 'next'
 
 const Experiences = dynamic(
   () => import('../components/Experiences/Experiences'),
@@ -32,4 +33,10 @@ export default function Home() {
       <Footer />
     </AppProvider>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  return {
+    props: {},
+  }
 }
