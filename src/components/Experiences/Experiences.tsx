@@ -2,7 +2,6 @@ import ExperienceItem from '../ExperienceItem/ExperienceItem'
 import { useEffect } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import Image from 'next/image'
 
 // import FlashPurple from '../../assets/images/feixe-roxo-right.png'
 
