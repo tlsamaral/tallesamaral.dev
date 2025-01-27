@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 import ProjectList from '../ProjectList/ProjectList'
-import Image from 'next/image'
 
 function Projects() {
   return (
@@ -9,14 +8,6 @@ function Projects() {
       id="projects"
     >
       <div className="container-app py-8 px-4 relative">
-        {/* <div className="absolute -top-[0%] -left-[50%] -z-10">
-          <Image
-            src="/feixe-laranja.png"
-            width={800}
-            height={800}
-            alt="img-orange"
-          />
-        </div> */}
         <h2 className="inter-font font-extrabold inter-font text-[30px] sm:text-5xl text-center sm:text-start">
           PROJECTS
         </h2>
