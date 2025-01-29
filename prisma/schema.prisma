@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,4 +5,68 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model Experience {
+  id          String   @id @default(cuid())
+  company     String
+  position    String
+  description String
+  startDate   DateTime
+  endDate     DateTime
+  status      Boolean
+  createdAt   DateTime @default(now())
+
+  tags ExperienceTagAssignment[]
+
+  @@map("experiences")
+}
+
+model Project {
+  id          String    @id @default(cuid())
+  name        String
+  description String
+  startDate   DateTime
+  endDate     DateTime?
+  banner      String?
+  status      Boolean
+  createdAt   DateTime  @default(now())
+
+  tags ProjectTagAssignment[]
+
+  @@map("projects")
+}
+
+model Tag {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  status    Boolean
+  createdAt DateTime @default(now())
+
+  experienceTags ExperienceTagAssignment[]
+  projectTags    ProjectTagAssignment[]
+
+  @@map("tags")
+}
+
+model ExperienceTagAssignment {
+  experienceId String
+  tagId        String
+
+  experience Experience @relation(fields: [experienceId], references: [id], onDelete: Cascade)
+  tag        Tag        @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([experienceId, tagId])
+  @@map("experience_tag_assignments")
+}
+
+model ProjectTagAssignment {
+  projectId String
+  tagId     String
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  tag     Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([projectId, tagId])
+  @@map("project_tag_assignments")
 }
