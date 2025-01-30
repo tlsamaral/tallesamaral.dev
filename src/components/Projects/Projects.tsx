@@ -1,7 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
+import { Project } from '@/pages'
 import ProjectList from '../ProjectList/ProjectList'
 
-function Projects() {
+export interface ProjectsProps {
+  projects: Project[]
+}
+function Projects({ projects }: ProjectsProps) {
   return (
     <section
       className="min-h-screen w-full flex px-4 flex-col items-center gap-20 mt-36 relative overflow-hidden"
@@ -20,7 +24,7 @@ function Projects() {
             HIGHLIGHTS
           </h3>
         </h6>
-        <ProjectList />
+        <ProjectList projects={projects} />
       </div>
     </section>
   )
