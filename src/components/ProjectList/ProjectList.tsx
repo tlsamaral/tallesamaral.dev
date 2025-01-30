@@ -3,54 +3,9 @@ import ProjectItem from '../ProjectItem/ProjectItem'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { FaAngleDoubleDown } from 'react-icons/fa'
+import { ProjectsProps } from '../Projects/Projects'
 
-interface Links {
-  repository?: string
-  liveDemo?: string
-}
-
-interface ProjectProps {
-  title: string
-  description: string
-  tags: string[]
-  links: Links
-  image?: string
-}
-const projects: ProjectProps[] = [
-  {
-    title: 'Auto Park System',
-    description:
-      'Auto Park System is an intelligent parking management system that recognizes when a car enters a space and displays this information on a real-time dashboard. It allows the registration of multiple parking spaces and gates, which can be managed by the system for opening and closing. The system aims to optimize parking operations, providing an efficient and modern experience for both administrators and users.',
-    tags: ['JavaScript', 'Node.js', 'React', 'Redux'],
-    links: {
-      repository: 'https://github.com/tlsamaral/AutoPark',
-      liveDemo: 'https://auto-park.vercel.app/login',
-    },
-    image: '/pub-autopark.png',
-  },
-  {
-    title: 'API Rest',
-    description:
-      'API Rest is a project developed for study purposes, enabling the management of students, including registering students and their photos. It uses JWT authentication and is developed in the MVC pattern, ensuring an organized and secure structure. This project highlights the application of modern API development practices, security integration, and efficient data management, making it ideal for educational and user management applications.',
-    tags: ['Node.js', 'Express', 'MariaDB', 'JWT'],
-    links: {
-      repository: 'https://github.com/tlsamaral/api_rest',
-    },
-    image: '/pub-api.png',
-  },
-  {
-    title: 'Code Flow System',
-    description:
-      'Code Flow System is a platform developed to promote products and systems, also offering the capability to receive client feedback. The platform integrates a chatbot that informs clients about the products, answers questions, and provides detailed information. This system is ideal for companies looking to improve customer interaction, providing an interactive and informative user experience.',
-    tags: ['React', 'Node.js', 'Chatbot', 'Json-Server', 'Python'],
-    links: {
-      repository: 'https://github.com/tlsamaral/CodeFlow_System',
-    },
-    image: '/pub-codeflow.png',
-  },
-]
-
-function ProjectList() {
+function ProjectList({ projects }: ProjectsProps) {
   const [visibleProjects, setVisibleProjects] = useState(3)
 
   useEffect(() => {
@@ -75,7 +30,7 @@ function ProjectList() {
         },
       })
     })
-  }, [])
+  }, [projects])
 
   const handleShowMore = () => {
     setVisibleProjects((prev) => prev + 3)
@@ -88,10 +43,8 @@ function ProjectList() {
           <ProjectItem
             key={index}
             className={`project-${index}`}
-            project={{
-              direction: index % 2 === 0 ? 'right' : 'left',
-              ...project,
-            }}
+            project={project}
+            direction={index % 2 === 0 ? 'left' : 'right'}
           />
         ))}
       </ul>
