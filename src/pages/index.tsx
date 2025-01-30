@@ -53,16 +53,18 @@ interface AppProps {
 
 export default function Home({ experiences, projects }: AppProps) {
   return (
-    <AppProvider>
-      <Toaster richColors />
-      <Header />
-      <Initial />
-      <AboutMe />
-      <Experiences experiences={experiences} />
-      <Projects projects={projects} />
-      <Contact />
-      <Footer />
-    </AppProvider>
+    <div id="app">
+      <AppProvider>
+        <Toaster richColors />
+        <Header />
+        <Initial />
+        <AboutMe />
+        <Experiences experiences={experiences} />
+        <Projects projects={projects} />
+        <Contact />
+        <Footer />
+      </AppProvider>
+    </div>
   )
 }
 
