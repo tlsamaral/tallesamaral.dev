@@ -1,3 +1,4 @@
+import dayjs from 'dayjs'
 import TagList from '../TagList/TagList'
 
 interface ExperienceItemProps {
@@ -38,7 +39,8 @@ function ExperienceItem({
           className={`flex ${allSpace ? 'justify-center items-center' : ''}`}
         >
           <small className="poppins-light">
-            {startDate} - {endDate}
+            {dayjs(startDate).format('MMM YYYY')} -{' '}
+            {dayjs(endDate).format('MMM YYYY')}
           </small>
         </div>
       </div>
