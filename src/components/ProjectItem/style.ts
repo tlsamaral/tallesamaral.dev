@@ -38,7 +38,7 @@ export const ImageProject = styled.div`
   grid-area: image;
   width: 100%;
   max-width: 718px;
-  border-radius: 10px;
+  border-radius: 20px;
   overflow: hidden;
   height: 464px;
 
@@ -54,6 +54,8 @@ export const ImgContent = styled.div<ImgContentProps>`
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  object-fit: cover;
+  border-radius: 20px;
 `
 
 export const MainContent = styled.div`
