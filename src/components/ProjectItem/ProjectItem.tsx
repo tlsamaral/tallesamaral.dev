@@ -13,28 +13,16 @@ import {
 import TagList from '../TagList/TagList'
 import Btn from '../Btn/Btn'
 import { toast } from 'sonner'
-
-interface Links {
-  repository?: string
-  liveDemo?: string
-}
-
-interface ProjectProps {
-  direction: 'left' | 'right'
-  title: string
-  description: string
-  tags: string[]
-  links: Links
-  image?: string
-}
+import { ProjectsProps } from '../Projects/Projects'
 
 interface IProjectItemProps {
-  project: ProjectProps
-  className: string
+  project: ProjectsProps['projects'][number]
+  className?: string
+  direction: 'left' | 'right'
 }
 
-function ProjectItem({ project, className }: IProjectItemProps) {
-  const { direction, title, description, tags, links, image } = project
+function ProjectItem({ project, className, direction }: IProjectItemProps) {
+  const { name, description, tags, appUrl, repositoryUrl, banner } = project
 
   const timeToast = 2050
   const promiseRedirect = (link: string) => {
@@ -48,15 +36,15 @@ function ProjectItem({ project, className }: IProjectItemProps) {
   }
 
   const handleRepositoryClick = () => {
-    if (!links.repository) return
+    if (repositoryUrl) return
 
-    promiseRedirect(links.repository)
+    promiseRedirect(repositoryUrl)
   }
 
   const handleLiveDemoClick = () => {
-    if (!links.liveDemo) return
+    if (appUrl) return
 
-    promiseRedirect(links.liveDemo)
+    promiseRedirect(appUrl)
   }
 
   return (
@@ -64,7 +52,7 @@ function ProjectItem({ project, className }: IProjectItemProps) {
       <GridContainer direction={direction}>
         <ContentProject>
           <MainContent>
-            <Title className="poppins-bold">{title}</Title>
+            <Title className="poppins-bold">{name}</Title>
             <Description className="poppins-regular">{description}</Description>
             <TagList
               taglist={tags}
@@ -72,7 +60,7 @@ function ProjectItem({ project, className }: IProjectItemProps) {
             />
           </MainContent>
           <ButtonList>
-            {links.repository && (
+            {repositoryUrl && (
               <Btn
                 type="button"
                 variant="leaked"
@@ -82,7 +70,7 @@ function ProjectItem({ project, className }: IProjectItemProps) {
                 <FaGithub />
               </Btn>
             )}
-            {links.liveDemo && (
+            {appUrl && (
               <Btn
                 type="button"
                 variant="default"
@@ -95,7 +83,7 @@ function ProjectItem({ project, className }: IProjectItemProps) {
           </ButtonList>
         </ContentProject>
         <ImageProject>
-          <ImgContent imgUrl={image || '/pub-default.png'} />
+          <ImgContent imgUrl={banner || '/pub-default.png'} />
         </ImageProject>
       </GridContainer>
     </li>
