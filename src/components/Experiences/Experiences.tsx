@@ -2,32 +2,15 @@ import ExperienceItem from '../ExperienceItem/ExperienceItem'
 import { useEffect } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import { Experience } from '@/pages'
 
 // import FlashPurple from '../../assets/images/feixe-roxo-right.png'
 
-const experiences = [
-  {
-    company: 'Editora Santuário',
-    position: 'Junior Development Analyst',
-    description:
-      'At Editora Santuário, I had the opportunity to work on challenging projects. My main activities included the development of web applications and APIs, server connection, creation of FTP server connection projects, and job execution. Additionally, I contributed to the development of internal applications, such as the Intranet Portal. I also gained experience in database connection, migration creation, and web service implementation. My knowledge spans both front-end and back-end.',
-    tags: [
-      'Web Development',
-      'API',
-      'Database Connection',
-      'Full Stack',
-      'C#',
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'Jquery',
-    ],
-    startDate: 'April 2023',
-    endDate: 'Present',
-  },
-]
+interface ExperiencesProps {
+  experiences: Experience[]
+}
 
-function Experiences() {
+function Experiences({ experiences }: ExperiencesProps) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
@@ -51,7 +34,7 @@ function Experiences() {
         },
       })
     })
-  }, [])
+  }, [experiences])
 
   return (
     <section
@@ -96,14 +79,6 @@ function Experiences() {
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-white"></div>
         </div>
       </div>
-      {/* <div className="absolute -right-0 -bottom-[50%] -z-10" tabIndex={-1}>
-        <Image
-          src="/feixe-roxo-right.png"
-          width={800}
-          height={800}
-          alt="flash"
-        />
-      </div> */}
     </section>
   )
 }
