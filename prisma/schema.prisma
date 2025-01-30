@@ -30,7 +30,11 @@ model Project {
   endDate     DateTime?
   banner      String?
   status      Boolean
-  createdAt   DateTime  @default(now())
+
+  repositoryUrl String?
+  appUrl        String?
+
+  createdAt DateTime @default(now())
 
   tags ProjectTagAssignment[]
 
