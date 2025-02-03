@@ -10,5 +10,5 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return <BackofficeLayout>{children}</BackofficeLayout>
   }
 
-  return children
+  return <>{children}</>
 }
