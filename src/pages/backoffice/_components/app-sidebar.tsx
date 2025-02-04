@@ -28,25 +28,25 @@ const data = {
   navMain: [
     {
       title: 'Insights',
-      url: '/insights',
+      url: '/backoffice/insights',
       icon: ChartSpline,
       isActive: true,
     },
     {
       title: 'Experiences',
-      url: '/experiences',
+      url: '/backoffice/experiences',
       icon: ChartNoAxesGantt,
       isActive: true,
     },
     {
       title: 'Feedbacks',
-      url: '/feedbacks',
+      url: '/backoffice/feedbacks',
       icon: MessagesSquare,
       isActive: true,
     },
     {
       title: 'Projects',
-      url: '/projects',
+      url: '/backoffice/projects',
       icon: SquareTerminal,
       isActive: true,
     },
