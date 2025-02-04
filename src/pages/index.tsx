@@ -6,8 +6,7 @@ import Header from '@/components/Header/Header'
 import Initial from '@/components/Initial/Initial'
 // import Projects from '@/components/Projects/Projects'
 import AppProvider from '@/context/AppContext'
-import { Toaster } from 'sonner'
-import { GetServerSideProps } from 'next'
+import type { GetServerSideProps } from 'next'
 import { prisma } from '@/lib/prisma'
 
 const Experiences = dynamic(
@@ -53,18 +52,15 @@ interface AppProps {
 
 export default function Home({ experiences, projects }: AppProps) {
   return (
-    <div id="app">
-      <AppProvider>
-        <Toaster richColors />
-        <Header />
-        <Initial />
-        <AboutMe />
-        <Experiences experiences={experiences} />
-        <Projects projects={projects} />
-        <Contact />
-        <Footer />
-      </AppProvider>
-    </div>
+    <AppProvider>
+      <Header />
+      <Initial />
+      <AboutMe />
+      <Experiences experiences={experiences} />
+      <Projects projects={projects} />
+      <Contact />
+      <Footer />
+    </AppProvider>
   )
 }
 
