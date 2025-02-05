@@ -18,10 +18,4 @@ export const TagArea = styled.li`
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(0.8px);
   -webkit-backdrop-filter: blur(0.8px);
-
-  @media (prefers-color-scheme: dark) {
-    border-color: rgb(77, 28, 88);
-    background-color: rgba(233, 195, 248, 0.4);
-    color: rgb(90, 28, 88);
-  }
 `
