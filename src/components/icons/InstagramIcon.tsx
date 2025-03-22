@@ -1,5 +1,3 @@
-import propTypes from 'prop-types'
-
 interface IIconProps {
   className?: string
 }
@@ -34,7 +32,3 @@ function InstagramIcon({ className }: IIconProps) {
 }
 
 export default InstagramIcon
-
-InstagramIcon.propTypes = {
-  className: propTypes.string,
-}

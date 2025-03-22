@@ -1,5 +1,4 @@
 import { Text } from './style'
-import PropTypes from 'prop-types'
 import React from 'react'
 
 interface IChildrenText {
@@ -11,7 +10,3 @@ const TextEffect: React.FC<IChildrenText> = ({ children }) => {
 }
 
 export default TextEffect
-
-TextEffect.propTypes = {
-  children: PropTypes.node.isRequired,
-}

@@ -1,5 +1,3 @@
-import propTypes from 'prop-types'
-
 interface IIconProps {
   className?: string
 }
@@ -23,7 +21,3 @@ function TwitterIcon({ className }: IIconProps) {
 }
 
 export default TwitterIcon
-
-TwitterIcon.propTypes = {
-  className: propTypes.string,
-}
