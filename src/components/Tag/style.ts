@@ -13,7 +13,6 @@ export const TagArea = styled.li`
 
   border-color: #9c6fa8;
   background-color: rgba(229, 170, 245, 0.2);
-
   color: #f0d2f8;
 
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);

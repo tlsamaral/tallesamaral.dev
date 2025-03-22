@@ -1,5 +1,4 @@
 import { TagArea } from './style'
-import propTypes from 'prop-types'
 
 interface ITagProps {
   tagName: string
@@ -14,7 +13,3 @@ function Tag({ tagName }: ITagProps) {
 }
 
 export default Tag
-
-Tag.propTypes = {
-  tagName: propTypes.string.isRequired,
-}

@@ -39,7 +39,7 @@ export function LoginForm({
   async function handleSignIn({ email, password }: AuthUser) {
     try {
       const response = await api.post('/user/auth', { email, password })
-      toast.success(`Welcome, ${response.data.name}`)
+      toast.success(`Welcome, ${response.data.user.name}`)
 
       await router.push('/backoffice')
     } catch (err) {
