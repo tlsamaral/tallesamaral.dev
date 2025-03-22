@@ -13,7 +13,7 @@ import {
 import TagList from '../TagList/TagList'
 import Btn from '../Btn/Btn'
 import { toast } from 'sonner'
-import { ProjectsProps } from '../Projects/Projects'
+import type { ProjectsProps } from '../Projects/Projects'
 
 interface IProjectItemProps {
   project: ProjectsProps['projects'][number]

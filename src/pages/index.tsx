@@ -7,7 +7,7 @@ import Initial from '@/components/Initial/Initial'
 // import Projects from '@/components/Projects/Projects'
 import AppProvider from '@/context/AppContext'
 import { Toaster } from 'sonner'
-import { GetServerSideProps } from 'next'
+import type { GetServerSideProps } from 'next'
 import { prisma } from '@/lib/prisma'
 
 const Experiences = dynamic(

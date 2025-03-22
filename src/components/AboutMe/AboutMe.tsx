@@ -130,6 +130,7 @@ function AboutMe() {
         </GridComponent>
       </div>
       <button
+        type="button"
         onClick={scrollToTop}
         className={`${
           showScrollToTop

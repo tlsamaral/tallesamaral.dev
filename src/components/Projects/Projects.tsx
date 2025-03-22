@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Project } from '@/pages'
+import type { Project } from '@/pages'
 import ProjectList from '../ProjectList/ProjectList'
 
 export interface ProjectsProps {

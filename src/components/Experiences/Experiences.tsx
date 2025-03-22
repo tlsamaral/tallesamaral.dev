@@ -2,7 +2,7 @@ import ExperienceItem from '../ExperienceItem/ExperienceItem'
 import { useEffect } from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import { Experience } from '@/pages'
+import type { Experience } from '@/pages'
 
 // import FlashPurple from '../../assets/images/feixe-roxo-right.png'
 
@@ -63,7 +63,7 @@ function Experiences({ experiences }: ExperiencesProps) {
                 }  w-2 h-2 rounded-full bg-white absolute right-1/2 top-3 ${
                   index === 0 ? '' : ''
                 }`}
-              ></div>
+              />
 
               <ExperienceItem
                 company={exp.company}
@@ -76,7 +76,7 @@ function Experiences({ experiences }: ExperiencesProps) {
               />
             </div>
           ))}
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-white"></div>
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-white" />
         </div>
       </div>
     </section>

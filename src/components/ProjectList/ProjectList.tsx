@@ -3,7 +3,7 @@ import ProjectItem from '../ProjectItem/ProjectItem'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { FaAngleDoubleDown } from 'react-icons/fa'
-import { ProjectsProps } from '../Projects/Projects'
+import type { ProjectsProps } from '../Projects/Projects'
 
 function ProjectList({ projects }: ProjectsProps) {
   const [visibleProjects, setVisibleProjects] = useState(3)
@@ -51,6 +51,7 @@ function ProjectList({ projects }: ProjectsProps) {
       {visibleProjects < projects.length && (
         <div className="w-full flex justify-end">
           <button
+            type="button"
             onClick={handleShowMore}
             className="poppins-light  px-4 py-2 text-white rounded flex gap-2 justify-center items-center hover:opacity-60 transition-all mt-10"
           >
