@@ -1,7 +1,7 @@
 import type { GetServerSideProps } from 'next'
 import { ProjectsTable } from './_components/projects-table'
 import { prisma } from '@/lib/prisma'
-import { Project } from '@/pages'
+import type { Project } from '@/pages'
 
 interface ProjectsProps {
   projects: Project[]
