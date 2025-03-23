@@ -1,4 +1,4 @@
-import { AppSidebar } from '@/pages/backoffice/_components/app-sidebar'
+import { AppSidebar } from '@/components/@backoffice/app-sidebar'
 import {
   Breadcrumb,
   BreadcrumbItem,

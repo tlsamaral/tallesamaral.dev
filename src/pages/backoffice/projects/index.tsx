@@ -1,5 +1,5 @@
 import type { GetServerSideProps } from 'next'
-import { ProjectsTable } from './_components/projects-table'
+import { ProjectsTable } from '../../../components/@backoffice/projects-table'
 import { prisma } from '@/lib/prisma'
 import type { Project } from '@/pages'
 
