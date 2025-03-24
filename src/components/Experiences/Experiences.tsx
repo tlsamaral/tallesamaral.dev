@@ -68,6 +68,7 @@ function Experiences({ experiences }: ExperiencesProps) {
               <ExperienceItem
                 company={exp.company}
                 position={exp.position}
+                isCurrent={exp.isCurrent}
                 description={exp.description}
                 tags={exp.tags}
                 allSpace={data.length === 1}

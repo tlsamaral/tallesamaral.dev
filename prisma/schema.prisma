@@ -8,14 +8,15 @@ datasource db {
 }
 
 model Experience {
-  id          String   @id @default(cuid())
+  id          String    @id @default(cuid())
   company     String
   position    String
   description String
   startDate   DateTime
-  endDate     DateTime
+  endDate     DateTime?
   status      Boolean
-  createdAt   DateTime @default(now())
+  createdAt   DateTime  @default(now())
+  isCurrent   Boolean   @default(false)
 
   tags ExperienceTagAssignment[]
 
@@ -76,11 +77,11 @@ model ProjectTagAssignment {
 }
 
 model User {
-  id String @id @default(cuid())
-  name String 
-  email String
-  password String 
-  
+  id       String @id @default(cuid())
+  name     String
+  email    String
+  password String
+
   createdAt DateTime @default(now())
 
   @@map("users")

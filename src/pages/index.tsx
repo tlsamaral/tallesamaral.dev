@@ -43,6 +43,7 @@ export interface Experience {
   endDate: string
   status: true
   createdAt: string
+  isCurrent: boolean
   tags: string[]
 }
 

@@ -9,6 +9,7 @@ interface ExperienceItemProps {
   allSpace: boolean
   startDate: string
   endDate: string
+  isCurrent: boolean
 }
 
 function ExperienceItem({
@@ -19,6 +20,7 @@ function ExperienceItem({
   startDate,
   endDate,
   allSpace,
+  isCurrent,
 }: ExperienceItemProps) {
   return (
     <div className="flex flex-col gap-5">
@@ -40,7 +42,7 @@ function ExperienceItem({
         >
           <small className="poppins-light">
             {dayjs(startDate).format('MMM YYYY')} -{' '}
-            {dayjs(endDate).format('MMM YYYY')}
+            {isCurrent ? 'Present' : dayjs(endDate).format('MMM YYYY')}
           </small>
         </div>
       </div>
