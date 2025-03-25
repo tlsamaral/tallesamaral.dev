@@ -78,20 +78,19 @@ function AboutMe() {
             <h2 className="inter-font font-extrabold text-[30px] sm:text-5xl text-center sm:text-start">
               ABOUT ME
             </h2>
-            <div className="flex flex-col gap-3">
-              <p className="inter-font font-medium min-[769px]:text-2xl text-[20px] text-center sm:text-start">
+            <div className="flex flex-col gap-4 lg:gap-8">
+              <p className="inter-font min-[769px]:text-xl text-center sm:text-start">
                 Born in Potim, Brazil, I am{' '}
-                <StrongText>21 years old</StrongText> and currently pursuing a
+                <StrongText>22 years old</StrongText> and currently pursuing a
                 degree in <StrongText>Computer Engineering</StrongText> at
                 Centro Universitário Salesiano de São Paulo (UNISAL). My
                 interest in programming sparked at the age of{' '}
                 <StrongText>14</StrongText> when I began exploring codes for
                 game servers out of pure curiosity. However, it was around{' '}
-                <StrongText>mid-2022</StrongText>
-                when I decided to fully dedicate myself to this field and become
-                a programmer.
+                <StrongText>mid-2022</StrongText> when I decided to fully
+                dedicate myself to this field and become a programmer.
               </p>
-              <p className="inter-font font-medium min-[769px]:text-2xl text-[20px] text-center sm:text-start">
+              <p className="inter-font min-[769px]:text-xl text-center sm:text-start">
                 Since then, I have been constantly striving to develop and
                 enhance my skills in{' '}
                 <StrongText>software development</StrongText>. Through courses,
@@ -99,7 +98,7 @@ function AboutMe() {
                 building a strong foundation in{' '}
                 <StrongText>programming and problem-solving</StrongText>.
               </p>
-              <p className="inter-font font-medium min-[769px]:text-2xl text-[20px] text-center sm:text-start">
+              <p className="inter-font min-[769px]:text-xl text-center sm:text-start">
                 My goal is to become a{' '}
                 <StrongText>talented software developer</StrongText> capable of
                 tackling complex challenges, thus contributing to the creation
@@ -111,14 +110,14 @@ function AboutMe() {
             <h3 className="inter-font font-extrabold text-[22px] sm:text-[32px] text-center sm:text-start">
               Professional and Inspirational Goal
             </h3>
-            <p className="inter-font font-medium min-[769px]:text-2xl text-[20px] w-full max-w-[1000px] text-center sm:text-start">
+            <p className="inter-font min-[769px]:text-xl w-full max-w-[1000px] text-center sm:text-start">
               I aim to become a <StrongText>great developer</StrongText> capable
               of making a difference in my community. I believe that achieving
               our dreams only requires dreaming and believing, and I want to
               demonstrate that through my work and dedication.
             </p>
           </SubTextArea>
-          <FooterTextArea>
+          <FooterTextArea className="hidden sm:block">
             <code className="code-font text-xs sm:text-base opacity-50 text-center sm:text-start">
               &lt;p&gt;
               <StrongText>
