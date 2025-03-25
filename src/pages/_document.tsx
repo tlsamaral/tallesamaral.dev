@@ -6,7 +6,7 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document'
-import { JSX } from 'react'
+import type { JSX } from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
 class MyDocument extends Document {
