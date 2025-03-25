@@ -27,9 +27,10 @@ function Experiences({ experiences }: ExperiencesProps) {
         duration: 1,
         scrollTrigger: {
           trigger: experienceClass,
-          start: 'top 80%',
-          end: 'bottom 60%',
-          scrub: 1, // adjusted scrub value
+          // trigger: experienceClass,
+          start: 'top 90%', // anima quando o topo do elemento estiver em 90% da tela
+          end: 'top 60%', // termina quando o topo do elemento atingir 60% da tela
+          toggleActions: 'play none none reverse', // simplifica o controle
           onLeave: () => gsap.to(experienceClass, { opacity: 1, x: 0, y: 0 }), // ensure the animation completes when leaving the trigger
         },
       })
