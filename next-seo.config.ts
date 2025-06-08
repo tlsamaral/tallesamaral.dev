@@ -15,6 +15,10 @@ export default {
       content:
         'Talles Amaral, Software Developer, Desenvolvedor Web, Portfólio, Frontend, Backend, Desenvolvedor Fullstack, JavaScript, React, Next.js, Node.js, Programador',
     },
+    {
+      name: 'google-site-verification',
+      content: 'Mvu2b3bDia9rnivAfRqg2l8MMHtSMC9XlEmU4WMTnoE', // Substitua por seu código gerado pelo Google
+    },
   ],
   openGraph: {
     type: 'website',
