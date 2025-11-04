@@ -1,0 +1,10 @@
+{
+  "hero": {
+    "title": "Olá, eu sou o Pika das Galáxias 👋",
+    "subtitle": "Desenvolvedor full stack e criador de experiências digitais."
+  },
+  "about": {
+    "title": "Sobre mim",
+    "text": "Sou apaixonado por tecnologia, design e experiências que unem ambos."
+  }
+}
