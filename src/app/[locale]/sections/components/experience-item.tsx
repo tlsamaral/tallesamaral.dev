@@ -31,7 +31,7 @@ export function ExperienceItem({ experience, isLast }: ExperienceItemProps) {
       >
         <div
           className={`
-            absolute top-4 left-7 w-0.5 h-full bg-muted
+            absolute top-4 left-7 mt-0.5 w-0.5 h-full bg-muted
             transition-opacity duration-300
             group-data-[state=open]:opacity-100
             ${isLast ? 'opacity-0 h-4/5' : 'opacity-100'}
