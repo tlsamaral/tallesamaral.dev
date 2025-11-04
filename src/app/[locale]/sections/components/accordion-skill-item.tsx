@@ -57,6 +57,7 @@ export function AccordionSkillItem({ category }: AccordionSkillItemProps) {
                   alt={stack.name}
                   width={32}
                   height={32}
+                  priority
                   className="size-8 drop-shadow-sm drop-shadow-muted-foreground/20"
                 />
               </div>

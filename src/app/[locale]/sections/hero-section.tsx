@@ -24,7 +24,7 @@ export function HeroSection({ t }: HeroSectionProps) {
           />
         </Avatar>
 
-        <div className="flex justify-center items-center border size-12 rounded-full bg-muted absolute -bottom-2 -left-2">
+        <div className="flex justify-center items-center border-2 size-12 rounded-full absolute -bottom-2 -left-2 supports-backdrop-blur:bg-white/10 supports-backdrop-blur:dark:bg-black/10 gap-2 backdrop-blur-md">
           <Image
             src="/icons/tallesamaral-logo.svg"
             alt="@TallesAmaral"
