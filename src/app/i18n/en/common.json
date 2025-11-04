@@ -13,5 +13,34 @@
         "I thrive in collaborative environments where innovation meets precision, always seeking to learn, evolve, and create digital experiences that inspire and make a difference."
       ]
     }
+  },
+  "experiences": {
+    "title": "Professional Experience",
+    "items": [
+      {
+        "company": "UNISAL – Salesian University Center of São Paulo",
+        "period": "Apr 2025 – Present",
+        "role": "Systems Analyst / Full Stack Developer",
+        "location": "Lorena, Brazil",
+        "description": [
+          "Responsible for the entire development lifecycle — from data modeling to the delivery of secure, responsive, and user-focused interfaces.",
+          "Currently leading the modernization of academic and administrative systems by rewriting legacy applications with modern, scalable architecture.",
+          "Results: Successfully restructured legacy systems with modular and intuitive solutions, improving performance and user experience."
+        ],
+        "avatarUrl": null
+      },
+      {
+        "company": "Editora Santuário",
+        "period": "Apr 2023 – Apr 2025",
+        "role": "Junior Developer",
+        "location": "Aparecida, Brazil",
+        "description": [
+          "Developed and maintained internal web applications to automate workflows and improve operational efficiency.",
+          "Built scalable applications that enhanced sales performance and communication across departments.",
+          "Results: Increased productivity and streamlined internal communication through tools like Help Desk, Intranet, and CRM — reducing response time by over 40%."
+        ],
+        "avatarUrl": null
+      }
+    ]
   }
 }

@@ -13,5 +13,34 @@
         "Gosto de trabalhar em ambientes colaborativos, onde inovação e precisão caminham juntas. Cada projeto em que atuo reflete meu compromisso em aprender continuamente, evoluir como profissional e construir experiências digitais que inspirem e façam a diferença."
       ]
     }
+  },
+  "experiences": {
+    "title": "Experiências",
+    "items": [
+      {
+        "company": "UNISAL – Centro Universitário Salesiano de São Paulo",
+        "period": "Abr 2025 – Presente",
+        "role": "Analista de Sistemas / Desenvolvedor Full Stack",
+        "location": "Lorena, SP",
+        "description": [
+          "Responsável por todo o ciclo de desenvolvimento, da modelagem de dados à entrega de interfaces responsivas, seguras e orientadas à experiência do usuário.",
+          "Atuo na reformulação de sistemas acadêmicos e administrativos, modernizando a infraestrutura digital da instituição através da reescrita de aplicações legadas com tecnologias atuais e arquitetura escalável.",
+          "Resultados: Reestruturei sistemas legados, substituindo arquiteturas ultrapassadas por soluções modernas e escaláveis, com interfaces mais intuitivas e acessíveis."
+        ],
+        "avatarUrl": null
+      },
+      {
+        "company": "Editora Santuário",
+        "period": "Abr 2023 – Abr 2025",
+        "role": "Analista Desenvolvedor Jr",
+        "location": "Aparecida, SP",
+        "description": [
+          "Criei e mantive aplicações web para o funcionamento de processos internos e automação de rotinas administrativas.",
+          "Desenvolvi aplicações escaláveis voltadas à performance de vendas e produtividade das equipes.",
+          "Resultados: Melhoria na produtividade e comunicação interna com sistemas como Help Desk, Intranet e CRM, reduzindo o tempo de resposta em mais de 40%."
+        ],
+        "avatarUrl": null
+      }
+    ]
   }
 }

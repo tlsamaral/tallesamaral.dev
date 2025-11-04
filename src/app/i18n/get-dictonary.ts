@@ -7,11 +7,11 @@ const dictionaries = {
 }
 
 export const getDictionary = async (locale: Locale) => {
-  const loadDictionary = dictionaries[locale]
-  if (!loadDictionary) {
-    console.log(locale, dictionaries)
-    throw new Error(`No dictionary found for locale "${locale}"`)
+  // 🔹 Protege contra chamadas erradas, tipo "favicon.ico"
+  if (locale !== 'en' && locale !== 'pt') {
+    console.warn(`[i18n] Invalid locale received: ${locale}`)
+    return dictionaries['pt']() // fallback padrão
   }
 
-  return loadDictionary()
+  return dictionaries[locale]()
 }
