@@ -1,5 +1,8 @@
-import { Languages } from 'lucide-react'
+'use client'
 
+import { Languages } from 'lucide-react'
+import { useParams } from 'next/navigation'
+import type { Locale } from '@/app/i18n/config'
 import { Button } from '@/components/ui/button'
 import {
   Popover,
@@ -14,6 +17,8 @@ import {
 import { LocaleSwitcher } from './locale-switcher'
 
 export function LanguageDockIcon() {
+  const { locale } = useParams() as { locale: Locale }
+
   return (
     <Tooltip>
       <Popover>
@@ -29,12 +34,16 @@ export function LanguageDockIcon() {
           </TooltipTrigger>
         </PopoverTrigger>
 
-        <PopoverContent side="top" className="w-44 shadow-md rounded-xl p-1">
+        <PopoverContent
+          side="top"
+          className="w-44 shadow-md rounded-xl p-0"
+          sideOffset={12}
+        >
           <LocaleSwitcher />
         </PopoverContent>
       </Popover>
       <TooltipContent>
-        <p>Alterar idioma</p>
+        <p>{locale === 'en' ? 'Change language' : 'Alterar idioma'}</p>
       </TooltipContent>
     </Tooltip>
   )

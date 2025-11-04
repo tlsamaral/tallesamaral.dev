@@ -1,6 +1,9 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
+import type { Locale } from '@/app/i18n/config'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import {
@@ -17,12 +20,40 @@ import { Dock, DockIcon } from './ui/dock'
 import { ScrollProgress } from './ui/scroll-progress'
 
 export function MainDock() {
+  const { locale } = useParams() as { locale: Locale }
+
   return (
     <div className="flex flex-col items-center justify-center">
       <ScrollProgress />
 
       <TooltipProvider>
         <Dock direction="middle">
+          <DockIcon>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href="#"
+                  className={cn(
+                    buttonVariants({ variant: 'ghost', size: 'icon' }),
+                    'size-12 rounded-full',
+                  )}
+                >
+                  <Image
+                    src="/icons/tallesamaral-logo.svg"
+                    alt="@TallesAmaral"
+                    width={20}
+                    height={20}
+                    className="size-4"
+                    priority
+                  />
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Talles Amaral</p>
+              </TooltipContent>
+            </Tooltip>
+          </DockIcon>
+
           {socialDataItems.navbar.map((item) => (
             <DockIcon key={item.label}>
               <Tooltip>
@@ -90,7 +121,7 @@ export function MainDock() {
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
-                <p>Toogle theme</p>
+                <p>{locale === 'en' ? 'Toggle theme' : 'Alterar tema'}</p>
               </TooltipContent>
             </Tooltip>
           </DockIcon>
