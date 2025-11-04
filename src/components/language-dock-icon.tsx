@@ -16,9 +16,9 @@ import { LocaleSwitcher } from './locale-switcher'
 export function LanguageDockIcon() {
   return (
     <Tooltip>
-      <TooltipTrigger asChild>
-        <Popover>
-          <PopoverTrigger asChild>
+      <Popover>
+        <PopoverTrigger asChild>
+          <TooltipTrigger asChild>
             <Button
               variant="ghost"
               size="icon"
@@ -26,13 +26,13 @@ export function LanguageDockIcon() {
             >
               <Languages className="size-4" />
             </Button>
-          </PopoverTrigger>
+          </TooltipTrigger>
+        </PopoverTrigger>
 
-          <PopoverContent side="top" className="w-44 shadow-md rounded-xl p-1">
-            <LocaleSwitcher />
-          </PopoverContent>
-        </Popover>
-      </TooltipTrigger>
+        <PopoverContent side="top" className="w-44 shadow-md rounded-xl p-1">
+          <LocaleSwitcher />
+        </PopoverContent>
+      </Popover>
       <TooltipContent>
         <p>Alterar idioma</p>
       </TooltipContent>
