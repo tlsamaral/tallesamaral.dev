@@ -4,7 +4,14 @@
     "subtitle": "Passionate about creating digital experiences that blend simplicity, emotion, and impact — always learning, exploring, and building the future."
   },
   "about": {
-    "title": "About me",
-    "text": "I'm passionate about technology, design, and experiences that blend both."
+    "title": "About Me",
+    "short": "I’m a full stack developer driven by curiosity and purpose. I love turning ideas into digital experiences that blend design, simplicity, and impact. I’m constantly learning, growing, and building solutions that connect people and give technology real meaning.",
+    "full": {
+      "paragraphs": [
+        "I’m a Full Stack Developer driven by curiosity and purpose. I believe technology is more than code — it’s a bridge that connects people, simplifies complexity, and transforms ideas into meaningful experiences.",
+        "Over the past few years, I’ve dedicated myself to crafting intuitive and scalable solutions that combine design, performance, and usability. My journey blends creativity and logic: from designing seamless user interfaces to building solid backend architectures guided by clean code and attention to detail.",
+        "I thrive in collaborative environments where innovation meets precision, always seeking to learn, evolve, and create digital experiences that inspire and make a difference."
+      ]
+    }
   }
 }

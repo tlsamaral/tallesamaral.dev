@@ -5,6 +5,13 @@
   },
   "about": {
     "title": "Sobre mim",
-    "text": "Sou apaixonado por tecnologia, design e experiências que unem ambos."
+    "short": "Sou um desenvolvedor full stack movido por curiosidade e propósito. Gosto de transformar ideias em experiências digitais que unem design, simplicidade e impacto. Busco sempre aprender, evoluir e criar soluções que conectem pessoas e façam a tecnologia ter significado real.",
+    "full": {
+      "paragraphs": [
+        "Sou um desenvolvedor full stack movido por curiosidade e propósito. Acredito que tecnologia vai além do código — é uma ponte que conecta pessoas, simplifica o que é complexo e transforma ideias em experiências significativas.",
+        "Nos últimos anos, dediquei-me a criar soluções intuitivas e escaláveis que unem design, performance e usabilidade. Minha trajetória combina criatividade e lógica: do design de interfaces fluidas à construção de arquiteturas sólidas, sempre guiado por boas práticas e atenção aos detalhes.",
+        "Gosto de trabalhar em ambientes colaborativos, onde inovação e precisão caminham juntas. Cada projeto em que atuo reflete meu compromisso em aprender continuamente, evoluir como profissional e construir experiências digitais que inspirem e façam a diferença."
+      ]
+    }
   }
 }

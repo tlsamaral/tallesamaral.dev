@@ -2,6 +2,7 @@ import { MainDock } from '@/components/main-dock'
 import { TracingBeam } from '@/components/ui/tracing-beam'
 import type { Locale } from '../i18n/config'
 import { getDictionary } from '../i18n/get-dictonary'
+import { AboutSection } from './sections/about-section'
 import { HeroSection } from './sections/hero-section'
 
 interface PageProps {
@@ -17,10 +18,14 @@ export default async function Home({ params }: PageProps) {
   return (
     <main className="max-w-2xl mx-auto sm:py-24 py-12 px-6 min-h-screen">
       <TracingBeam>
-        <HeroSection t={t} />
+        <div className="flex flex-col gap-8">
+          <HeroSection t={t} />
+
+          <AboutSection t={t} />
+        </div>
       </TracingBeam>
 
-      <div className="w-full fixed inset-x-0 bottom-4 z-50">
+      <div className="w-full fixed inset-x-0 bottom-4 z-100">
         <MainDock />
       </div>
     </main>
