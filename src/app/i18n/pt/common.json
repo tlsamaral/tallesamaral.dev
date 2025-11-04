@@ -42,5 +42,90 @@
         "avatarUrl": null
       }
     ]
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Tecnologias e ferramentas que moldam meu trabalho — da ideia à entrega.",
+    "categories": {
+      "frontend": {
+        "label": "Frontend",
+        "stacks": [
+          { "name": "Next.js", "icon": "/icons/nextjs.svg", "projects": 8 },
+          { "name": "React.js", "icon": "/icons/react.svg", "projects": 10 },
+          {
+            "name": "TypeScript",
+            "icon": "/icons/typescript.svg",
+            "projects": 12
+          },
+          {
+            "name": "TailwindCSS",
+            "icon": "/icons/tailwindcss.svg",
+            "projects": 9
+          },
+          {
+            "name": "React Native",
+            "icon": "/icons/react.svg",
+            "projects": 3
+          },
+          { "name": "Expo", "icon": "/icons/expo.svg", "projects": 2 },
+          { "name": "HTML5", "icon": "/icons/html5.svg", "projects": 15 },
+          { "name": "CSS3", "icon": "/icons/css3.svg", "projects": 15 }
+        ]
+      },
+      "backend": {
+        "label": "Backend",
+        "stacks": [
+          { "name": "Node.js", "icon": "/icons/nodejs.svg", "projects": 8 },
+          { "name": "Fastify", "icon": "/icons/fastify.svg", "projects": 5 },
+          { "name": "Prisma ORM", "icon": "/icons/prisma.svg", "projects": 6 },
+          { "name": "C#", "icon": "/icons/csharp.svg", "projects": 2 }
+        ]
+      },
+      "database": {
+        "label": "Bancos de Dados",
+        "stacks": [
+          {
+            "name": "PostgreSQL",
+            "icon": "/icons/postgresql.svg",
+            "projects": 6
+          },
+          { "name": "MySQL", "icon": "/icons/mysql.svg", "projects": 4 },
+          {
+            "name": "SQL Server",
+            "icon": "/icons/sqlserver.svg",
+            "projects": 2
+          },
+          { "name": "Supabase", "icon": "/icons/supabase.svg", "projects": 2 }
+        ]
+      },
+      "testing": {
+        "label": "Testes",
+        "stacks": [
+          { "name": "Vitest", "icon": "/icons/vitest.svg", "projects": 4 },
+          { "name": "Jest", "icon": "/icons/jest.svg", "projects": 1 },
+          { "name": "Cypress", "icon": "/icons/cypress.svg", "projects": 1 },
+          {
+            "name": "Playwright",
+            "icon": "/icons/playwright.svg",
+            "projects": 2
+          }
+        ]
+      },
+      "devops": {
+        "label": "DevOps & Infraestrutura",
+        "stacks": [
+          { "name": "Docker", "icon": "/icons/docker.svg", "projects": 6 },
+          { "name": "Vercel", "icon": "/icons/vercel.svg", "projects": 5 },
+          { "name": "Git/GitHub", "icon": "/icons/github.svg", "projects": 12 },
+          { "name": "Linux", "icon": "/icons/linux.svg", "projects": 4 }
+        ]
+      },
+      "design": {
+        "label": "Design & Branding",
+        "stacks": [
+          { "name": "Figma", "icon": "/icons/figma.svg", "projects": 4 }
+        ]
+      }
+    }
   }
 }
