@@ -1,3 +1,15 @@
-export function SectionTitle({ children }: { children: React.ReactNode }) {
-  return <h2 className="text-2xl font-bold">{children}</h2>
+import clsx from 'clsx'
+
+export function SectionTitle({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
+  return (
+    <h2 className={clsx('text-2xl font-bold tracking-tighter', className)}>
+      {children}
+    </h2>
+  )
 }

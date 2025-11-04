@@ -2,6 +2,7 @@ import { MainDock } from '@/components/main-dock'
 import type { Locale } from '../i18n/config'
 import { getDictionary } from '../i18n/get-dictonary'
 import { AboutSection } from './sections/about-section'
+import { ContactSection } from './sections/contact-section'
 import { EducationSection } from './sections/education-section'
 import { ExperiencesSection } from './sections/experiences-section'
 import { HeroSection } from './sections/hero-section'
@@ -19,7 +20,7 @@ export default async function Home({ params }: PageProps) {
 
   return (
     <main className="max-w-2xl mx-auto sm:py-24 py-12 px-6 min-h-screen">
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 pb-14">
         <HeroSection t={t} />
 
         <AboutSection t={t} />
@@ -29,6 +30,8 @@ export default async function Home({ params }: PageProps) {
         <EducationSection t={t} />
 
         <SkillsSection t={t} />
+
+        <ContactSection t={t} />
       </div>
 
       <div className="w-full fixed inset-x-0 bottom-4 z-100">

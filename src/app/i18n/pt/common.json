@@ -185,5 +185,10 @@
         }
       ]
     }
+  },
+  "contact": {
+    "title": "Entre em contato",
+    "description": "Se você gostou do que viu e quer conversar sobre oportunidades, projetos ou colaborações, ficarei feliz em responder. Vamos construir algo incrível juntos!",
+    "button": "Falar comigo"
   }
 }

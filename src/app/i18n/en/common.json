@@ -186,5 +186,10 @@
         }
       ]
     }
+  },
+  "contact": {
+    "title": "Get in touch",
+    "description": "If you liked what you saw and want to chat about opportunities, projects, or collaborations, I’d be happy to connect. Let’s build something amazing together!",
+    "button": "Contact me"
   }
 }
