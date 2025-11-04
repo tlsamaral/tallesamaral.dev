@@ -155,6 +155,7 @@ export function MainDock() {
                   variant="ghost"
                   size="icon"
                   className="rounded-full size-12"
+                  asChild
                 >
                   <AnimatedThemeToggler />
                 </Button>
