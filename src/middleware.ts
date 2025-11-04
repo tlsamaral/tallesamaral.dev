@@ -1,29 +1,33 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+import type { NextRequest } from 'next/server'
+import { NextResponse } from 'next/server'
+
+// Lista de idiomas suportados
+const locales = ['pt', 'en']
+
+// Regex para ignorar arquivos estáticos
+const PUBLIC_FILE = /\.(.*)$/
 
 export function middleware(req: NextRequest) {
-	const token = req.cookies.get("@tallesamaral:token"); // Substitua pelo nome correto do seu cookie
-	const { pathname } = req.nextUrl;
+  const { pathname } = req.nextUrl
 
-	// if (pathname === '/backoffice/sign-in') {
-	//   return NextResponse.next()
-	// }
+  // Ignorar arquivos estáticos e APIs
+  if (
+    pathname.startsWith('/_next') ||
+    pathname.includes('/api/') ||
+    PUBLIC_FILE.test(pathname)
+  ) {
+    return
+  }
 
-	// Se o usuário já estiver autenticado e tentar acessar /sign-in, redireciona para /backoffice
-	if (pathname === "/backoffice/sign-in" && token) {
-		return NextResponse.redirect(new URL("/backoffice", req.url));
-	} else if (pathname === "/backoffice/sign-in" && !token) {
-		return NextResponse.next();
-	}
+  const hasLocale = locales.some(
+    (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
+  )
 
-	// Se o usuário tentar acessar qualquer coisa dentro de /backoffice/ sem um token, redireciona para /login
-	if (pathname.startsWith("/backoffice") && !token) {
-		return NextResponse.redirect(new URL("/", req.url));
-	}
+  if (!hasLocale) {
+    const url = req.nextUrl.clone()
+    url.pathname = `/pt${pathname}`
+    return NextResponse.redirect(url)
+  }
 
-	return NextResponse.next(); // Permite a requisição continuar normalmente
+  return NextResponse.next()
 }
-
-export const config = {
-	matcher: ["/backoffice/:path*", "/sign-in"], // Protege as rotas do backoffice e monitora /sign-in
-};

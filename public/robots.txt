@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://tallesamaral.dev
-
-# Sitemaps
-Sitemap: https://tallesamaral.dev/sitemap.xml
