@@ -1,7 +1,7 @@
 'use client'
 
-import { CalendarIcon, HomeIcon, Languages, MailIcon } from 'lucide-react'
-import Image from 'next/image'
+import { CalendarIcon, HomeIcon, MailIcon } from 'lucide-react'
+
 import Link from 'next/link'
 import type React from 'react'
 import { Button, buttonVariants } from '@/components/ui/button'
@@ -14,10 +14,9 @@ import {
 } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
 import { LanguageDockIcon } from './language-dock-icon'
-import { LocaleSwitcher } from './locale-switcher'
+
 import { AnimatedThemeToggler } from './ui/animated-theme-toggler'
 import { Dock, DockIcon } from './ui/dock'
-import { Select, SelectTrigger } from './ui/select'
 
 export type IconProps = React.HTMLAttributes<SVGElement>
 
@@ -56,6 +55,7 @@ const Icons = {
     </svg>
   ),
   github: (props: IconProps) => (
+    // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
     <svg viewBox="0 0 438.549 438.549" {...props}>
       <path
         fill="currentColor"
@@ -151,7 +151,13 @@ export function MainDock() {
           <DockIcon>
             <Tooltip>
               <TooltipTrigger asChild>
-                <AnimatedThemeToggler />
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="rounded-full size-12"
+                >
+                  <AnimatedThemeToggler />
+                </Button>
               </TooltipTrigger>
               <TooltipContent>
                 <p>Toogle theme</p>

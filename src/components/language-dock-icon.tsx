@@ -19,7 +19,11 @@ export function LanguageDockIcon() {
       <TooltipTrigger asChild>
         <Popover>
           <PopoverTrigger asChild>
-            <Button variant="link" size="icon" className="size-12 rounded-full">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="size-12 rounded-full"
+            >
               <Languages className="size-4" />
             </Button>
           </PopoverTrigger>
