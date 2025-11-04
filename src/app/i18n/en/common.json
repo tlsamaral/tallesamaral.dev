@@ -128,5 +128,63 @@
         ]
       }
     }
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "Academic background and complementary courses that shaped my technical and professional skills.",
+    "formal": {
+      "label": "Academic Education",
+      "items": [
+        {
+          "institution": "UNISAL – Salesian University Center of São Paulo",
+          "degree": "Bachelor’s in Computer Engineering",
+          "period": "2021 — 2025 (ongoing)",
+          "location": "Lorena, SP — Brazil",
+          "description": [
+            "Focus on software development, system architecture, and distributed computing.",
+            "Work in high-performance projects, databases, and graph theory applied to fraud detection."
+          ],
+          "avatarUrl": "/icons/unisal.svg",
+          "certificateUrl": null
+        }
+      ]
+    },
+    "courses": {
+      "label": "Courses & Certifications",
+      "items": [
+        {
+          "institution": "Rocketseat",
+          "degree": "Ignite — ReactJS Track",
+          "period": "2023",
+          "description": [
+            "Development of modern applications using React, TypeScript, and Next.js.",
+            "Emphasis on best practices, performance, and scalable architecture."
+          ],
+          "avatarUrl": "/icons/rocketseat.svg",
+          "certificateUrl": "https://app.rocketseat.com.br/certificates/ignite-reactjs"
+        },
+        {
+          "institution": "Alura",
+          "degree": "Node.js with Express Certification",
+          "period": "2022",
+          "description": [
+            "Development of REST APIs with Express and integration with SQL and NoSQL databases.",
+            "Application of Clean Code and automated testing principles."
+          ],
+          "avatarUrl": "/icons/alura.svg",
+          "certificateUrl": "https://cursos.alura.com.br/certificate/tallesamaral-nodejs"
+        },
+        {
+          "institution": "Origamid",
+          "degree": "UI Design for Developers",
+          "period": "2021",
+          "description": [
+            "UI and UX principles applied to digital interfaces, focusing on usability and visual consistency."
+          ],
+          "avatarUrl": "/icons/origamid.svg",
+          "certificateUrl": "https://www.origamid.com/certificate/ui-design"
+        }
+      ]
+    }
   }
 }

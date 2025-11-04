@@ -127,5 +127,63 @@
         ]
       }
     }
+  },
+  "education": {
+    "title": "Educação",
+    "subtitle": "Formação acadêmica e cursos complementares que moldam meu conhecimento técnico e profissional.",
+    "formal": {
+      "label": "Formação Acadêmica",
+      "items": [
+        {
+          "institution": "UNISAL – Centro Universitário Salesiano de São Paulo",
+          "degree": "Bacharelado em Engenharia de Computação",
+          "period": "2021 — 2025 (em andamento)",
+          "location": "Lorena, SP",
+          "description": [
+            "Foco em desenvolvimento de software, arquitetura de sistemas e computação distribuída.",
+            "Atuação em projetos de alto desempenho, banco de dados e grafos aplicados à detecção de fraudes."
+          ],
+          "avatarUrl": "/icons/unisal.svg",
+          "certificateUrl": null
+        }
+      ]
+    },
+    "courses": {
+      "label": "Cursos e Certificações",
+      "items": [
+        {
+          "institution": "Rocketseat",
+          "degree": "Ignite — Trilha ReactJS",
+          "period": "2023",
+          "description": [
+            "Construção de aplicações modernas com React, TypeScript e Next.js.",
+            "Boas práticas, performance e arquitetura escalável."
+          ],
+          "avatarUrl": "/icons/rocketseat.svg",
+          "certificateUrl": "https://app.rocketseat.com.br/certificates/ignite-reactjs"
+        },
+        {
+          "institution": "Alura",
+          "degree": "Formação Node.js com Express",
+          "period": "2022",
+          "description": [
+            "Desenvolvimento de APIs REST com Express e integração com bancos SQL e NoSQL.",
+            "Aplicação de princípios de Clean Code e testes automatizados."
+          ],
+          "avatarUrl": "/icons/alura.svg",
+          "certificateUrl": "https://cursos.alura.com.br/certificate/tallesamaral-nodejs"
+        },
+        {
+          "institution": "Origamid",
+          "degree": "UI Design para Devs",
+          "period": "2021",
+          "description": [
+            "Princípios de design aplicados a interfaces digitais com foco em usabilidade e consistência visual."
+          ],
+          "avatarUrl": "/icons/origamid.svg",
+          "certificateUrl": "https://www.origamid.com/certificate/ui-design"
+        }
+      ]
+    }
   }
 }
