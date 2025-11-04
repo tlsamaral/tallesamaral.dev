@@ -83,7 +83,7 @@
         ]
       },
       "database": {
-        "label": "Bancos de Dados",
+        "label": "Databases",
         "stacks": [
           {
             "name": "PostgreSQL",
@@ -100,7 +100,7 @@
         ]
       },
       "testing": {
-        "label": "Testes",
+        "label": "Tests",
         "stacks": [
           { "name": "Vitest", "icon": "/icons/vitest.svg", "projects": 4 },
           { "name": "Jest", "icon": "/icons/jest.svg", "projects": 1 },
@@ -113,7 +113,7 @@
         ]
       },
       "devops": {
-        "label": "DevOps & Infraestrutura",
+        "label": "DevOps & Infrastructure",
         "stacks": [
           { "name": "Docker", "icon": "/icons/docker.svg", "projects": 6 },
           { "name": "Vercel", "icon": "/icons/vercel.svg", "projects": 5 },
