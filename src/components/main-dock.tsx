@@ -17,6 +17,7 @@ import { LanguageDockIcon } from './language-dock-icon'
 
 import { AnimatedThemeToggler } from './ui/animated-theme-toggler'
 import { Dock, DockIcon } from './ui/dock'
+import { ScrollProgress } from './ui/scroll-progress'
 
 export type IconProps = React.HTMLAttributes<SVGElement>
 
@@ -96,6 +97,8 @@ const DATA = {
 export function MainDock() {
   return (
     <div className="flex flex-col items-center justify-center">
+      <ScrollProgress />
+
       <TooltipProvider>
         <Dock direction="middle">
           {DATA.navbar.map((item) => (
