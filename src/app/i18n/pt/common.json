@@ -116,7 +116,7 @@
         "stacks": [
           { "name": "Docker", "icon": "/icons/docker.svg", "projects": 6 },
           { "name": "Vercel", "icon": "/icons/vercel.svg", "projects": 5 },
-          { "name": "Git/GitHub", "icon": "/icons/github.svg", "projects": 12 },
+          { "name": "Git/GitHub", "icon": "/icons/github.svg", "projects": 60 },
           { "name": "Linux", "icon": "/icons/linux.svg", "projects": 4 }
         ]
       },
