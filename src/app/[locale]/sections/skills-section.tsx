@@ -35,7 +35,7 @@ export function SkillsSection({ t: { skills } }: SkillsProps) {
         <p className="text-muted-foreground">{skills.subtitle}</p>
       </div>
 
-      <Accordion type="single" collapsible className="space-y-4">
+      <Accordion type="single" collapsible className="space-y-2">
         {categories.map(([key, category]) => (
           <AccordionSkillItem key={key} category={category} />
         ))}
