@@ -30,6 +30,7 @@ export function HeroSection({ t }: HeroSectionProps) {
             alt="@TallesAmaral"
             width={28}
             height={28}
+            priority
             className="size-7 opacity-80"
           />
         </div>
