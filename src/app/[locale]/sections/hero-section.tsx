@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 interface HeroSectionProps {
@@ -14,13 +15,25 @@ interface HeroSectionProps {
 export function HeroSection({ t }: HeroSectionProps) {
   return (
     <section className="flex gap-8">
-      <Avatar className="size-32 border-2">
-        <AvatarFallback>T</AvatarFallback>
-        <AvatarImage
-          src="https://github.com/tlsamaral.png"
-          alt="@TallesAmaral"
-        />
-      </Avatar>
+      <div className="size-30 rounded-full relative">
+        <Avatar className="size-30 border-2">
+          <AvatarFallback>T</AvatarFallback>
+          <AvatarImage
+            src="https://github.com/tlsamaral.png"
+            alt="@TallesAmaral"
+          />
+        </Avatar>
+
+        <div className="flex justify-center items-center border size-12 rounded-full bg-muted absolute -bottom-2 -left-2">
+          <Image
+            src="/icons/tallesamaral-logo.svg"
+            alt="@TallesAmaral"
+            width={28}
+            height={28}
+            className="size-7 opacity-80"
+          />
+        </div>
+      </div>
       <div className="space-y-2">
         <h1 className="inline-block text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
           {t.hero.title}
