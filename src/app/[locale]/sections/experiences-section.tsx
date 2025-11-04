@@ -11,6 +11,7 @@ interface ExperiencesSectionProps {
         role: string
         location: string
         description: string[]
+        avatarUrl: string | null
       }[]
     }
   }

@@ -14,6 +14,7 @@ interface ExperienceItemProps {
     role: string
     location: string
     description: string[]
+    avatarUrl: string | null
   }
   isLast: boolean
 }
@@ -42,8 +43,8 @@ export function ExperienceItem({ experience, isLast }: ExperienceItemProps) {
             {getInitials(experience.company)}
           </AvatarFallback>
           <AvatarImage
-            src="https://github.com/tlsamaral.png"
-            alt="@TallesAmaral"
+            src={experience.avatarUrl || undefined}
+            alt={experience.company}
           />
         </Avatar>
 
