@@ -45,6 +45,7 @@ export function ExperienceItem({ experience, isLast }: ExperienceItemProps) {
           <AvatarImage
             src={experience.avatarUrl || undefined}
             alt={experience.company}
+            className="object-fill"
           />
         </Avatar>
 
