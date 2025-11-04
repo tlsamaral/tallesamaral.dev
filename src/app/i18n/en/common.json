@@ -154,35 +154,68 @@
       "items": [
         {
           "institution": "Rocketseat",
-          "degree": "Ignite — ReactJS Track",
-          "period": "2023",
+          "degree": "React and Next.js Training",
+          "period": "2024",
           "description": [
-            "Development of modern applications using React, TypeScript, and Next.js.",
-            "Emphasis on best practices, performance, and scalable architecture."
+            "Development of modern web applications with React, TypeScript, and Next.js.",
+            "Focus on best practices, performance, and scalable architecture."
           ],
-          "avatarUrl": "/icons/rocketseat.svg",
+          "avatarUrl": "/logos/rocketseat.svg",
           "certificateUrl": "https://app.rocketseat.com.br/certificates/ignite-reactjs"
         },
         {
-          "institution": "Alura",
-          "degree": "Node.js with Express Certification",
-          "period": "2022",
+          "institution": "Rocketseat",
+          "degree": "Node.js Training",
+          "period": "2025",
           "description": [
-            "Development of REST APIs with Express and integration with SQL and NoSQL databases.",
-            "Application of Clean Code and automated testing principles."
+            "Development of modern and scalable APIs using Node.js and TypeScript, applying SOLID principles, Clean Architecture, and automated testing. Focused on building robust back-end solutions and deploying high-performance applications."
           ],
-          "avatarUrl": "/icons/alura.svg",
-          "certificateUrl": "https://cursos.alura.com.br/certificate/tallesamaral-nodejs"
+          "avatarUrl": "/logos/rocketseat.svg",
+          "certificateUrl": "https://app.rocketseat.com.br/certificates/ignite-reactjs"
         },
         {
-          "institution": "Origamid",
-          "degree": "UI Design for Developers",
-          "period": "2021",
+          "institution": "Udemy",
+          "degree": "UI and UX Design - Figma",
+          "period": "2023",
           "description": [
-            "UI and UX principles applied to digital interfaces, focusing on usability and visual consistency."
+            "Design of intuitive interfaces and user experiences focused on clarity and usability.",
+            "User-centered design applied to digital products."
           ],
-          "avatarUrl": "/icons/origamid.svg",
-          "certificateUrl": "https://www.origamid.com/certificate/ui-design"
+          "avatarUrl": "/logos/udemy.svg",
+          "certificateUrl": null
+        },
+        {
+          "institution": "Udemy",
+          "degree": "Git and GitHub — Project Version Control",
+          "period": "2022",
+          "description": [
+            "Version control and collaborative workflows using Git and GitHub.",
+            "Professional branching strategies and versioning best practices."
+          ],
+          "avatarUrl": "/logos/udemy.svg",
+          "certificateUrl": null
+        },
+        {
+          "institution": "Workover Academy",
+          "degree": "SQL Server and Database Certification",
+          "period": "2022",
+          "description": [
+            "Database creation, manipulation, and optimization using SQL Server.",
+            "Query analysis, data modeling, and integration with back-end applications."
+          ],
+          "avatarUrl": null,
+          "certificateUrl": null
+        },
+        {
+          "institution": "Workover Academy",
+          "degree": "Scrum Fundamentals",
+          "period": "2022",
+          "description": [
+            "Agile concepts and practices based on the Scrum framework.",
+            "Team organization, sprint planning, and iterative delivery in software projects."
+          ],
+          "avatarUrl": null,
+          "certificateUrl": null
         }
       ]
     }
