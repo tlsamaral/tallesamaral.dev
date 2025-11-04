@@ -2,6 +2,7 @@ import { MainDock } from '@/components/main-dock'
 import type { Locale } from '../i18n/config'
 import { getDictionary } from '../i18n/get-dictonary'
 import { AboutSection } from './sections/about-section'
+import { EducationSection } from './sections/education-section'
 import { ExperiencesSection } from './sections/experiences-section'
 import { HeroSection } from './sections/hero-section'
 import { SkillsSection } from './sections/skills-section'
@@ -24,6 +25,8 @@ export default async function Home({ params }: PageProps) {
         <AboutSection t={t} />
 
         <ExperiencesSection t={t} />
+
+        <EducationSection t={t} />
 
         <SkillsSection t={t} />
       </div>

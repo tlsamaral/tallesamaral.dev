@@ -29,7 +29,7 @@ export function AccordionSkillItem({ category }: AccordionSkillItemProps) {
         className="flex items-center justify-between border-b-0 hover:no-underline py-3"
       >
         <div className="flex items-center gap-3">
-          <h3 className="font-semibold">{category.label}</h3>
+          <h3 className="font-semibold text-lg">{category.label}</h3>
           <ChevronRight
             className="
               size-4 transition-transform duration-300 ease-out
