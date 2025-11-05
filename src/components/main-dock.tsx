@@ -56,23 +56,6 @@ export function MainDock() {
 
           <Separator orientation="vertical" className="h-full" />
 
-          <DockIcon>
-            <LanguageDockIcon />
-          </DockIcon>
-
-          <DockIcon>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <ThemeTogglerButton />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{locale === 'en' ? 'Toggle theme' : 'Alterar tema'}</p>
-              </TooltipContent>
-            </Tooltip>
-          </DockIcon>
-
-          <Separator orientation="vertical" className="h-full" />
-
           {Object.entries(socialDataItems.contact.dock).map(
             ([name, social]) => (
               <DockIcon key={name}>
@@ -98,6 +81,22 @@ export function MainDock() {
               </DockIcon>
             ),
           )}
+
+          <Separator orientation="vertical" className="h-full" />
+          <DockIcon>
+            <LanguageDockIcon />
+          </DockIcon>
+
+          <DockIcon>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <ThemeTogglerButton />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{locale === 'en' ? 'Toggle theme' : 'Alterar tema'}</p>
+              </TooltipContent>
+            </Tooltip>
+          </DockIcon>
         </Dock>
       </TooltipProvider>
     </div>
