@@ -49,7 +49,25 @@ const Icons = {
 
 export const socialDataItems = {
   navbar: [{ href: '#', icon: HomeIcon, label: 'Home' }],
+
   contact: {
+    dock: {
+      GitHub: {
+        name: 'GitHub',
+        url: 'https://github.com/tlsamaral',
+        icon: Icons.github,
+      },
+      LinkedIn: {
+        name: 'LinkedIn',
+        url: 'https://linkedin.com/in/tallesamaral',
+        icon: Icons.linkedin,
+      },
+      X: {
+        name: 'X',
+        url: 'https://x.com/tlsamaral_',
+        icon: Icons.x,
+      },
+    },
     social: {
       GitHub: {
         name: 'GitHub',

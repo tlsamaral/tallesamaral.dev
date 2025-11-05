@@ -73,7 +73,7 @@ export function MainDock() {
 
           <Separator orientation="vertical" className="h-full" />
 
-          {Object.entries(socialDataItems.contact.social).map(
+          {Object.entries(socialDataItems.contact.dock).map(
             ([name, social]) => (
               <DockIcon key={name}>
                 <Tooltip>

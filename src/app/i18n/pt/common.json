@@ -227,15 +227,15 @@
         "title": "Ordena",
         "description": "Ordena é um sistema de gerenciamento para restaurantes desenvolvido para otimizar a comunicação em tempo real entre garçons e cozinha. Um dos meus projetos mais completos, une Next.js, Node e WebSockets para garantir performance e fluidez em ambientes de alta demanda.",
         "stacks": ["Next.js", "Node.js", "Socket.io", "Prisma", "TailwindCSS"],
-        "repoUrl": "https://github.com/tlsamaral/ordena",
-        "previewUrl": "https://ordena.tallesamaral.dev",
+        "repoUrl": "https://github.com/tlsamaral?tab=repositories",
+        "previewUrl": null,
         "image": "https://res.cloudinary.com/duwaccahn/image/upload/v1738177776/ordena_eze3xg.png"
       },
       {
         "title": "Auto Park System",
         "description": "Projeto destaque voltado à automação de estacionamentos inteligentes. Desenvolvi uma plataforma capaz de detectar entradas e saídas de veículos em tempo real, integrando hardware IoT (ESP8266) com um painel web completo para monitoramento e controle.",
         "stacks": ["React", "Redux", "Node.js", "Express", "Sequelize"],
-        "repoUrl": "https://github.com/tlsamaral/autopark",
+        "repoUrl": "https://github.com/tlsamaral?tab=repositories",
         "previewUrl": "https://autopark.tallesamaral.dev",
         "image": "https://res.cloudinary.com/duwaccahn/image/upload/v1738192954/hfcyepo2wcl7tdi9cqlq.png"
       },
@@ -243,7 +243,7 @@
         "title": "Flóreo",
         "description": "Flóreo é um projeto autoral que une IoT, mobile e inteligência artificial. Criei um vaso inteligente que monitora umidade, luz e temperatura, enviando dados para um app React Native. A integração com a IA Gemini gera recomendações automáticas para manter as plantas sempre saudáveis.",
         "stacks": ["React Native", "Expo", "Supabase", "Gemini IA", "IoT"],
-        "repoUrl": "https://github.com/tlsamaral/floreo",
+        "repoUrl": "https://github.com/tlsamaral?tab=repositories",
         "previewUrl": "https://floreo.tallesamaral.dev",
         "image": "/projects/floreo.png"
       },
@@ -251,7 +251,7 @@
         "title": "Solidus Engenharia",
         "description": "Landing page desenvolvida para empresa de engenharia civil, com foco em SEO, performance e identidade visual sólida, garantindo posicionamento e conversão.",
         "stacks": ["Next.js", "TailwindCSS", "SEO", "TypeScript"],
-        "repoUrl": "https://github.com/tlsamaral/solidus",
+        "repoUrl": null,
         "previewUrl": "https://solidusengenharia.com.br",
         "image": "/projects/solidus.png"
       }
