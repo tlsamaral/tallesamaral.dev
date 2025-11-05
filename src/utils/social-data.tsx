@@ -1,4 +1,4 @@
-import { CalendarIcon, HomeIcon, MailIcon } from 'lucide-react'
+import { CalendarIcon, MailIcon } from 'lucide-react'
 
 export type IconProps = React.HTMLAttributes<SVGElement>
 
@@ -48,7 +48,7 @@ const Icons = {
 }
 
 export const socialDataItems = {
-  navbar: [{ href: '#', icon: HomeIcon, label: 'Home' }],
+  navbar: [],
   contact: {
     social: {
       GitHub: {
