@@ -6,6 +6,7 @@ import { ContactSection } from './sections/contact-section'
 import { EducationSection } from './sections/education-section'
 import { ExperiencesSection } from './sections/experiences-section'
 import { HeroSection } from './sections/hero-section'
+import { ProjectsSection } from './sections/projects-section'
 import { SkillsSection } from './sections/skills-section'
 
 interface PageProps {
@@ -30,6 +31,8 @@ export default async function Home({ params }: PageProps) {
         <EducationSection t={t} />
 
         <SkillsSection t={t} />
+
+        <ProjectsSection t={t} />
 
         <ContactSection t={t} />
       </div>

@@ -143,7 +143,7 @@
             "Foco em desenvolvimento de software, arquitetura de sistemas e computação distribuída.",
             "Atuação em projetos de alto desempenho, banco de dados e grafos aplicados à detecção de fraudes."
           ],
-          "avatarUrl": "/icons/unisal.svg",
+          "avatarUrl": "/logos/unisal.svg",
           "certificateUrl": null
         }
       ]
@@ -159,7 +159,7 @@
             "Desenvolvimento de aplicações modernas com React, TypeScript e Next.js.",
             "Ênfase em boas práticas, performance e arquitetura escalável."
           ],
-          "avatarUrl": "/icons/rocketseat.svg",
+          "avatarUrl": "/logos/rocketseat.svg",
           "certificateUrl": "https://app.rocketseat.com.br/certificates/ignite-reactjs"
         },
         {
@@ -169,7 +169,7 @@
           "description": [
             "Desenvolvimento de APIs modernas e escaláveis com Node.js e TypeScript, aplicando conceitos de Clean Architecture, SOLID e testes automatizados."
           ],
-          "avatarUrl": "/icons/rocketseat.svg",
+          "avatarUrl": "/logos/rocketseat.svg",
           "certificateUrl": "https://app.rocketseat.com.br/certificates/ignite-reactjs"
         },
         {
@@ -180,7 +180,7 @@
             "Criação de interfaces intuitivas e experiência do usuário voltada à clareza e consistência.",
             "Design centrado no usuário aplicado a produtos digitais."
           ],
-          "avatarUrl": "/icons/figma.svg",
+          "avatarUrl": "/logos/udemy.svg",
           "certificateUrl": null
         },
         {
@@ -191,7 +191,7 @@
             "Gerenciamento de versões de código com Git e colaboração em repositórios remotos via GitHub.",
             "Fluxos de trabalho profissionais e boas práticas de versionamento."
           ],
-          "avatarUrl": "/icons/git.svg",
+          "avatarUrl": "/logos/udemy.svg",
           "certificateUrl": null
         },
         {
@@ -202,7 +202,7 @@
             "Criação, manipulação e otimização de bancos de dados utilizando SQL Server.",
             "Análise de consultas, modelagem de dados e integração com aplicações back-end."
           ],
-          "avatarUrl": "/icons/sqlserver.svg",
+          "avatarUrl": "/logos/workover.svg",
           "certificateUrl": null
         },
         {
@@ -213,11 +213,49 @@
             "Conceitos e práticas ágeis baseados no framework Scrum.",
             "Organização de times, sprints e entregas iterativas em projetos de software."
           ],
-          "avatarUrl": "/icons/scrum.svg",
+          "avatarUrl": "/logos/workover.svg",
           "certificateUrl": null
         }
       ]
     }
+  },
+  "projects": {
+    "title": "Projetos em Destaque",
+    "subtitle": "Alguns dos meus principais projetos — cada um refletindo desafios reais, inovação e o prazer de construir soluções que fazem diferença.",
+    "items": [
+      {
+        "title": "Ordena",
+        "description": "Ordena é um sistema de gerenciamento para restaurantes desenvolvido para otimizar a comunicação em tempo real entre garçons e cozinha. Um dos meus projetos mais completos, une Next.js, Node e WebSockets para garantir performance e fluidez em ambientes de alta demanda.",
+        "stacks": ["Next.js", "Node.js", "Socket.io", "Prisma", "TailwindCSS"],
+        "repoUrl": "https://github.com/tlsamaral/ordena",
+        "previewUrl": "https://ordena.tallesamaral.dev",
+        "image": "https://res.cloudinary.com/duwaccahn/image/upload/v1738177776/ordena_eze3xg.png"
+      },
+      {
+        "title": "Auto Park System",
+        "description": "Projeto destaque voltado à automação de estacionamentos inteligentes. Desenvolvi uma plataforma capaz de detectar entradas e saídas de veículos em tempo real, integrando hardware IoT (ESP8266) com um painel web completo para monitoramento e controle.",
+        "stacks": ["React", "Redux", "Node.js", "Express", "Sequelize"],
+        "repoUrl": "https://github.com/tlsamaral/autopark",
+        "previewUrl": "https://autopark.tallesamaral.dev",
+        "image": "https://res.cloudinary.com/duwaccahn/image/upload/v1738192954/hfcyepo2wcl7tdi9cqlq.png"
+      },
+      {
+        "title": "Flóreo",
+        "description": "Flóreo é um projeto autoral que une IoT, mobile e inteligência artificial. Criei um vaso inteligente que monitora umidade, luz e temperatura, enviando dados para um app React Native. A integração com a IA Gemini gera recomendações automáticas para manter as plantas sempre saudáveis.",
+        "stacks": ["React Native", "Expo", "Supabase", "Gemini IA", "IoT"],
+        "repoUrl": "https://github.com/tlsamaral/floreo",
+        "previewUrl": "https://floreo.tallesamaral.dev",
+        "image": "/projects/floreo.png"
+      },
+      {
+        "title": "Solidus Engenharia",
+        "description": "Landing page desenvolvida para empresa de engenharia civil, com foco em SEO, performance e identidade visual sólida, garantindo posicionamento e conversão.",
+        "stacks": ["Next.js", "TailwindCSS", "SEO", "TypeScript"],
+        "repoUrl": "https://github.com/tlsamaral/solidus",
+        "previewUrl": "https://solidusengenharia.com.br",
+        "image": "/projects/solidus.png"
+      }
+    ]
   },
   "contact": {
     "title": "Entre em contato",

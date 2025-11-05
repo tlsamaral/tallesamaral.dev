@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import type { Locale } from '@/app/i18n/config'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import {
   Tooltip,
@@ -14,8 +14,8 @@ import {
 } from '@/components/ui/tooltip'
 import { cn } from '@/lib/utils'
 import { socialDataItems } from '@/utils/social-data'
+import { ThemeTogglerButton } from './animate-ui/components/buttons/theme-toggler'
 import { LanguageDockIcon } from './language-dock-icon'
-import { AnimatedThemeToggler } from './ui/animated-theme-toggler'
 import { Dock, DockIcon } from './ui/dock'
 import { ScrollProgress } from './ui/scroll-progress'
 
@@ -43,7 +43,7 @@ export function MainDock() {
                     alt="@TallesAmaral"
                     width={20}
                     height={20}
-                    className="size-4"
+                    className="size-4 invert dark:invert-0"
                     priority
                   />
                 </Link>
@@ -111,14 +111,7 @@ export function MainDock() {
           <DockIcon>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="rounded-full size-12"
-                  asChild
-                >
-                  <AnimatedThemeToggler />
-                </Button>
+                <ThemeTogglerButton />
               </TooltipTrigger>
               <TooltipContent>
                 <p>{locale === 'en' ? 'Toggle theme' : 'Alterar tema'}</p>

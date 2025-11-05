@@ -31,7 +31,7 @@ export function HeroSection({ t }: HeroSectionProps) {
             width={28}
             height={28}
             priority
-            className="size-7 opacity-80"
+            className="size-7 opacity-70 dark:opacity-70 invert dark:invert-0"
           />
         </div>
       </div>

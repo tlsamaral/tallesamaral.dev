@@ -144,7 +144,7 @@
             "Focus on software development, system architecture, and distributed computing.",
             "Work in high-performance projects, databases, and graph theory applied to fraud detection."
           ],
-          "avatarUrl": "/icons/unisal.svg",
+          "avatarUrl": "/logos/unisal.svg",
           "certificateUrl": null
         }
       ]
@@ -203,7 +203,7 @@
             "Database creation, manipulation, and optimization using SQL Server.",
             "Query analysis, data modeling, and integration with back-end applications."
           ],
-          "avatarUrl": null,
+          "avatarUrl": "/logos/workover.svg",
           "certificateUrl": null
         },
         {
@@ -214,11 +214,49 @@
             "Agile concepts and practices based on the Scrum framework.",
             "Team organization, sprint planning, and iterative delivery in software projects."
           ],
-          "avatarUrl": null,
+          "avatarUrl": "/logos/workover.svg",
           "certificateUrl": null
         }
       ]
     }
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "A selection of my most impactful projects — each representing real challenges, innovation, and a passion for building meaningful solutions.",
+    "items": [
+      {
+        "title": "Ordena",
+        "description": "Ordena is a restaurant management system built to optimize real-time communication between waiters and the kitchen. One of my most complete full stack projects, combining Next.js, Node.js, and WebSockets to deliver performance and fluidity in high-demand environments.",
+        "stacks": ["Next.js", "Node.js", "Socket.io", "Prisma", "TailwindCSS"],
+        "repoUrl": "https://github.com/tlsamaral/ordena",
+        "previewUrl": "https://ordena.tallesamaral.dev",
+        "image": "https://res.cloudinary.com/duwaccahn/image/upload/v1738177776/ordena_eze3xg.png"
+      },
+      {
+        "title": "Auto Park System",
+        "description": "A featured project focused on smart parking automation. I developed a platform that detects car entries and exits in real time, integrating IoT hardware (ESP8266) with a complete web dashboard for monitoring and control.",
+        "stacks": ["React", "Redux", "Node.js", "Express", "Sequelize"],
+        "repoUrl": "https://github.com/tlsamaral/autopark",
+        "previewUrl": "https://autopark.tallesamaral.dev",
+        "image": "https://res.cloudinary.com/duwaccahn/image/upload/v1738192954/hfcyepo2wcl7tdi9cqlq.png"
+      },
+      {
+        "title": "Flóreo",
+        "description": "Flóreo is a personal project that blends IoT, mobile development, and artificial intelligence. I created a smart vase that monitors humidity, light, and temperature, sending real-time data to a React Native app. Integrated with Gemini AI, it generates automated recommendations to keep plants healthy.",
+        "stacks": ["React Native", "Expo", "Supabase", "Gemini AI", "IoT"],
+        "repoUrl": "https://github.com/tlsamaral/floreo",
+        "previewUrl": "https://floreo.tallesamaral.dev",
+        "image": "/projects/floreo.png"
+      },
+      {
+        "title": "Solidus Engenharia",
+        "description": "Landing page built for a civil engineering company with high SEO optimization, focusing on responsiveness, performance, and brand identity alignment.",
+        "stacks": ["Next.js", "TailwindCSS", "SEO", "TypeScript"],
+        "repoUrl": "https://github.com/tlsamaral/solidus",
+        "previewUrl": "https://solidusengenharia.com.br",
+        "image": "/projects/solidus.png"
+      }
+    ]
   },
   "contact": {
     "title": "Get in touch",

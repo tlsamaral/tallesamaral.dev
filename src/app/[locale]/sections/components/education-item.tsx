@@ -9,19 +9,7 @@ export function EducationItem({ item }: { item: EducationItemProps }) {
         <AvatarFallback className="uppercase">
           {getInitials(item.institution)}
         </AvatarFallback>
-        <AvatarImage
-          src={item.avatarUrl || undefined}
-          alt={item.institution}
-          width={32}
-          height={32}
-          className="
-            size-8
-            drop-shadow-sm
-            transition
-
-            dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.1)]
-          "
-        />
+        <AvatarImage src={item.avatarUrl || undefined} alt={item.institution} />
       </Avatar>
       <div className="flex flex-col">
         <h4 className="font-bold">{item.degree}</h4>
