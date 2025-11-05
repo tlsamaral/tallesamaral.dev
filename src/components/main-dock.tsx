@@ -54,28 +54,25 @@ export function MainDock() {
             </Tooltip>
           </DockIcon>
 
-          {socialDataItems.navbar.map((item) => (
-            <DockIcon key={item.label}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href={item.href}
-                    aria-label={item.label}
-                    className={cn(
-                      buttonVariants({ variant: 'ghost', size: 'icon' }),
-                      'size-12 rounded-full',
-                    )}
-                  >
-                    <item.icon className="size-4" />
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{item.label}</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-          ))}
           <Separator orientation="vertical" className="h-full" />
+
+          <DockIcon>
+            <LanguageDockIcon />
+          </DockIcon>
+
+          <DockIcon>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <ThemeTogglerButton />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{locale === 'en' ? 'Toggle theme' : 'Alterar tema'}</p>
+              </TooltipContent>
+            </Tooltip>
+          </DockIcon>
+
+          <Separator orientation="vertical" className="h-full" />
+
           {Object.entries(socialDataItems.contact.social).map(
             ([name, social]) => (
               <DockIcon key={name}>
@@ -101,23 +98,6 @@ export function MainDock() {
               </DockIcon>
             ),
           )}
-
-          <Separator orientation="vertical" className="h-full" />
-
-          <DockIcon>
-            <LanguageDockIcon />
-          </DockIcon>
-
-          <DockIcon>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <ThemeTogglerButton />
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{locale === 'en' ? 'Toggle theme' : 'Alterar tema'}</p>
-              </TooltipContent>
-            </Tooltip>
-          </DockIcon>
         </Dock>
       </TooltipProvider>
     </div>
