@@ -69,8 +69,7 @@
         ],
         "gallery": [
           "Capa do Lery AI: “O tutor de inglês que conversa”, com o mascote e cartões mostrando uma frase em português, o nível do modo ponte, a resposta em inglês, nota 92 e a proporção de inglês falado.",
-          "Diagrama do pipeline de context engineering do Lery: quatro camadas de contexto com orçamento de tokens, seguidas do rascunho do tutor verificado por compliance gate e avaliador em paralelo.",
-          "Diagrama do Lery “Qualidade, Memória & Testes”: saída estruturada tipada por schema, insight card assíncrono ao fim da aula e um aluno sintético que estressa os quatro pilares do CEFR."
+          "Visão da arquitetura do Lery AI, “Por dentro do Lery”: o aparelho com Raspberry Pi (wake word, Whisper, modo ponte, Gemini, Edge TTS, LED e mascote), o cérebro multiagente, a API Fastify e Prisma com PostgreSQL, um painel web em React e um app Expo, além da base pedagógica e dos números do projeto."
         ]
       },
       "boua": {
@@ -108,7 +107,6 @@
         "gallery": [
           "Landing page do Colete: título, login com Google e celulares mostrando a tela de jogo ao vivo.",
           "Perfil de jogador do Colete no modo escuro, com rating, conquistas, estatísticas e cartinha compartilhável. Dados de demonstração.",
-          "Seção do Colete mostrando sorteio de times equilibrados em um campo e uma cartinha de jogador.",
           "Três telas do app Colete na landing page: um jogo ao vivo com placar e lances, a home com o próximo jogo e a escalação, e o ranking da temporada. Dados de demonstração."
         ]
       },

@@ -157,8 +157,14 @@ export const featuredProjects: FeaturedProjectMeta[] = [
           1600,
           1200,
         ),
-        shot('/projects/lery/01.jpg', 1600, 1541),
-        shot('/projects/lery/02.jpg', 1600, 1393),
+        localizedShot(
+          {
+            en: '/projects/lery/system-en.jpg',
+            pt: '/projects/lery/system-pt.jpg',
+          },
+          1600,
+          1200,
+        ),
       ],
     },
   },
@@ -236,7 +242,6 @@ export const featuredProjects: FeaturedProjectMeta[] = [
       images: [
         shot('/projects/colete/02.jpg', 1600, 1250),
         shot('/projects/colete/01.jpg', 1600, 1309, 'left top'),
-        shot('/projects/colete/03.jpg', 1600, 1389),
         {
           type: 'devices',
           stage:

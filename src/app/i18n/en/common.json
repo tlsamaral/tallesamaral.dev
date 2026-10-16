@@ -69,8 +69,7 @@
         ],
         "gallery": [
           "Lery AI cover: “The English tutor that talks back”, with the mascot and cards showing a Portuguese sentence, the bridge-mode level, the English reply, a score of 92 and the share of English spoken.",
-          "Diagram of Lery's context engineering pipeline: four context layers with token budgets, then a tutor draft checked by a compliance gate and an evaluator running in parallel.",
-          "Lery diagram “Quality, memory & tests”: schema-typed structured output, an asynchronous insight card at the end of each lesson, and a synthetic student that stresses the four CEFR pillars."
+          "Lery AI architecture overview, “Under the hood of Lery”: the Raspberry Pi device (wake word, Whisper, bridge mode, Gemini, Edge TTS, LED and mascot), the multi-agent brain, the Fastify and Prisma API with PostgreSQL, a React dashboard and an Expo app, plus the research it rests on and project numbers."
         ]
       },
       "boua": {
@@ -108,7 +107,6 @@
         "gallery": [
           "Colete landing page: headline, sign-in with Google and phones showing the live game screen.",
           "Colete player profile in dark mode with rating, achievements, all-time stats and a shareable player card. Demo data.",
-          "Colete feature section showing balanced team draws on a pitch and a player card.",
           "Three Colete app screens from the landing page: a live game with the score and plays, the home with the next game and lineup, and the season ranking. Demo data."
         ]
       },
