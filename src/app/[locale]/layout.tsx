@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { site } from '@/content/site'
 import { BCP47 } from '@/lib/seo'
+import { SPLASH_SCRIPT } from '@/lib/splash-script'
 import '../globals.css'
 import { i18n, type Locale } from '../i18n/config'
 import { Providers } from '../providers'
@@ -70,6 +71,12 @@ export default async function RootLayout({
 
   return (
     <html lang={BCP47[locale as Locale]} suppressHydrationWarning>
+      <head>
+        <script
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: static inline script that must run before first paint
+          dangerouslySetInnerHTML={{ __html: SPLASH_SCRIPT }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

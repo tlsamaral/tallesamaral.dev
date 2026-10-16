@@ -3,6 +3,7 @@ import { Footer } from '@/components/site/footer'
 import { Header } from '@/components/site/header'
 import { JsonLd } from '@/components/site/json-ld'
 import { RevealObserver } from '@/components/site/reveal-observer'
+import { SplashScreen } from '@/components/site/splash-screen'
 import { site } from '@/content/site'
 import { homeGraph } from '@/lib/seo'
 import type { Locale } from '../i18n/config'
@@ -65,6 +66,7 @@ export default async function Home({ params }: PageProps) {
         {t.nav.skip}
       </a>
       <JsonLd data={homeGraph(t, locale)} />
+      <SplashScreen />
       <Header locale={locale} labels={t.nav} />
       <RevealObserver />
 

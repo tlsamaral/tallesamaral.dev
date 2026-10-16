@@ -309,7 +309,126 @@ html[data-reveal-ready] [data-reveal]:not([data-visible]) {
   animation-delay: 90ms;
 }
 
+/* -------------------------------------------------------------------------- */
+/* Splash curtain                                                              */
+/* -------------------------------------------------------------------------- */
+
+/*
+ * Shown once per session on the home page, and only when a tiny inline
+ * script in <head> sets html[data-splash="show"] (it skips bots, automation,
+ * reduced motion and repeat visits). Without that attribute the curtain is
+ * display:none, so no-JS visitors and crawlers never see it. The page content
+ * is already in the DOM underneath; the curtain only lifts off of it.
+ */
+:root {
+  --splash-ms: 1200ms;
+}
+
+#splash {
+  display: none;
+}
+
+html[data-splash="show"] {
+  overflow: hidden;
+}
+
+html[data-splash="show"] #splash {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+  animation: splash-lift 460ms var(--ease-in-out-soft) 760ms forwards;
+}
+
+@keyframes splash-lift {
+  to {
+    transform: translate3d(0, -101%, 0);
+  }
+}
+
+/* The mark inside the curtain draws a little faster than the header one. */
+#splash .logomark-animated .lm-draw path {
+  animation-duration: 560ms;
+  animation-delay: 80ms;
+}
+
+#splash .logomark-animated .lm-draw path:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+#splash .logomark-animated .lm-fill {
+  animation-duration: 380ms;
+  animation-delay: 400ms;
+}
+
+/* Header and hero wait for the curtain, then overlap its last moments. */
+html[data-splash] .enter {
+  animation-delay: calc(
+    var(--splash-ms) -
+    240ms +
+    min(var(--i, 0), 9) *
+    70ms +
+    60ms
+  );
+}
+
+html[data-splash] .enter-fade {
+  animation-delay: calc(var(--splash-ms) - 320ms + var(--i, 0) * 80ms);
+}
+
+html[data-splash] header .logomark-animated .lm-draw path {
+  animation-delay: calc(var(--splash-ms) - 200ms);
+}
+
+html[data-splash] header .logomark-animated .lm-draw path:nth-child(2) {
+  animation-delay: calc(var(--splash-ms) - 20ms);
+}
+
+html[data-splash] header .logomark-animated .lm-fill {
+  animation-delay: calc(var(--splash-ms) + 400ms);
+}
+
+/* Skipped (click or key): drop the curtain and play the normal entrance. */
+html[data-splash="skip"] #splash {
+  display: none;
+}
+
+html[data-splash="skip"] {
+  overflow: auto;
+}
+
+html[data-splash="skip"] .enter {
+  animation-delay: calc(min(var(--i, 0), 9) * 70ms + 60ms);
+}
+
+html[data-splash="skip"] .enter-fade {
+  animation-delay: calc(var(--i, 0) * 80ms);
+}
+
+html[data-splash="skip"] header .logomark-animated .lm-draw path {
+  animation-delay: 120ms;
+}
+
+html[data-splash="skip"] header .logomark-animated .lm-draw path:nth-child(2) {
+  animation-delay: 300ms;
+}
+
+html[data-splash="skip"] header .logomark-animated .lm-fill {
+  animation-delay: 760ms;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html[data-splash] #splash {
+    display: none;
+  }
+
+  html[data-splash] {
+    overflow: auto;
+  }
+
   .enter,
   .enter-fade {
     animation: none;
