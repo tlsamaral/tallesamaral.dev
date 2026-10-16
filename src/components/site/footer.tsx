@@ -11,7 +11,7 @@ export function Footer({ locale, t }: { locale: Locale; t: Dictionary }) {
       <div className="flex flex-col gap-6 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
         <p>
           © {year} {site.name}.{' '}
-          <span className="text-faint">{t.footer.builtWith}</span>
+          <span className="text-faint">{t.footer.signature}</span>
         </p>
         <ul className="flex flex-wrap items-center gap-x-5 gap-y-2">
           <li>
