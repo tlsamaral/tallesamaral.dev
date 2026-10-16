@@ -145,12 +145,12 @@ export default async function LinksPage({ params }: PageProps) {
 
   const projects: HubLink[] = [
     {
-      href: 'https://github.com/tlsamaral/leryai',
+      href: `/${locale}#project-lery`,
       label: t.work.items.lery.title,
       detail: copy.leryDetail,
       icon: <ProjectIcon id="lery" />,
       bareIcon: true,
-      external: true,
+      external: false,
     },
     {
       href: 'https://colete-app.vercel.app',
