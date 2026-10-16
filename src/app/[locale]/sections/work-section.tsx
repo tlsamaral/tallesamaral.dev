@@ -1,4 +1,5 @@
 import { ArrowUpRightIcon } from 'lucide-react'
+import type { Locale } from '@/app/i18n/config'
 import type { Dictionary } from '@/app/i18n/get-dictonary'
 import { ProjectGallery } from '@/components/site/project-gallery'
 import { SectionHeader } from '@/components/site/section-header'
@@ -8,6 +9,7 @@ import {
   type FeaturedProjectMeta,
   featuredProjects,
   type ProjectLink,
+  resolveGallery,
 } from '@/content/site'
 import { cn } from '@/lib/utils'
 
@@ -18,90 +20,43 @@ function linkLabel(link: ProjectLink, copy: WorkCopy) {
   return link.note ? `${base} · ${link.note}` : base
 }
 
-function PipelinePanel({
-  label,
-  steps,
-}: {
-  label: string
-  steps: { step: string; detail: string }[]
-}) {
-  return (
-    <div className="flex h-full flex-col justify-between gap-8 bg-[#141413] p-6 text-[#ededea] sm:p-9">
-      <p className="font-mono text-xs uppercase tracking-[0.04em] text-[#8f8e89]">
-        {label}
-      </p>
-      <ol className="relative space-y-5 sm:space-y-6">
-        <span
-          aria-hidden="true"
-          className="absolute bottom-3 left-[0.6875rem] top-3 w-px bg-[#34342f]"
-        />
-        {steps.map((item, i) => (
-          <li key={item.step} className="relative flex gap-4">
-            <span
-              aria-hidden="true"
-              className={cn(
-                'relative z-10 mt-0.5 grid size-[1.375rem] shrink-0 place-items-center rounded-full border font-mono text-[0.625rem]',
-                i === steps.length - 1
-                  ? 'border-[#86a7ff] bg-[#86a7ff] text-[#141413]'
-                  : 'border-[#3f3f39] bg-[#141413] text-[#8f8e89]',
-              )}
-            >
-              {i + 1}
-            </span>
-            <div>
-              <p className="font-medium tracking-[-0.01em]">{item.step}</p>
-              <p className="mt-0.5 text-sm text-[#a3a29d]">{item.detail}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
-    </div>
-  )
-}
-
 function ProjectMedia({
   meta,
   copy,
   labels,
+  locale,
   priority,
 }: {
   meta: FeaturedProjectMeta
   copy: WorkCopy['items'][FeaturedProjectMeta['id']]
   labels: WorkCopy
+  locale: Locale
   priority: boolean
 }) {
-  if (meta.gallery && 'gallery' in copy) {
-    return (
-      <ProjectGallery
-        gallery={meta.gallery}
-        alts={copy.gallery}
-        label={labels.galleryLabel.replace('{title}', copy.title)}
-        showLabel={labels.showImage}
-        priority={priority}
-      />
-    )
-  }
+  if (!meta.gallery) return null
 
-  if ('pipeline' in copy) {
-    return (
-      <div className="min-h-[22rem] overflow-hidden rounded-xl border border-border bg-[#141413] lg:aspect-[4/3]">
-        <PipelinePanel label={copy.pipelineLabel} steps={copy.pipeline} />
-      </div>
-    )
-  }
-
-  return null
+  return (
+    <ProjectGallery
+      gallery={resolveGallery(meta.gallery, locale)}
+      alts={copy.gallery}
+      label={labels.galleryLabel.replace('{title}', copy.title)}
+      showLabel={labels.showImage}
+      priority={priority}
+    />
+  )
 }
 
 function FeaturedProject({
   meta,
   copy,
   labels,
+  locale,
   index,
 }: {
   meta: FeaturedProjectMeta
   copy: WorkCopy['items'][FeaturedProjectMeta['id']]
   labels: WorkCopy
+  locale: Locale
   index: number
 }) {
   const flipped = index % 2 === 1
@@ -123,6 +78,7 @@ function FeaturedProject({
           meta={meta}
           copy={copy}
           labels={labels}
+          locale={locale}
           priority={index === 0}
         />
       </div>
@@ -215,7 +171,7 @@ function FeaturedProject({
   )
 }
 
-export function WorkSection({ t }: { t: Dictionary }) {
+export function WorkSection({ t, locale }: { t: Dictionary; locale: Locale }) {
   const copy = t.work
 
   return (
@@ -238,6 +194,7 @@ export function WorkSection({ t }: { t: Dictionary }) {
             meta={meta}
             copy={copy.items[meta.id]}
             labels={copy}
+            locale={locale}
             index={index}
           />
         ))}

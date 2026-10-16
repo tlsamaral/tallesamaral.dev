@@ -1,0 +1,90 @@
+<!doctype html>
+<!-- NexusTrace portfolio cover (1600x1200). Open with ?l=en or ?l=pt and screenshot at 1600x1200. -->
+<html lang="en"><head><meta charset="UTF-8"/>
+<style>
+@font-face { font-family:"Fredoka"; src:url("fonts/fredoka-latin-wght-normal.woff2") format("woff2"); font-weight:300 700; }
+@font-face { font-family:"Figtree"; src:url("fonts/figtree-latin-wght-normal.woff2") format("woff2"); font-weight:300 900; }
+:root { --acc:#5B5BF0; --deep:#3E3CC4; --tint:#ECEBFF; --tint2:#F7F6FF; --hl:#CFCDFF; --ink:#1F2D35; --ink2:#5A6A72; --line:#E2E9EC; --gray:#F3F6F7; --risk:#FF4D5E; --risk-d:#C9283A; --risk-t:#FFE9EB; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1600px; height:1200px; overflow:hidden; background:#fff; }
+.slide { position:absolute; inset:0; background:#fff; overflow:hidden; font-family:"Figtree",sans-serif; color:var(--ink); }
+.brand { position:absolute; left:110px; top:96px; display:flex; align-items:center; gap:16px; font-family:"Fredoka",sans-serif; font-weight:600; font-size:40px; }
+.eyebrow { position:absolute; left:110px; top:300px; font-size:26px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--deep); }
+.h1 { position:absolute; left:110px; top:352px; width:720px; font-family:"Fredoka",sans-serif; font-weight:600; font-size:100px; line-height:1; letter-spacing:-.01em; }
+.h1 .l { display:block; }
+.hl { background:linear-gradient(transparent 60%, var(--hl) 60%, var(--hl) 92%, transparent 92%); padding:0 8px; margin:0 -8px; }
+.sub { position:absolute; left:110px; top:700px; width:620px; font-size:34px; line-height:1.38; color:var(--ink2); font-weight:500; }
+.chips { position:absolute; left:110px; bottom:110px; display:flex; gap:12px; }
+.chip { display:inline-flex; align-items:center; height:52px; padding:0 20px; border-radius:26px; background:var(--gray); font-size:22px; white-space:nowrap; font-weight:700; }
+.chip.c { background:var(--tint); color:var(--deep); }
+.fl { position:absolute; background:#fff; border-radius:32px; box-shadow:0 22px 54px rgba(31,45,53,.11); }
+.fl small { display:block; font-size:18px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--ink2); margin-bottom:8px; }
+.bub { padding:22px 30px 24px; font-size:31px; font-weight:600; line-height:1.25; white-space:nowrap; }
+.bub.ac { background:var(--acc); color:#fff; }
+.bub.ac small { color:#D9D8FF; }
+.row { display:flex; align-items:center; gap:12px; font-size:21px; font-weight:700; }
+.bar { flex:1; height:14px; border-radius:7px; background:#E9ECF8; overflow:hidden; }
+.bar i { display:block; height:100%; border-radius:7px; }
+</style></head><body>
+<div id="pt" class="slide"></div>
+<script>
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function graph(){
+  const r=rng(11), W=620, H=410; let edges='', nodes='', rings='';
+  const clusters=[
+    {cx:140,cy:132,n:8,rad:82,col:'#5B5BF0'},
+    {cx:170,cy:322,n:7,rad:70,col:'#38A8F2'},
+    {cx:420,cy:262,n:9,rad:92,col:'#FF4D5E',hub:true}
+  ];
+  const pts=clusters.map(c=>{const a=[];for(let i=0;i<c.n;i++){const ang=(i/c.n)*Math.PI*2+r()*.5;const d=(c.hub?60:34)+r()*(c.rad-(c.hub?55:34));a.push({x:c.cx+Math.cos(ang)*d,y:c.cy+Math.sin(ang)*d*.92,r:7+r()*5,col:c.col})}return a});
+  // in-cluster edges (nearest 2)
+  pts.forEach((cl,ci)=>{cl.forEach((p,i)=>{const near=cl.map((q,j)=>({j,d:Math.hypot(p.x-q.x,p.y-q.y)})).filter(o=>o.j!==i).sort((a,b)=>a.d-b.d).slice(0,2);near.forEach(o=>{if(o.j>i||r()>.5)edges+=`<line x1="${p.x}" y1="${p.y}" x2="${cl[o.j].x}" y2="${cl[o.j].y}" stroke="${ci===2?'#FFC2C8':'#D4D7F5'}" stroke-width="3"/>`})})});
+  // hub + fan-in
+  const hub={x:clusters[2].cx,y:clusters[2].cy};
+  pts[2].forEach(p=>{edges+=`<line x1="${p.x}" y1="${p.y}" x2="${hub.x}" y2="${hub.y}" stroke="#FF4D5E" stroke-opacity=".55" stroke-width="3.5"/>`});
+  // cross-community edges (dashed)
+  [[0,3],[0,6],[1,2],[1,5]].forEach(([a,b],k)=>{const p=pts[k<2?0:1][a],q=pts[2][b%pts[2].length];edges+=`<line x1="${p.x}" y1="${p.y}" x2="${q.x}" y2="${q.y}" stroke="#FF4D5E" stroke-opacity=".5" stroke-width="3" stroke-dasharray="9 8" stroke-linecap="round"/>`});
+  // a couple of benign cross edges
+  edges+=`<line x1="${pts[0][1].x}" y1="${pts[0][1].y}" x2="${pts[1][2].x}" y2="${pts[1][2].y}" stroke="#D4D7F5" stroke-width="3"/>`;
+  // rings around hub
+  [74,110,146].forEach((rad,i)=>{rings+=`<circle cx="${hub.x}" cy="${hub.y}" r="${rad}" fill="none" stroke="#FF4D5E" stroke-width="5" stroke-opacity="${[.34,.2,.1][i]}"/>`});
+  pts.forEach(cl=>cl.forEach(p=>{nodes+=`<circle cx="${p.x}" cy="${p.y}" r="${p.r}" fill="${p.col}" stroke="#fff" stroke-width="4"/>`}));
+  nodes+=`<circle cx="${hub.x}" cy="${hub.y}" r="30" fill="#fff" stroke="#FF4D5E" stroke-width="10"/><circle cx="${hub.x}" cy="${hub.y}" r="13" fill="#FF4D5E"/>`;
+  return `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" style="overflow:visible">${rings}${edges}${nodes}</svg>`;
+}
+function mark(){return `<svg viewBox="0 0 64 64" width="64" height="64"><g stroke="#5B5BF0" stroke-width="5" stroke-linecap="round"><line x1="32" y1="32" x2="13" y2="17"/><line x1="32" y1="32" x2="51" y2="19"/><line x1="32" y1="32" x2="32" y2="54"/></g><circle cx="13" cy="17" r="7.5" fill="#5B5BF0"/><circle cx="51" cy="19" r="7.5" fill="#5B5BF0"/><circle cx="32" cy="54" r="7.5" fill="#5B5BF0"/><circle cx="32" cy="32" r="12" fill="#fff" stroke="#FF4D5E" stroke-width="7"/></svg>`}
+const T={
+ en:{eyebrow:'Graph-based fraud detection',h:['Fraud hides','in the','<span class="hl">connections</span>'],sub:'Neo4j community detection and explainable risk scores, with an AI analyst on top.',
+  chips:[['Graph analytics',1],['Neo4j GDS',0],['FastAPI + Next.js',0],['AI analyst',0]],tag:'Integrator project · Unisal',alert:'Fan-in',alertTxt:'17 accounts → 1',sig:'Risk signals',s1:'Fan-in',s2:'Volume z-score',s3:'Cross-community',
+  ai:'AI analyst',aiQ:'Why is this account flagged?',aiA:'17 inbound transfers, all from one community.',risk:'High risk',comm:'Communities',syn:'Synthetic data',lang:'en'},
+ pt:{eyebrow:'Detecção de fraude com grafos',h:['A fraude se','esconde nas','<span class="hl">conexões</span>'],sub:'Detecção de comunidades no Neo4j e scores de risco explicáveis, com um analista de IA por cima.',
+  chips:[['Análise de grafos',1],['Neo4j GDS',0],['FastAPI + Next.js',0],['Analista de IA',0]],tag:'Projeto integrador · Unisal',alert:'Fan-in',alertTxt:'17 contas → 1',sig:'Sinais de risco',s1:'Fan-in',s2:'Z-score de volume',s3:'Intercomunidade',
+  ai:'Analista de IA',aiQ:'Por que essa conta foi sinalizada?',aiA:'17 transferências de entrada, todas da mesma comunidade.',risk:'Risco alto',comm:'Comunidades',syn:'Dados sintéticos',lang:'pt'}
+};
+function build(t){
+  const el=document.getElementById('pt'); document.documentElement.lang=t.lang;
+  el.innerHTML=`
+  <div style="position:absolute;left:640px;top:40px;width:1120px;height:1120px;border-radius:50%;background:var(--tint2)"></div>
+  <div style="position:absolute;left:800px;top:200px;width:800px;height:800px;border-radius:50%;background:var(--tint)"></div>
+  <div class="brand"><span style="width:64px;height:64px;display:block">${mark()}</span>NexusTrace</div>
+  <div style="position:absolute;right:110px;top:112px;font-size:26px;font-weight:700;color:var(--ink2)">${t.tag}</div>
+  <div class="eyebrow">${t.eyebrow}</div>
+  <div class="h1">${t.h.map(l=>`<span class="l">${l}</span>`).join('')}</div>
+  <div class="sub">${t.sub}</div>
+  <div class="chips">${t.chips.map(([c,on])=>`<span class="chip ${on?'c':''}">${c}</span>`).join('')}</div>
+  <div style="position:absolute;left:860px;top:300px">${graph()}</div>
+  <div class="fl bub" style="left:840px;top:236px"><small>${t.alert}</small>${t.alertTxt}</div>
+  <div class="fl" style="right:96px;top:230px;width:320px;padding:22px 26px 24px"><small>${t.sig}</small>
+    <div style="display:grid;gap:13px;margin-top:6px">
+      <div><div class="row" style="justify-content:space-between"><span>${t.s1}</span></div><div class="bar" style="margin-top:6px"><i style="width:92%;background:#FF4D5E"></i></div></div>
+      <div><div class="row"><span>${t.s2}</span></div><div class="bar" style="margin-top:6px"><i style="width:68%;background:#5B5BF0"></i></div></div>
+      <div><div class="row"><span>${t.s3}</span></div><div class="bar" style="margin-top:6px"><i style="width:54%;background:#38A8F2"></i></div></div>
+    </div></div>
+  <div class="fl bub ac" style="right:96px;top:716px;white-space:normal;width:480px"><small>${t.ai}</small>${t.aiA}</div>
+  <div class="fl" style="left:860px;top:880px;padding:20px 30px 20px 20px;display:flex;align-items:center;gap:20px">
+    <svg width="92" height="92" viewBox="0 0 96 96"><circle cx="48" cy="48" r="38" fill="#fff" stroke="#FFD3D8" stroke-width="12"/><circle cx="48" cy="48" r="38" fill="none" stroke="#FF4D5E" stroke-width="12" stroke-linecap="round" pathLength="100" stroke-dasharray="87 100" transform="rotate(-90 48 48)"/><text x="48" y="58" text-anchor="middle" font-family="Fredoka" font-weight="600" font-size="30" fill="#1F2D35">87</text></svg>
+    <span style="font-size:31px;font-weight:700">${t.risk}</span></div>
+  <div class="fl" style="right:96px;top:954px;padding:16px 26px;display:flex;align-items:center;gap:14px"><span style="width:14px;height:14px;border-radius:7px;background:#5B5BF0"></span><span style="font-size:22px;font-weight:700;color:var(--ink2)">${t.syn}</span></div>`;
+}
+const q=new URLSearchParams(location.search).get('l')||'en'; build(T[q]);
+</script></body></html>

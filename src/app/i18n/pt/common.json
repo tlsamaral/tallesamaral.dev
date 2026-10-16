@@ -68,6 +68,7 @@
           "Traces com OpenTelemetry mostraram duas checagens independentes rodando em série; em paralelo, uma chamada inteira saiu do caminho crítico."
         ],
         "gallery": [
+          "Capa do Lery AI: “O tutor de inglês que conversa”, com o mascote e cartões mostrando uma frase em português, o nível do modo ponte, a resposta em inglês, nota 92 e a proporção de inglês falado.",
           "Diagrama do pipeline de context engineering do Lery: quatro camadas de contexto com orçamento de tokens, seguidas do rascunho do tutor verificado por compliance gate e avaliador em paralelo.",
           "Diagrama do Lery “Qualidade, Memória & Testes”: saída estruturada tipada por schema, insight card assíncrono ao fim da aula e um aluno sintético que estressa os quatro pilares do CEFR."
         ]
@@ -105,9 +106,10 @@
           "Imagens Open Graph dinâmicas para jogos, rankings e cartinhas de jogadores públicos."
         ],
         "gallery": [
-          "Perfil de jogador do Colete no modo escuro, com rating, conquistas, estatísticas e cartinha compartilhável. Dados de demonstração.",
           "Landing page do Colete: título, login com Google e celulares mostrando a tela de jogo ao vivo.",
-          "Seção do Colete mostrando sorteio de times equilibrados em um campo e uma cartinha de jogador."
+          "Perfil de jogador do Colete no modo escuro, com rating, conquistas, estatísticas e cartinha compartilhável. Dados de demonstração.",
+          "Seção do Colete mostrando sorteio de times equilibrados em um campo e uma cartinha de jogador.",
+          "Três telas do app Colete na landing page: um jogo ao vivo com placar e lances, a home com o próximo jogo e a escalação, e o ranking da temporada. Dados de demonstração."
         ]
       },
       "nexustrace": {
@@ -122,28 +124,8 @@
           "Serviço FastAPI enviando eventos de anomalia por WebSockets para um dashboard Next.js com grafo interativo.",
           "Um analista de IA com GPT-4.1 que responde perguntas chamando a mesma API de risco via tool calling."
         ],
-        "pipelineLabel": "Pipeline",
-        "pipeline": [
-          {
-            "step": "Gerar",
-            "detail": "Contas, clientes e transferências sintéticas"
-          },
-          {
-            "step": "Importar",
-            "detail": "CSV → grafo no Neo4j"
-          },
-          {
-            "step": "Agrupar",
-            "detail": "Comunidades Louvain via GDS"
-          },
-          {
-            "step": "Pontuar",
-            "detail": "Fan-in · z-score de volume · intercomunidade"
-          },
-          {
-            "step": "Explicar",
-            "detail": "REST + WebSockets → dashboard e analista de IA"
-          }
+        "gallery": [
+          "Capa do NexusTrace: “A fraude se esconde nas conexões”, com um grafo de comunidades de contas, uma conta de risco alto recebendo transferências de 17 contas, sinais de risco e uma nota do analista de IA. Dados sintéticos."
         ]
       },
       "aresta": {
@@ -160,8 +142,7 @@
         "gallery": [
           "Home do Aresta Studio no modo escuro: título sobre transformar ideias complexas em produtos reais, com ilustração isométrica.",
           "Seção de problemas do site do Aresta: ilustrações isométricas ao lado de dores comuns de empresas e como são resolvidas.",
-          "Seção de processo do site do Aresta, do entendimento do problema à produção, no modo claro.",
-          "Três capas de carrossel do Instagram renderizadas com o design system do site do Aresta."
+          "Seção de processo do site do Aresta, do entendimento do problema à produção, no modo claro."
         ]
       }
     },

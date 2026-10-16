@@ -68,6 +68,7 @@
           "OpenTelemetry traces showed two independent LLM checks running in series; running them in parallel removed a full call from the critical path."
         ],
         "gallery": [
+          "Lery AI cover: “The English tutor that talks back”, with the mascot and cards showing a Portuguese sentence, the bridge-mode level, the English reply, a score of 92 and the share of English spoken.",
           "Diagram of Lery's context engineering pipeline: four context layers with token budgets, then a tutor draft checked by a compliance gate and an evaluator running in parallel.",
           "Lery diagram “Quality, memory & tests”: schema-typed structured output, an asynchronous insight card at the end of each lesson, and a synthetic student that stresses the four CEFR pillars."
         ]
@@ -105,9 +106,10 @@
           "Dynamic Open Graph images for public games, rankings and player cards."
         ],
         "gallery": [
-          "Colete player profile in dark mode with rating, achievements, all-time stats and a shareable player card. Demo data.",
           "Colete landing page: headline, sign-in with Google and phones showing the live game screen.",
-          "Colete feature section showing balanced team draws on a pitch and a player card."
+          "Colete player profile in dark mode with rating, achievements, all-time stats and a shareable player card. Demo data.",
+          "Colete feature section showing balanced team draws on a pitch and a player card.",
+          "Three Colete app screens from the landing page: a live game with the score and plays, the home with the next game and lineup, and the season ranking. Demo data."
         ]
       },
       "nexustrace": {
@@ -122,28 +124,8 @@
           "FastAPI service pushing anomaly events over WebSockets to a Next.js dashboard with an interactive force graph.",
           "An AI analyst on GPT-4.1 that answers questions by calling the same risk API through tool calling."
         ],
-        "pipelineLabel": "Pipeline",
-        "pipeline": [
-          {
-            "step": "Generate",
-            "detail": "Synthetic accounts, customers and transfers"
-          },
-          {
-            "step": "Import",
-            "detail": "CSV → Neo4j graph"
-          },
-          {
-            "step": "Cluster",
-            "detail": "Louvain communities via GDS"
-          },
-          {
-            "step": "Score",
-            "detail": "Fan-in · volume z-score · cross-community"
-          },
-          {
-            "step": "Explain",
-            "detail": "REST + WebSockets → dashboard and AI analyst"
-          }
+        "gallery": [
+          "NexusTrace cover: “Fraud hides in the connections”, with a graph of account communities, a high-risk account receiving transfers from 17 accounts, risk signals and a note from the AI analyst. Synthetic data."
         ]
       },
       "aresta": {
@@ -160,8 +142,7 @@
         "gallery": [
           "Aresta Studio home page in dark mode: headline about turning complex ideas into real products, with an isometric illustration.",
           "Problems section of the Aresta site: isometric illustrations next to common business pains and how they are solved.",
-          "Process section of the Aresta site, from understanding the problem to production, in light mode.",
-          "Three Instagram carousel covers rendered from the Aresta site's design system."
+          "Process section of the Aresta site, from understanding the problem to production, in light mode."
         ]
       }
     },

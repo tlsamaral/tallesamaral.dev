@@ -73,7 +73,7 @@ export default async function Home({ params }: PageProps) {
       <main id="content" tabIndex={-1} className="outline-none">
         <span id="top" />
         <HeroSection t={t} />
-        <WorkSection t={t} />
+        <WorkSection t={t} locale={locale} />
         <ExperienceSection t={t} />
         <AboutSection t={t} />
         <FaqSection t={t} />

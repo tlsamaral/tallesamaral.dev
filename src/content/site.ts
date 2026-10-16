@@ -1,3 +1,5 @@
+import type { Locale } from '@/app/i18n/config'
+
 /**
  * Single source of truth for verified profile links and project URLs.
  * Translated copy lives in the i18n dictionaries; anything that is the same
@@ -54,6 +56,8 @@ export interface ProjectImage {
   height: number
   /** CSS object-position for the crop inside the frame. */
   position?: string
+  /** Per-language versions of this image (e.g. covers with text in them). */
+  srcByLocale?: Partial<Record<Locale, string>>
 }
 
 /** A phone-framed slide: real screenshots inside a titanium device frame. */
@@ -73,6 +77,21 @@ export interface ProjectGallery {
   images: ProjectSlide[]
 }
 
+/** Picks the right-language file for every slide that has one. */
+export function resolveGallery(
+  gallery: ProjectGallery,
+  locale: Locale,
+): ProjectGallery {
+  return {
+    ...gallery,
+    images: gallery.images.map((slide) =>
+      isDevicesSlide(slide)
+        ? slide
+        : { ...slide, src: slide.srcByLocale?.[locale] ?? slide.src },
+    ),
+  }
+}
+
 export const isDevicesSlide = (slide: ProjectSlide): slide is DevicesSlide =>
   slide.type === 'devices'
 
@@ -90,6 +109,20 @@ export interface FeaturedProjectMeta {
   links: ProjectLink[]
   gallery: ProjectGallery | null
 }
+
+/** Cover that exists in each language; `src` is the default (pt). */
+const localizedShot = (
+  srcs: Record<Locale, string>,
+  width: number,
+  height: number,
+  position = 'center top',
+): ProjectImage => ({
+  src: srcs.pt,
+  srcByLocale: srcs,
+  width,
+  height,
+  position,
+})
 
 const shot = (
   src: string,
@@ -116,6 +149,14 @@ export const featuredProjects: FeaturedProjectMeta[] = [
       aspect: 4 / 3,
       tone: 'light',
       images: [
+        localizedShot(
+          {
+            en: '/projects/lery/thumb-en.jpg',
+            pt: '/projects/lery/thumb-pt.jpg',
+          },
+          1600,
+          1200,
+        ),
         shot('/projects/lery/01.jpg', 1600, 1541),
         shot('/projects/lery/02.jpg', 1600, 1393),
       ],
@@ -193,9 +234,31 @@ export const featuredProjects: FeaturedProjectMeta[] = [
       aspect: 4 / 3,
       tone: 'dark',
       images: [
-        shot('/projects/colete/01.jpg', 1600, 1309, 'left top'),
         shot('/projects/colete/02.jpg', 1600, 1250),
+        shot('/projects/colete/01.jpg', 1600, 1309, 'left top'),
         shot('/projects/colete/03.jpg', 1600, 1389),
+        {
+          type: 'devices',
+          stage:
+            'radial-gradient(110% 80% at 50% 0%, #effaf4 0%, #d6efe2 58%, #bfe3cf 100%)',
+          screens: [
+            {
+              src: '/projects/colete/screen-live.jpg',
+              width: 798,
+              height: 1728,
+            },
+            {
+              src: '/projects/colete/screen-home.jpg',
+              width: 900,
+              height: 1952,
+            },
+            {
+              src: '/projects/colete/screen-ranking.jpg',
+              width: 798,
+              height: 1728,
+            },
+          ],
+        },
       ],
     },
   },
@@ -211,7 +274,20 @@ export const featuredProjects: FeaturedProjectMeta[] = [
       'OpenAI',
     ],
     links: [{ kind: 'repo', href: 'https://github.com/tlsamaral/nexus-trace' }],
-    gallery: null,
+    gallery: {
+      aspect: 4 / 3,
+      tone: 'light',
+      images: [
+        localizedShot(
+          {
+            en: '/projects/nexustrace/thumb-en.jpg',
+            pt: '/projects/nexustrace/thumb-pt.jpg',
+          },
+          1600,
+          1200,
+        ),
+      ],
+    },
   },
   {
     id: 'aresta',
@@ -225,7 +301,6 @@ export const featuredProjects: FeaturedProjectMeta[] = [
         shot('/projects/aresta/01.jpg', 1600, 1000, 'left top'),
         shot('/projects/aresta/02.jpg', 1600, 1325),
         shot('/projects/aresta/03.jpg', 1600, 1111),
-        shot('/projects/aresta/04.jpg', 1600, 1200, 'center'),
       ],
     },
   },

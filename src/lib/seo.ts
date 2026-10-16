@@ -3,6 +3,7 @@ import type { Dictionary } from '@/app/i18n/get-dictonary'
 import {
   type FeaturedProjectId,
   featuredProjects,
+  resolveGallery,
   site,
   socials,
 } from '@/content/site'
@@ -113,7 +114,9 @@ function projectNodes(t: Dictionary, locale: Locale) {
     const copy = t.work.items[project.id]
     const repo = project.links.find((link) => link.kind === 'repo')
     const live = project.links.find((link) => link.kind === 'live')
-    const cover = project.gallery?.images[0]
+    const cover = project.gallery
+      ? resolveGallery(project.gallery, locale).images[0]
+      : undefined
     const coverSrc = cover && 'src' in cover ? cover.src : undefined
     const base = PROJECT_TYPE[project.id]
     const isCode = base['@type'] === 'SoftwareSourceCode'
