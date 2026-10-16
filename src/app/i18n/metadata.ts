@@ -20,11 +20,3 @@ export function localizedAlternates(
 }
 
 export const ogLocale: Record<Locale, string> = { pt: 'pt_BR', en: 'en_US' }
-
-/** Child `openGraph`/`twitter` objects replace the root ones, so repeat the image. */
-export const shareImage = {
-  url: `${site.url}/og-image.png`,
-  width: 1200,
-  height: 630,
-  alt: site.name,
-}

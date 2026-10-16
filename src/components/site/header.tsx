@@ -181,7 +181,7 @@ export function Header({
           <Link
             href={localeHref}
             hrefLang={otherLocale}
-            aria-label={labels.switchTo}
+            aria-label={`${otherLocale.toUpperCase()} — ${labels.switchTo}`}
             title={labels.switchTo}
             className={cn(
               buttonStyles.ghost,

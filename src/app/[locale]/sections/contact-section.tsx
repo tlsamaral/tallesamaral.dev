@@ -17,7 +17,7 @@ export function ContactSection({ t }: { t: Dictionary }) {
     >
       <div className="grid gap-4 border-t border-border pt-6 md:grid-cols-12 md:gap-8">
         <p data-reveal className="eyebrow md:col-span-3">
-          <span className="text-faint">04</span>
+          <span className="text-faint">05</span>
           <span className="mx-2 text-faint">/</span>
           {copy.eyebrow}
         </p>

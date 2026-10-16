@@ -1,9 +1,11 @@
 {
   "meta": {
-    "title": "Talles Amaral — Engenheiro de Software Full Stack",
-    "description": "Talles Amaral é engenheiro de software full stack no Brasil e constrói plataformas web, APIs e sistemas de IA aplicada, da modelagem de dados à interface.",
+    "title": "Talles Amaral — Desenvolvedor Full Stack | IA e LLMs",
+    "description": "Talles Amaral é desenvolvedor full stack no Brasil e constrói plataformas web, APIs e sistemas com LLMs usando TypeScript, React, Next.js, Node.js e IA.",
     "linksTitle": "Links",
-    "linksDescription": "Portfólio, projetos e perfis de Talles Amaral em um só lugar."
+    "linksDescription": "Portfólio, projetos e perfis de Talles Amaral em um só lugar.",
+    "jobTitle": "Desenvolvedor Full Stack",
+    "profileName": "Talles Amaral — portfólio"
   },
   "nav": {
     "work": "Projetos",
@@ -41,7 +43,8 @@
         "label": "Foco",
         "value": "Plataformas web, APIs, sistemas com LLMs"
       }
-    ]
+    ],
+    "nameLabel": "Talles Amaral:"
   },
   "work": {
     "eyebrow": "Projetos selecionados",
@@ -392,6 +395,40 @@
     "languagesTitle": "Idiomas",
     "languages": "Português (nativo) · Inglês (B1/B2)"
   },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Respostas rápidas sobre quem eu sou e o que eu faço.",
+    "items": [
+      {
+        "q": "Quem é Talles Amaral?",
+        "a": "Talles Amaral é Desenvolvedor Full Stack de Potim, SP. Desde abril de 2025 atua no UNISAL, onde desenha, constrói e evolui os sistemas internos da instituição, e no tempo livre cria produtos como Lery, Boua, Colete e Aresta Studio."
+      },
+      {
+        "q": "Com quais tecnologias ele trabalha?",
+        "a": "TypeScript, React, Next.js, React Native e Expo no front end; Node.js (Fastify, NestJS), .NET Core e Python (FastAPI) no back end; PostgreSQL, SQL Server, MySQL e Neo4j para dados; Docker, CI/CD e AWS para entrega."
+      },
+      {
+        "q": "Ele trabalha com IA e LLMs?",
+        "a": "Sim. Seu trabalho com IA é a engenharia em volta do modelo: context engineering, tool calling, saída estruturada, evals e observabilidade. O Lery, seu TCC de Engenharia de Computação, é um tutor de inglês por voz construído assim, e o NexusTrace une um motor de risco baseado em grafos a um analista de IA."
+      },
+      {
+        "q": "O que ele já construiu?",
+        "a": "No UNISAL: o SIGA, um sistema de filas em tempo real, e uma plataforma de Serviço Social que atende 678 alunos. Por conta própria: Lery AI (tutor de inglês por voz), Boua (app social de rolês), Colete (app para organizar o rachão da semana) e Aresta Studio (o site do seu estúdio de software). Em grupo: NexusTrace, detecção de fraudes com análise de grafos."
+      },
+      {
+        "q": "Quanta experiência ele tem?",
+        "a": "Mais de três anos em produção. Foi Analista Desenvolvedor Jr na Editora Santuário de dezembro de 2022 a abril de 2025 (CRM, assinatura digital em conformidade com a LGPD, helpdesk e intranet integrada ao TOTVS RM) e é Desenvolvedor Full Stack no UNISAL desde abril de 2025."
+      },
+      {
+        "q": "Onde ele estudou e quais idiomas fala?",
+        "a": "Cursa Bacharelado em Engenharia de Computação no UNISAL (desde janeiro de 2022). Fala português (nativo) e inglês (B1/B2)."
+      },
+      {
+        "q": "Como entrar em contato?",
+        "a": "Por e-mail em contact@tallesamaral.dev. Ele também está no LinkedIn (linkedin.com/in/tallesamaral) e no GitHub (github.com/tlsamaral)."
+      }
+    ]
+  },
   "contact": {
     "eyebrow": "Contato",
     "title": "Tem um projeto, uma vaga ou uma dúvida?",
@@ -407,7 +444,7 @@
     "top": "Voltar ao topo"
   },
   "links": {
-    "bio": "Engenheiro de software full stack construindo plataformas web, APIs e sistemas de IA aplicada.",
+    "bio": "Desenvolvedor full stack construindo plataformas web, APIs e sistemas com LLMs.",
     "portfolio": "Portfólio",
     "portfolioDetail": "Projetos, experiência e contato",
     "email": "E-mail",

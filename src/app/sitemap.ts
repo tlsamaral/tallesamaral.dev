@@ -1,29 +1,29 @@
 import type { MetadataRoute } from 'next'
+import { site } from '@/content/site'
+import { i18n } from './i18n/config'
+
+const HREFLANG = { pt: 'pt-BR', en: 'en-US' } as const
+
+const PAGES = [
+  { path: '', priority: 1 },
+  { path: '/links', priority: 0.6 },
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.tallesamaral.dev'
-  const locales = ['pt', 'en']
+  return PAGES.flatMap(({ path, priority }) => {
+    const languages = {
+      ...Object.fromEntries(
+        i18n.locales.map((l) => [HREFLANG[l], `${site.url}/${l}${path}`]),
+      ),
+      'x-default': `${site.url}/${i18n.defaultLocale}${path}`,
+    }
 
-  // Páginas principais (sem duplicar manualmente)
-  const pages = ['', '/links']
-
-  // Gera cada URL em ambos idiomas + hreflang alternates
-  const entries: MetadataRoute.Sitemap = pages.flatMap((path) =>
-    locales.map((locale) => {
-      const url = `${baseUrl}/${locale}${path}`
-      const alternates = Object.fromEntries(
-        locales.map((alt) => [alt, `${baseUrl}/${alt}${path}`]),
-      )
-
-      return {
-        url,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: path === '' ? 1 : 0.8,
-        alternates: { languages: alternates },
-      }
-    }),
-  )
-
-  return entries
+    return i18n.locales.map((locale) => ({
+      url: `${site.url}/${locale}${path}`,
+      lastModified: site.updated,
+      changeFrequency: 'monthly' as const,
+      priority,
+      alternates: { languages },
+    }))
+  })
 }

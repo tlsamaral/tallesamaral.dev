@@ -1,13 +1,17 @@
 import type { Metadata } from 'next'
 import { Footer } from '@/components/site/footer'
 import { Header } from '@/components/site/header'
+import { JsonLd } from '@/components/site/json-ld'
 import { RevealObserver } from '@/components/site/reveal-observer'
+import { site } from '@/content/site'
+import { homeGraph } from '@/lib/seo'
 import type { Locale } from '../i18n/config'
 import { getDictionary, isLocale } from '../i18n/get-dictonary'
-import { localizedAlternates, ogLocale, shareImage } from '../i18n/metadata'
+import { localizedAlternates, ogLocale } from '../i18n/metadata'
 import { AboutSection } from './sections/about-section'
 import { ContactSection } from './sections/contact-section'
 import { ExperienceSection } from './sections/experience-section'
+import { FaqSection } from './sections/faq-section'
 import { HeroSection } from './sections/hero-section'
 import { WorkSection } from './sections/work-section'
 
@@ -27,20 +31,22 @@ export async function generateMetadata({
     description: t.meta.description,
     alternates: localizedAlternates(locale),
     openGraph: {
+      type: 'profile',
       title: t.meta.title,
       description: t.meta.description,
       locale: ogLocale[locale],
-      siteName: 'Talles Amaral',
-      type: 'website',
-      images: [shareImage],
+      alternateLocale: ogLocale[locale === 'pt' ? 'en' : 'pt'],
+      siteName: site.name,
       url: `/${locale}`,
+      firstName: 'Talles',
+      lastName: 'Amaral',
+      username: 'tlsamaral',
     },
     twitter: {
       card: 'summary_large_image',
       creator: '@tlsamaral_',
       title: t.meta.title,
       description: t.meta.description,
-      images: [shareImage.url],
     },
   }
 }
@@ -58,6 +64,7 @@ export default async function Home({ params }: PageProps) {
       >
         {t.nav.skip}
       </a>
+      <JsonLd data={homeGraph(t, locale)} />
       <Header locale={locale} labels={t.nav} />
       <RevealObserver />
 
@@ -67,6 +74,7 @@ export default async function Home({ params }: PageProps) {
         <WorkSection t={t} />
         <ExperienceSection t={t} />
         <AboutSection t={t} />
+        <FaqSection t={t} />
         <ContactSection t={t} />
       </main>
 

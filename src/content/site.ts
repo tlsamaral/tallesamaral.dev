@@ -6,9 +6,14 @@
 
 export const site = {
   name: 'Talles Amaral',
+  alternateName: 'Talles dos Amaral',
   url: 'https://www.tallesamaral.dev',
   email: 'contact@tallesamaral.dev',
   avatar: 'https://github.com/tlsamaral.png',
+  /** Last meaningful content change; used for sitemap and structured data. */
+  updated: '2026-10-16',
+  location: { locality: 'Potim', region: 'SP', country: 'BR' },
+  employer: 'UNISAL – Centro Universitário Salesiano de São Paulo',
 } as const
 
 export type SocialId = 'github' | 'linkedin' | 'x'

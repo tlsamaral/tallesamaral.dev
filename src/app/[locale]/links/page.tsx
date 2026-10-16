@@ -9,12 +9,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { Locale } from '@/app/i18n/config'
 import { getDictionary, isLocale } from '@/app/i18n/get-dictonary'
-import { localizedAlternates, ogLocale, shareImage } from '@/app/i18n/metadata'
+import { localizedAlternates, ogLocale } from '@/app/i18n/metadata'
 import { Logomark, socialIcons } from '@/components/site/brand-icons'
+import { JsonLd } from '@/components/site/json-ld'
 import { ProjectIcon } from '@/components/site/project-icons'
 import { arrowNudge } from '@/components/site/styles'
 import { ThemeToggle } from '@/components/site/theme-toggle'
 import { type SocialId, site, socials } from '@/content/site'
+import { linksGraph } from '@/lib/seo'
 import { cn } from '@/lib/utils'
 
 interface PageProps {
@@ -37,9 +39,8 @@ export async function generateMetadata({
       title,
       description: t.meta.linksDescription,
       locale: ogLocale[locale],
-      siteName: 'Talles Amaral',
+      siteName: site.name,
       type: 'website',
-      images: [shareImage],
       url: `/${locale}/links`,
     },
     twitter: {
@@ -47,7 +48,6 @@ export async function generateMetadata({
       creator: '@tlsamaral_',
       title,
       description: t.meta.linksDescription,
-      images: [shareImage.url],
     },
   }
 }
@@ -190,79 +190,82 @@ export default async function LinksPage({ params }: PageProps) {
   let offset = 0
 
   return (
-    <main className="relative mx-auto flex min-h-svh w-full max-w-md flex-col px-4 pb-10 pt-6 sm:px-6 sm:pt-10">
-      <div className="enter-fade flex items-center justify-between">
-        <Link
-          href={`/${locale}`}
-          className="group -ml-2 inline-flex min-h-10 items-center gap-1.5 rounded-full px-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-        >
-          <ArrowLeftIcon
-            aria-hidden="true"
-            className="size-4 transition-transform duration-200 group-hover:-translate-x-0.5"
-          />
-          {copy.back}
-        </Link>
-        <ThemeToggle label={t.nav.theme} />
-      </div>
-
-      <header className="mt-10 flex flex-col items-center text-center">
-        <div className="enter" style={{ '--i': 0 } as React.CSSProperties}>
-          <Image
-            src={site.avatar}
-            alt={site.name}
-            width={176}
-            height={176}
-            priority
-            className="size-22 rounded-full border border-border bg-subtle object-cover"
-          />
+    <>
+      <JsonLd data={linksGraph(t, locale)} />
+      <main className="relative mx-auto flex min-h-svh w-full max-w-md flex-col px-4 pb-10 pt-6 sm:px-6 sm:pt-10">
+        <div className="enter-fade flex items-center justify-between">
+          <Link
+            href={`/${locale}`}
+            className="group -ml-2 inline-flex min-h-10 items-center gap-1.5 rounded-full px-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <ArrowLeftIcon
+              aria-hidden="true"
+              className="size-4 transition-transform duration-200 group-hover:-translate-x-0.5"
+            />
+            {copy.back}
+          </Link>
+          <ThemeToggle label={t.nav.theme} />
         </div>
-        <h1
-          className="enter mt-5 text-2xl font-medium tracking-[-0.03em]"
-          style={{ '--i': 1 } as React.CSSProperties}
-        >
-          {site.name}
-        </h1>
-        <p
-          className="enter mt-2 max-w-[34ch] text-pretty text-[0.9375rem] leading-relaxed text-muted-foreground"
-          style={{ '--i': 2 } as React.CSSProperties}
-        >
-          {copy.bio}
-        </p>
-      </header>
 
-      <div className="mt-10 space-y-8">
-        {groups.map((group) => {
-          const start = offset
-          offset += group.links.length
-          return (
-            <section key={group.title ?? 'primary'}>
-              {group.title && (
-                <h2
-                  className="eyebrow enter mb-3 px-1"
-                  style={{ '--i': start + 3 } as React.CSSProperties}
-                >
-                  {group.title}
-                </h2>
-              )}
-              <ul className="space-y-2.5">
-                {group.links.map((link, i) => (
-                  <LinkRow key={link.href} link={link} index={start + i} />
-                ))}
-              </ul>
-            </section>
-          )
-        })}
-      </div>
+        <header className="mt-10 flex flex-col items-center text-center">
+          <div className="enter" style={{ '--i': 0 } as React.CSSProperties}>
+            <Image
+              src={site.avatar}
+              alt={site.name}
+              width={176}
+              height={176}
+              priority
+              className="size-22 rounded-full border border-border bg-subtle object-cover"
+            />
+          </div>
+          <h1
+            className="enter mt-5 text-2xl font-medium tracking-[-0.03em]"
+            style={{ '--i': 1 } as React.CSSProperties}
+          >
+            {site.name}
+          </h1>
+          <p
+            className="enter mt-2 max-w-[34ch] text-pretty text-[0.9375rem] leading-relaxed text-muted-foreground"
+            style={{ '--i': 2 } as React.CSSProperties}
+          >
+            {copy.bio}
+          </p>
+        </header>
 
-      <footer className="mt-auto pt-12 text-center">
-        <Link
-          href={`/${locale}`}
-          className="group/logo inline-flex items-center gap-2 font-mono text-xs text-faint transition-colors hover:text-foreground"
-        >
-          <Logomark animated className="h-3 w-auto" />
-          tallesamaral.dev
-        </Link>
-      </footer>
-    </main>
+        <div className="mt-10 space-y-8">
+          {groups.map((group) => {
+            const start = offset
+            offset += group.links.length
+            return (
+              <section key={group.title ?? 'primary'}>
+                {group.title && (
+                  <h2
+                    className="eyebrow enter mb-3 px-1"
+                    style={{ '--i': start + 3 } as React.CSSProperties}
+                  >
+                    {group.title}
+                  </h2>
+                )}
+                <ul className="space-y-2.5">
+                  {group.links.map((link, i) => (
+                    <LinkRow key={link.href} link={link} index={start + i} />
+                  ))}
+                </ul>
+              </section>
+            )
+          })}
+        </div>
+
+        <footer className="mt-auto pt-12 text-center">
+          <Link
+            href={`/${locale}`}
+            className="group/logo inline-flex items-center gap-2 font-mono text-xs text-faint transition-colors hover:text-foreground"
+          >
+            <Logomark animated className="h-3 w-auto" />
+            tallesamaral.dev
+          </Link>
+        </footer>
+      </main>
+    </>
   )
 }

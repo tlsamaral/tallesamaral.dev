@@ -26,13 +26,14 @@ export function HeroSection({ t }: { t: Dictionary }) {
         id="hero-title"
         className="mt-6 text-[clamp(2.25rem,8.4vw,7.25rem)] font-medium leading-[0.96] tracking-[-0.045em]"
       >
+        <span className="sr-only">{hero.nameLabel} </span>
         {hero.lines.map((line, i) => (
           <span
             key={line}
             className={`enter block text-balance ${i === hero.lines.length - 1 ? 'text-muted-foreground' : ''}`}
             style={{ '--i': i + 1 } as React.CSSProperties}
           >
-            {line}
+            {line}{' '}
           </span>
         ))}
       </h1>

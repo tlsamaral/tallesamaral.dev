@@ -1,9 +1,11 @@
 {
   "meta": {
-    "title": "Talles Amaral — Full Stack Software Engineer",
-    "description": "Talles Amaral is a full stack software engineer in Brazil building web platforms, APIs and applied AI systems, from data model to interface.",
+    "title": "Talles Amaral — Full Stack Developer | AI & LLM Engineering",
+    "description": "Talles Amaral is a full stack developer from Brazil building web platforms, APIs and LLM-powered systems with TypeScript, React, Next.js, Node.js and AI.",
     "linksTitle": "Links",
-    "linksDescription": "Talles Amaral's portfolio, projects and profiles in one place."
+    "linksDescription": "Talles Amaral's portfolio, projects and profiles in one place.",
+    "jobTitle": "Full Stack Developer",
+    "profileName": "Talles Amaral — portfolio"
   },
   "nav": {
     "work": "Work",
@@ -41,7 +43,8 @@
         "label": "Focus",
         "value": "Web platforms, APIs, LLM systems"
       }
-    ]
+    ],
+    "nameLabel": "Talles Amaral:"
   },
   "work": {
     "eyebrow": "Selected work",
@@ -392,6 +395,40 @@
     "languagesTitle": "Languages",
     "languages": "Portuguese (native) · English (B1/B2)"
   },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Quick answers about who I am and what I do.",
+    "items": [
+      {
+        "q": "Who is Talles Amaral?",
+        "a": "Talles Amaral is a Full Stack Developer from Potim, Brazil. Since April 2025 he works at UNISAL, where he designs, builds and evolves the university's internal systems, and on his own time he builds products such as Lery, Boua, Colete and Aresta Studio."
+      },
+      {
+        "q": "Which technologies does he work with?",
+        "a": "TypeScript, React, Next.js, React Native and Expo on the front end; Node.js (Fastify, NestJS), .NET Core and Python (FastAPI) on the back end; PostgreSQL, SQL Server, MySQL and Neo4j for data; Docker, CI/CD and AWS for delivery."
+      },
+      {
+        "q": "Does he work with AI and LLMs?",
+        "a": "Yes. His AI work is about the engineering around the model: context engineering, tool calling, structured output, evals and observability. Lery, his Computer Engineering thesis, is a voice-first English tutor built this way, and NexusTrace pairs a graph-based risk engine with an AI analyst."
+      },
+      {
+        "q": "What has he built?",
+        "a": "At UNISAL: SIGA, a real-time queue system, and a Social Service platform serving 678 students. Personally: Lery AI (voice-first English tutor), Boua (social app for nights out), Colete (app for organizing weekly football games) and Aresta Studio (his software studio's website). With a team: NexusTrace, fraud detection with graph analytics."
+      },
+      {
+        "q": "How much experience does he have?",
+        "a": "Three-plus years in production. He was a Junior Developer Analyst at Editora Santuário from December 2022 to April 2025 (CRM, LGPD-compliant digital signatures, help desk and an intranet integrated with TOTVS RM) and has been a Full Stack Developer at UNISAL since April 2025."
+      },
+      {
+        "q": "Where did he study and which languages does he speak?",
+        "a": "He is pursuing a Bachelor's in Computer Engineering at UNISAL (since January 2022). He speaks Portuguese (native) and English (B1/B2)."
+      },
+      {
+        "q": "How can I contact him?",
+        "a": "By email at contact@tallesamaral.dev. He is also on LinkedIn (linkedin.com/in/tallesamaral) and GitHub (github.com/tlsamaral)."
+      }
+    ]
+  },
   "contact": {
     "eyebrow": "Contact",
     "title": "Have a project, a role or a question?",
@@ -407,7 +444,7 @@
     "top": "Back to top"
   },
   "links": {
-    "bio": "Full stack software engineer building web platforms, APIs and applied AI systems.",
+    "bio": "Full stack developer building web platforms, APIs and LLM-powered systems.",
     "portfolio": "Portfolio",
     "portfolioDetail": "Selected work, experience and contact",
     "email": "Email",

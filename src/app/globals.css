@@ -49,8 +49,8 @@
   --surface: #ffffff;
   --subtle: #f2f1ed;
   --foreground: #171717;
-  --muted-foreground: #6b6b68;
-  --faint: #a3a29d;
+  --muted-foreground: #62615d;
+  --faint: #6f6e69;
   --border: #e6e4df;
   --hairline: #ecebe6;
   --brand: #2c5bd6;
@@ -84,8 +84,8 @@
   --surface: #161615;
   --subtle: #1c1c1a;
   --foreground: #ededea;
-  --muted-foreground: #9b9a95;
-  --faint: #66655f;
+  --muted-foreground: #aeada8;
+  --faint: #8a8983;
   --border: #2a2a27;
   --hairline: #222220;
   --brand: #86a7ff;
@@ -164,9 +164,12 @@
 /* -------------------------------------------------------------------------- */
 
 /* Initial entrance: pure CSS so it runs before hydration and without JS. */
+/* Entrance animations start at 0.01, not 0: Chrome never reports an LCP
+   candidate for text that starts fully transparent, which would hide the
+   page's real Largest Contentful Paint from Core Web Vitals. */
 @keyframes enter-rise {
   from {
-    opacity: 0;
+    opacity: 0.01;
     transform: translate3d(0, 14px, 0);
   }
   to {
@@ -177,7 +180,7 @@
 
 @keyframes enter-fade {
   from {
-    opacity: 0;
+    opacity: 0.01;
   }
   to {
     opacity: 1;
