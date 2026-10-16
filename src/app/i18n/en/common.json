@@ -1,266 +1,422 @@
 {
+  "meta": {
+    "title": "Talles Amaral — Full Stack Software Engineer",
+    "description": "Talles Amaral is a full stack software engineer in Brazil building web platforms, APIs and applied AI systems, from data model to interface.",
+    "linksTitle": "Links",
+    "linksDescription": "Talles Amaral's portfolio, projects and profiles in one place."
+  },
+  "nav": {
+    "work": "Work",
+    "experience": "Experience",
+    "about": "About",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close menu",
+    "skip": "Skip to content",
+    "language": "Language",
+    "switchTo": "Ver em português",
+    "theme": "Toggle color theme",
+    "home": "Talles Amaral, home"
+  },
   "hero": {
-    "title": "Hi, I'm Talles Amaral 👋",
-    "subtitle": "Passionate about creating digital experiences that blend simplicity, emotion, and impact — always learning, exploring, and building the future."
-  },
-  "about": {
-    "title": "About Me",
-    "short": "I’m a full stack developer driven by curiosity and purpose. I love turning ideas into digital experiences that blend design, simplicity, and impact. I’m constantly learning, growing, and building solutions that connect people and give technology real meaning.",
-    "full": {
-      "paragraphs": [
-        "I’m a Full Stack Developer driven by curiosity and purpose. I believe technology is more than code — it’s a bridge that connects people, simplifies complexity, and transforms ideas into meaningful experiences.",
-        "Over the past few years, I’ve dedicated myself to crafting intuitive and scalable solutions that combine design, performance, and usability. My journey blends creativity and logic: from designing seamless user interfaces to building solid backend architectures guided by clean code and attention to detail.",
-        "I thrive in collaborative environments where innovation meets precision, always seeking to learn, evolve, and create digital experiences that inspire and make a difference."
-      ]
-    }
-  },
-  "experiences": {
-    "title": "Professional Experience",
-    "items": [
+    "eyebrow": "Full stack developer · AI & LLMs · Potim, Brazil",
+    "lines": [
+      "Full stack engineer,",
+      "from the data model",
+      "to the last pixel."
+    ],
+    "intro": "I'm Talles Amaral, a Full Stack Developer at UNISAL with 3+ years shipping production systems — lately with LLMs. On my own time I build products like Lery, a voice-first AI English tutor, and Boua, a social app for nights out.",
+    "primary": "See selected work",
+    "secondary": "Get in touch",
+    "meta": [
       {
-        "company": "UNISAL – Salesian University Center of São Paulo",
-        "period": "Apr 2025 – Present",
-        "role": "Systems Analyst / Full Stack Developer",
-        "location": "Lorena, Brazil",
-        "description": [
-          "Responsible for the entire development lifecycle — from data modeling to the delivery of secure, responsive, and user-focused interfaces.",
-          "Currently leading the modernization of academic and administrative systems by rewriting legacy applications with modern, scalable architecture.",
-          "Results: Successfully restructured legacy systems with modular and intuitive solutions, improving performance and user experience."
-        ],
-        "avatarUrl": "/logos/unisal-s.svg"
+        "label": "Currently",
+        "value": "Full Stack Developer, UNISAL"
       },
       {
-        "company": "Editora Santuário",
-        "period": "Apr 2023 – Apr 2025",
-        "role": "Junior Developer",
-        "location": "Aparecida, Brazil",
-        "description": [
-          "Developed and maintained internal web applications to automate workflows and improve operational efficiency.",
-          "Built scalable applications that enhanced sales performance and communication across departments.",
-          "Results: Increased productivity and streamlined internal communication through tools like Help Desk, Intranet, and CRM — reducing response time by over 40%."
-        ],
-        "avatarUrl": "/logos/editora-santuario.svg"
+        "label": "Previously",
+        "value": "Developer, Editora Santuário"
+      },
+      {
+        "label": "Focus",
+        "value": "Web platforms, APIs, LLM systems"
       }
     ]
   },
-
-  "skills": {
-    "title": "Skills",
-    "subtitle": "Technologies and tools that shape my work — from concept to delivery.",
-    "categories": {
-      "frontend": {
-        "label": "Frontend",
-        "stacks": [
-          { "name": "Next.js", "icon": "/icons/nextjs.svg", "projects": 8 },
-          { "name": "React.js", "icon": "/icons/react.svg", "projects": 10 },
-          {
-            "name": "TypeScript",
-            "icon": "/icons/typescript.svg",
-            "projects": 12
-          },
-          {
-            "name": "TailwindCSS",
-            "icon": "/icons/tailwindcss.svg",
-            "projects": 9
-          },
-          {
-            "name": "React Native",
-            "icon": "/icons/react.svg",
-            "projects": 3
-          },
-          { "name": "Expo", "icon": "/icons/expo.svg", "projects": 2 },
-          { "name": "HTML5", "icon": "/icons/html5.svg", "projects": 15 },
-          { "name": "CSS3", "icon": "/icons/css3.svg", "projects": 15 }
+  "work": {
+    "eyebrow": "Selected work",
+    "title": "A few systems I've designed and built end to end.",
+    "role": "Role",
+    "stack": "Stack",
+    "repo": "Source",
+    "live": "Live site",
+    "archiveTitle": "More projects",
+    "items": {
+      "lery": {
+        "title": "Lery AI",
+        "kind": "Computer Engineering thesis",
+        "summary": "A screen-less, voice-first English tutor that runs on a Raspberry Pi.",
+        "problem": "Many learners freeze when they have to speak. A naive LLM tutor makes it worse: give it a long prompt and it answers an A1 student at B2 level. Lery treats the model as one component in a system that controls what it sees, when, and how its output is checked.",
+        "role": "Design and development across the device voice loop, agent service, API and mobile app.",
+        "highlights": [
+          "Layered context with explicit token budgets, plus just-in-time retrieval through tool calls instead of injecting full history every turn.",
+          "Compliance gate for beginner levels: typed violations are fed back to the tutor for one corrective retry before anything is spoken.",
+          "Every turn scored on four CEFR pillars using schema-constrained output, with eval fixtures and a synthetic student to test the pipeline.",
+          "OpenTelemetry traces showed two independent LLM checks running in series; running them in parallel removed a full call from the critical path."
+        ],
+        "gallery": [
+          "Diagram of Lery's context engineering pipeline: four context layers with token budgets, then a tutor draft checked by a compliance gate and an evaluator running in parallel.",
+          "Lery diagram “Quality, memory & tests”: schema-typed structured output, an asynchronous insight card at the end of each lesson, and a synthetic student that stresses the four CEFR pillars."
         ]
       },
-      "backend": {
-        "label": "Backend",
-        "stacks": [
-          { "name": "Node.js", "icon": "/icons/nodejs.svg", "projects": 8 },
-          { "name": "Fastify", "icon": "/icons/fastify.svg", "projects": 5 },
-          { "name": "Prisma ORM", "icon": "/icons/prisma.svg", "projects": 6 },
-          { "name": "C#", "icon": "/icons/csharp.svg", "projects": 2 }
+      "boua": {
+        "title": "Boua",
+        "kind": "Personal product",
+        "status": "In development — not public yet",
+        "summary": "A social app for finding and hosting nights out — from a house party to a paid event.",
+        "problem": "Knowing where the good night is usually means scrolling a dozen Instagram stories. Boua puts what's happening nearby on one feed and map, and lets anyone host — free or with paid entry — from the same app and the same account.",
+        "role": "Product, design and full stack development — mobile app, API, web and landing page.",
+        "highlights": [
+          "pnpm monorepo: an Expo app, a Fastify API and web apps sharing typed API contracts and design tokens through internal packages.",
+          "Payments sit behind a provider interface, so Stripe or a local stub is picked by configuration; idempotency keys keep retries from charging twice.",
+          "QR tickets are RS256-signed for tamper evidence, but validation always re-checks the code against the database — the signature is never the source of truth.",
+          "Pulse: live crowd ratings in rounds during an event — vibe, sound, crowd, queue."
+        ],
+        "gallery": [
+          "Boua landing page: “Before you leave the house, see how the night is going”, with phones showing a live Pulse score, the map and the home feed.",
+          "Three Boua app screens: the home deck of nights out, the live map of the city and an event page with confirmed guests and a host notice.",
+          "Three Boua app screens: a live Pulse vote with an emoji dial, the night's “Espiada” photo stories and the My nights list.",
+          "Three Boua app screens: the new-night sheet, the create-a-night form and a night hosted by a friend."
         ]
       },
-      "database": {
-        "label": "Databases",
-        "stacks": [
-          {
-            "name": "PostgreSQL",
-            "icon": "/icons/postgresql.svg",
-            "projects": 6
-          },
-          { "name": "MySQL", "icon": "/icons/mysql.svg", "projects": 4 },
-          {
-            "name": "SQL Server",
-            "icon": "/icons/sqlserver.svg",
-            "projects": 2
-          },
-          { "name": "Supabase", "icon": "/icons/supabase.svg", "projects": 2 }
+      "colete": {
+        "title": "Colete",
+        "kind": "Personal product",
+        "summary": "A mobile-first web app for organizing weekly pickup football games.",
+        "problem": "Attendance, team draws, live scores, stats, rankings and awards usually live in a group chat and someone's memory. Colete puts the whole game night in one place, and makes the results shareable.",
+        "role": "Product, design and full stack development.",
+        "highlights": [
+          "Statistics are derived from game events — goals, assists, awards — so there are no redundant counters to drift out of sync.",
+          "Authorization checked per group on every server action; private groups return 404 so their existence isn't revealed.",
+          "Invites use random tokens with revocation, expiry and usage limits.",
+          "Dynamic Open Graph images for public games, rankings and player cards."
+        ],
+        "gallery": [
+          "Colete player profile in dark mode with rating, achievements, all-time stats and a shareable player card. Demo data.",
+          "Colete landing page: headline, sign-in with Google and phones showing the live game screen.",
+          "Colete feature section showing balanced team draws on a pitch and a player card."
         ]
       },
-      "testing": {
-        "label": "Tests",
-        "stacks": [
-          { "name": "Vitest", "icon": "/icons/vitest.svg", "projects": 4 },
-          { "name": "Jest", "icon": "/icons/jest.svg", "projects": 1 },
-          { "name": "Cypress", "icon": "/icons/cypress.svg", "projects": 1 },
+      "nexustrace": {
+        "title": "NexusTrace",
+        "kind": "Integrator project · Team",
+        "summary": "Fraud detection over a graph of financial transactions.",
+        "problem": "Fraud rings hide in relationships, not in single transactions. NexusTrace loads accounts and transfers into Neo4j, groups them into communities and scores every account by how money actually moves through the network.",
+        "role": "Built as a team integrator project at UNISAL; I maintain the public repository.",
+        "highlights": [
+          "Louvain community detection with Neo4j Graph Data Science, run on startup over synthetic account and transaction data.",
+          "Explainable risk scores from fan-in, volume z-score and cross-community behaviour, with configurable rules.",
+          "FastAPI service pushing anomaly events over WebSockets to a Next.js dashboard with an interactive force graph.",
+          "An AI analyst on GPT-4.1 that answers questions by calling the same risk API through tool calling."
+        ],
+        "pipelineLabel": "Pipeline",
+        "pipeline": [
           {
-            "name": "Playwright",
-            "icon": "/icons/playwright.svg",
-            "projects": 2
+            "step": "Generate",
+            "detail": "Synthetic accounts, customers and transfers"
+          },
+          {
+            "step": "Import",
+            "detail": "CSV → Neo4j graph"
+          },
+          {
+            "step": "Cluster",
+            "detail": "Louvain communities via GDS"
+          },
+          {
+            "step": "Score",
+            "detail": "Fan-in · volume z-score · cross-community"
+          },
+          {
+            "step": "Explain",
+            "detail": "REST + WebSockets → dashboard and AI analyst"
           }
         ]
       },
-      "devops": {
-        "label": "DevOps & Infrastructure",
-        "stacks": [
-          { "name": "Docker", "icon": "/icons/docker.svg", "projects": 6 },
-          { "name": "Vercel", "icon": "/icons/vercel.svg", "projects": 5 },
-          { "name": "Git/GitHub", "icon": "/icons/github.svg", "projects": 60 },
-          { "name": "Linux", "icon": "/icons/linux.svg", "projects": 4 }
-        ]
-      },
-      "design": {
-        "label": "Design & Branding",
-        "stacks": [
-          { "name": "Figma", "icon": "/icons/figma.svg", "projects": 4 }
+      "aresta": {
+        "title": "Aresta Studio",
+        "kind": "Independent studio · Website",
+        "summary": "The website for my independent software studio, designed and built end to end.",
+        "problem": "A studio site has one job: make a business owner trust you enough to describe their problem. Aresta leads with problems instead of a list of services, shows real cases and turns the first contact into a structured brief.",
+        "role": "Brand, design and development.",
+        "highlights": [
+          "Brief form as a Server Action with field validation, a honeypot and transactional emails built with React Email.",
+          "Isometric illustration system drawn in code, with light and dark themes and entrance motion that steps aside under reduced motion.",
+          "Dynamic Open Graph images and a route that renders Instagram carousels from the same components as the site."
+        ],
+        "gallery": [
+          "Aresta Studio home page in dark mode: headline about turning complex ideas into real products, with an isometric illustration.",
+          "Problems section of the Aresta site: isometric illustrations next to common business pains and how they are solved.",
+          "Process section of the Aresta site, from understanding the problem to production, in light mode.",
+          "Three Instagram carousel covers rendered from the Aresta site's design system."
         ]
       }
-    }
-  },
-  "education": {
-    "title": "Education",
-    "subtitle": "Academic background and complementary courses that shaped my technical and professional skills.",
-    "formal": {
-      "label": "Academic Education",
-      "items": [
-        {
-          "institution": "UNISAL – Salesian University Center of São Paulo",
-          "degree": "Bachelor’s in Computer Engineering",
-          "period": "2021 — 2025 (ongoing)",
-          "location": "Lorena, SP — Brazil",
-          "description": [
-            "Focus on software development, system architecture, and distributed computing.",
-            "Work in high-performance projects, databases, and graph theory applied to fraud detection."
-          ],
-          "avatarUrl": "/logos/unisal.svg",
-          "certificateUrl": null
-        }
-      ]
     },
-    "courses": {
-      "label": "Courses & Certifications",
-      "items": [
-        {
-          "institution": "Rocketseat",
-          "degree": "React and Next.js Training",
-          "period": "2024",
-          "description": [
-            "Development of modern web applications with React, TypeScript, and Next.js.",
-            "Focus on best practices, performance, and scalable architecture."
-          ],
-          "avatarUrl": "/logos/rocketseat.svg",
-          "certificateUrl": "https://app.rocketseat.com.br/certificates/ignite-reactjs"
-        },
-        {
-          "institution": "Rocketseat",
-          "degree": "Node.js Training",
-          "period": "2025",
-          "description": [
-            "Development of modern and scalable APIs using Node.js and TypeScript, applying SOLID principles, Clean Architecture, and automated testing. Focused on building robust back-end solutions and deploying high-performance applications."
-          ],
-          "avatarUrl": "/logos/rocketseat.svg",
-          "certificateUrl": "https://app.rocketseat.com.br/certificates/ignite-reactjs"
-        },
-        {
-          "institution": "Udemy",
-          "degree": "UI and UX Design - Figma",
-          "period": "2023",
-          "description": [
-            "Design of intuitive interfaces and user experiences focused on clarity and usability.",
-            "User-centered design applied to digital products."
-          ],
-          "avatarUrl": "/logos/udemy.svg",
-          "certificateUrl": null
-        },
-        {
-          "institution": "Udemy",
-          "degree": "Git and GitHub — Project Version Control",
-          "period": "2022",
-          "description": [
-            "Version control and collaborative workflows using Git and GitHub.",
-            "Professional branching strategies and versioning best practices."
-          ],
-          "avatarUrl": "/logos/udemy.svg",
-          "certificateUrl": null
-        },
-        {
-          "institution": "Workover Academy",
-          "degree": "SQL Server and Database Certification",
-          "period": "2022",
-          "description": [
-            "Database creation, manipulation, and optimization using SQL Server.",
-            "Query analysis, data modeling, and integration with back-end applications."
-          ],
-          "avatarUrl": "/logos/workover.svg",
-          "certificateUrl": null
-        },
-        {
-          "institution": "Workover Academy",
-          "degree": "Scrum Fundamentals",
-          "period": "2022",
-          "description": [
-            "Agile concepts and practices based on the Scrum framework.",
-            "Team organization, sprint planning, and iterative delivery in software projects."
-          ],
-          "avatarUrl": "/logos/workover.svg",
-          "certificateUrl": null
-        }
-      ]
-    }
+    "archive": {
+      "microservices": {
+        "title": "Node.js microservices",
+        "summary": "Orders and invoices services over RabbitMQ with a dead-letter queue, Kong gateway, distributed tracing and Pulumi for AWS ECS."
+      },
+      "nest": {
+        "title": "NestJS Clean Architecture API",
+        "summary": "Clean Architecture and DDD with domain events, Redis caching and end-to-end tests."
+      },
+      "floreo": {
+        "title": "Flóreo",
+        "summary": "Team integrator project: a smart plant pot streaming humidity, light and temperature to a mobile app, with AI-generated care recommendations."
+      },
+      "solidus": {
+        "title": "Solidus Engenharia",
+        "summary": "Landing page for a civil engineering company, focused on SEO, performance and brand identity."
+      },
+      "autopark": {
+        "title": "Auto Park System",
+        "summary": "Parking automation that detects cars entering and leaving with ESP8266 hardware and a web dashboard."
+      },
+      "ordena": {
+        "title": "Ordena",
+        "summary": "Restaurant order management with real-time sync between the floor and the kitchen over WebSockets."
+      }
+    },
+    "galleryLabel": "{title} screenshots",
+    "showImage": "Show image {n} of {total}",
+    "inDevelopment": "In development"
   },
-  "projects": {
-    "title": "Featured Projects",
-    "subtitle": "A selection of my most impactful projects — each representing real challenges, innovation, and a passion for building meaningful solutions.",
+  "experience": {
+    "eyebrow": "Experience",
+    "title": "Building systems hundreds of people use every day.",
     "items": [
       {
-        "title": "Ordena",
-        "description": "Ordena is a restaurant management system built to optimize real-time communication between waiters and the kitchen. One of my most complete full stack projects, combining Next.js, Node.js, and WebSockets to deliver performance and fluidity in high-demand environments.",
-        "stacks": ["Next.js", "Node.js", "Socket.io", "Prisma", "TailwindCSS"],
-        "repoUrl": "https://github.com/tlsamaral?tab=repositories",
-        "previewUrl": null,
-        "image": "https://res.cloudinary.com/duwaccahn/image/upload/v1738177776/ordena_eze3xg.png"
+        "company": "UNISAL",
+        "companyFull": "Salesian University Center of São Paulo",
+        "period": "Apr 2025 — Present",
+        "role": "Full Stack Developer",
+        "location": "Lorena, Brazil",
+        "description": [
+          "I work on the architecture, development and evolution of the institution's internal systems, from solution design to deployment."
+        ],
+        "highlights": [
+          {
+            "title": "SIGA, real-time queue system",
+            "text": "Queue platform with ticket kiosks, receipt printing, calling panels and operational metrics. Each step of a ticket's lifecycle — issued, called, transferred, finished, no-show — publishes an event pushed over Socket.IO to kiosks, panels and attendants."
+          },
+          {
+            "title": "Social Service platform",
+            "text": "Full stack platform in Fastify, TypeScript and Next.js (DDD, Clean Architecture) serving 678 students and handling 90 scholarship applications and 170 appointments a month, replacing manual work without growing the team."
+          },
+          {
+            "title": "Ombudsman modernization",
+            "text": "Migrated a legacy ASP.NET WebForms system to Next.js, with real-time chat and a file API with secure links."
+          },
+          {
+            "title": "Key management",
+            "text": "Replaced untracked spreadsheets with a Fastify + Vite app with permissions and a full audit trail — 350 keys and 312 checkouts a month."
+          },
+          {
+            "title": "AI training",
+            "text": "Taught the workshop “Artificial Intelligence and Prompt Engineering” to about 40 people during UNISAL's Employability Week."
+          }
+        ]
       },
       {
-        "title": "Auto Park System",
-        "description": "A featured project focused on smart parking automation. I developed a platform that detects car entries and exits in real time, integrating IoT hardware (ESP8266) with a complete web dashboard for monitoring and control.",
-        "stacks": ["React", "Redux", "Node.js", "Express", "Sequelize"],
-        "repoUrl": "https://github.com/tlsamaral?tab=repositories",
-        "previewUrl": null,
-        "image": "https://res.cloudinary.com/duwaccahn/image/upload/v1738192954/hfcyepo2wcl7tdi9cqlq.png"
+        "company": "Editora Santuário",
+        "companyFull": "Publishing house",
+        "period": "Dec 2022 — Apr 2025",
+        "role": "Junior Developer Analyst",
+        "location": "Aparecida, Brazil",
+        "description": [
+          "Internal systems used every day across sales, HR and operations."
+        ],
+        "highlights": [
+          {
+            "title": "Sales CRM",
+            "text": "Cut contract generation from 10+ minutes to seconds for an operation with 5,678 clients and ~797 orders a month — a CRM in Next.js and .NET Core with Pagar.me integration and document automation."
+          },
+          {
+            "title": "LGPD-compliant digital signatures",
+            "text": "Digital signature platform with dynamic Markdown documents that issued 20,345 legally valid consent terms."
+          },
+          {
+            "title": "Help desk",
+            "text": ".NET and SQL Server ticketing system handling ~650 tickets a month, with departmental flows, prioritization and end-to-end traceability."
+          },
+          {
+            "title": "Intranet integrated with TOTVS RM",
+            "text": "Intranet portal connected to the TOTVS RM ERP, centralizing timesheets, shift management, announcements and real-time management dashboards."
+          },
+          {
+            "title": "Dynamic forms platform",
+            "text": "Customizable forms (Next.js, .NET Core) that gave HR and Workplace Safety autonomy over their own data collection."
+          }
+        ]
+      }
+    ],
+    "stackTitle": "Tools I reach for",
+    "stack": [
+      {
+        "label": "Frontend & mobile",
+        "items": [
+          "TypeScript",
+          "React",
+          "Next.js",
+          "React Native · Expo",
+          "Vite",
+          "Tailwind CSS"
+        ]
       },
       {
-        "title": "Flóreo",
-        "description": "Flóreo is a personal project that blends IoT, mobile development, and artificial intelligence. I created a smart vase that monitors humidity, light, and temperature, sending real-time data to a React Native app. Integrated with Gemini AI, it generates automated recommendations to keep plants healthy.",
-        "stacks": ["React Native", "Expo", "Supabase", "Gemini AI", "IoT"],
-        "repoUrl": "https://github.com/tlsamaral?tab=repositories",
-        "previewUrl": null,
-        "image": "/projects/floreo.png"
+        "label": "Backend",
+        "items": [
+          "Node.js · Fastify",
+          "NestJS",
+          "Express",
+          ".NET Core",
+          "Python · FastAPI",
+          "Socket.IO"
+        ]
       },
       {
-        "title": "Solidus Engenharia",
-        "description": "Landing page built for a civil engineering company with high SEO optimization, focusing on responsiveness, performance, and brand identity alignment.",
-        "stacks": ["Next.js", "TailwindCSS", "SEO", "TypeScript"],
-        "repoUrl": null,
-        "previewUrl": "https://solidusengenharia.com.br",
-        "image": "/projects/solidus.png"
+        "label": "Data",
+        "items": [
+          "PostgreSQL",
+          "SQL Server",
+          "MySQL",
+          "Neo4j",
+          "Redis",
+          "Prisma"
+        ]
+      },
+      {
+        "label": "AI engineering",
+        "items": [
+          "Gemini · OpenAI · Claude",
+          "Context engineering",
+          "Tool calling",
+          "Structured output",
+          "RAG",
+          "Evals"
+        ]
+      },
+      {
+        "label": "Architecture",
+        "items": [
+          "DDD",
+          "Clean Architecture",
+          "Hexagonal",
+          "Event-driven",
+          "SOLID"
+        ]
+      },
+      {
+        "label": "DevOps & quality",
+        "items": [
+          "Docker",
+          "CI/CD",
+          "AWS",
+          "OpenTelemetry",
+          "Vitest · Jest",
+          "Playwright"
+        ]
       }
     ]
   },
+  "about": {
+    "eyebrow": "About",
+    "title": "I like software that holds up after the demo.",
+    "paragraphs": [
+      "I'm a full stack developer from Potim, Brazil, with 3+ years building systems people rely on every day — first a CRM, help desk, intranet and digital signatures at Editora Santuário, and now academic and administrative platforms at UNISAL, where I own the work from solution design to deploy.",
+      "I care about the parts users never see: clear domain boundaries, authorization that holds up, performance I've actually measured, and tests where they matter. With AI, my focus is the engineering around the model — context, tool calling, structured output, evals and observability. I build, measure, and only then optimize."
+    ],
+    "educationTitle": "Education",
+    "degree": {
+      "title": "Bachelor's in Computer Engineering",
+      "institution": "UNISAL",
+      "period": "Jan 2022 — ongoing"
+    },
+    "coursesTitle": "Courses",
+    "courses": [
+      {
+        "title": "CS50",
+        "institution": "Harvard",
+        "year": "In progress",
+        "url": null
+      },
+      {
+        "title": "Node.js",
+        "institution": "Rocketseat",
+        "year": "2025",
+        "url": null
+      },
+      {
+        "title": "React and Next.js",
+        "institution": "Rocketseat",
+        "year": "2024",
+        "url": "https://app.rocketseat.com.br/certificates/ignite-reactjs"
+      },
+      {
+        "title": "UI and UX Design — Figma",
+        "institution": "Udemy",
+        "year": "2023",
+        "url": null
+      },
+      {
+        "title": "Git and GitHub",
+        "institution": "Udemy",
+        "year": "2022",
+        "url": null
+      },
+      {
+        "title": "SQL Server",
+        "institution": "Workover Academy",
+        "year": "2022",
+        "url": null
+      },
+      {
+        "title": "Scrum Fundamentals",
+        "institution": "Workover Academy",
+        "year": "2022",
+        "url": null
+      }
+    ],
+    "certificate": "Certificate",
+    "languagesTitle": "Languages",
+    "languages": "Portuguese (native) · English (B1/B2)"
+  },
   "contact": {
-    "title": "Get in touch",
-    "description": "If you liked what you saw and want to chat about opportunities, projects, or collaborations, I’d be happy to connect. Let’s build something amazing together!",
-    "button": "Contact me"
+    "eyebrow": "Contact",
+    "title": "Have a project, a role or a question?",
+    "description": "Email is the fastest way to reach me. I'm also on GitHub and LinkedIn.",
+    "email": "Email me",
+    "copy": "Copy address",
+    "copied": "Copied",
+    "elsewhere": "Elsewhere"
+  },
+  "footer": {
+    "builtWith": "Built with Next.js and Tailwind CSS.",
+    "links": "Links",
+    "top": "Back to top"
+  },
+  "links": {
+    "bio": "Full stack software engineer building web platforms, APIs and applied AI systems.",
+    "portfolio": "Portfolio",
+    "portfolioDetail": "Selected work, experience and contact",
+    "email": "Email",
+    "projects": "Projects",
+    "profiles": "Profiles",
+    "back": "tallesamaral.dev",
+    "leryDetail": "Voice-first AI English tutor · source",
+    "coleteDetail": "Pickup football organizer · live app",
+    "nexusDetail": "Graph-based fraud detection · source",
+    "arestaDetail": "My software studio · website"
   }
 }

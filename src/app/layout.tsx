@@ -1,4 +1,3 @@
-/** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
@@ -16,15 +15,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Talles Amaral | Software Developer',
-    template: '%s | Talles Amaral',
+    default: 'Talles Amaral — Engenheiro de Software Full Stack',
+    template: '%s — Talles Amaral',
   },
   description:
-    'Conheça o portfólio de Talles Amaral, desenvolvedor de software especializado em criar soluções modernas, performáticas e inovadoras.',
+    'Talles Amaral é engenheiro de software full stack no Brasil e constrói plataformas web, APIs e sistemas de IA aplicada, da modelagem de dados à interface.',
   metadataBase: new URL('https://www.tallesamaral.dev'),
-  alternates: {
-    canonical: 'https://www.tallesamaral.dev',
-  },
   authors: [{ name: 'Talles Amaral', url: 'https://www.tallesamaral.dev' }],
   keywords: [
     'Talles Amaral',
@@ -42,11 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://www.tallesamaral.dev',
-    siteName: 'Talles Amaral | Software Developer',
-    title: 'Talles Amaral | Software Developer',
-    description:
-      'Portfólio oficial de Talles Amaral, desenvolvedor especializado em soluções web modernas, rápidas e eficazes.',
+    siteName: 'Talles Amaral',
     images: [
       {
         url: 'https://tallesamaral.dev/og-image.png',
@@ -58,9 +50,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Talles Amaral | Software Developer',
-    description:
-      'Portfólio oficial de Talles Amaral, desenvolvedor especializado em soluções web modernas, rápidas e eficazes.',
     creator: '@tlsamaral_',
     images: ['https://tallesamaral.dev/og-image.png'],
   },
@@ -82,7 +71,13 @@ export default function RootLayout({
         '@id': 'https://www.tallesamaral.dev/#person',
         name: 'Talles Amaral',
         alternateName: 'Talles dos Amaral',
-        jobTitle: 'Software Developer',
+        jobTitle: 'Full Stack Developer',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Potim',
+          addressRegion: 'SP',
+          addressCountry: 'BR',
+        },
         url: 'https://www.tallesamaral.dev',
         image: 'https://tallesamaral.dev/og-image.png',
         sameAs: [
@@ -91,19 +86,19 @@ export default function RootLayout({
           'https://x.com/tlsamaral_',
         ],
         knowsAbout: [
-          'Next.js',
-          'React',
-          'Node.js',
           'TypeScript',
-          'Software Engineering',
-          'Web Development',
-          'Frontend',
-          'Backend',
-          'UX/UI Design',
+          'React',
+          'Next.js',
+          'Node.js',
+          'PostgreSQL',
+          'Software Architecture',
+          'Applied AI',
+          'LLM Engineering',
+          'Graph Analytics',
         ],
         worksFor: {
-          '@type': 'Organization',
-          name: 'Talles Amaral | Software Developer',
+          '@type': 'CollegeOrUniversity',
+          name: 'UNISAL - Centro Universitário Salesiano de São Paulo',
         },
         alumniOf: {
           '@type': 'CollegeOrUniversity',
@@ -118,17 +113,10 @@ export default function RootLayout({
         '@type': 'WebSite',
         '@id': 'https://www.tallesamaral.dev/#website',
         url: 'https://www.tallesamaral.dev',
-        name: 'Talles Amaral | Software Developer',
-        description:
-          'Portfólio de Talles Amaral, desenvolvedor de software especializado em soluções web modernas, performáticas e inovadoras.',
+        name: 'Talles Amaral',
         inLanguage: ['pt-BR', 'en-US'],
         publisher: {
           '@id': 'https://www.tallesamaral.dev/#person',
-        },
-        potentialAction: {
-          '@type': 'SearchAction',
-          target: 'https://www.tallesamaral.dev/?q={search_term_string}',
-          'query-input': 'required name=search_term_string',
         },
       },
       {
@@ -139,12 +127,7 @@ export default function RootLayout({
           '@id': 'https://www.tallesamaral.dev/#person',
         },
         url: 'https://www.tallesamaral.dev/pt/',
-        about: [
-          'Ordena',
-          'Auto Park System',
-          'Flóreo',
-          'Plataforma de Serviço Social',
-        ],
+        about: ['Lery AI', 'Boua', 'Colete', 'NexusTrace', 'Aresta Studio'],
         inLanguage: ['pt-BR', 'en-US'],
       },
     ],
@@ -155,6 +138,7 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD built on the server
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>

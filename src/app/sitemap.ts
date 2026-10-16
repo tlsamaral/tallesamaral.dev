@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ['pt', 'en']
 
   // Páginas principais (sem duplicar manualmente)
-  const pages = ['']
+  const pages = ['', '/links']
 
   // Gera cada URL em ambos idiomas + hreflang alternates
   const entries: MetadataRoute.Sitemap = pages.flatMap((path) =>
