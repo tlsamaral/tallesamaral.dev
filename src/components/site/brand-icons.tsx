@@ -1,18 +1,52 @@
 import type { SVGProps } from 'react'
 import type { SocialId } from '@/content/site'
+import { cn } from '@/lib/utils'
 
 type IconProps = SVGProps<SVGSVGElement>
 
-export function Logomark(props: IconProps) {
+const LOGO_BODY =
+  'M51.9529 127.156L108.854 54.9111L184 33.2837V0L0.154622 49.8506V79.4542L60.7664 64.8825L0 139.12L0.154622 154.306H105.297L83.0319 127.156H51.9529Z'
+const LOGO_LEG =
+  'M99.5767 97.0937L143.489 154.199H184.127L120.76 70.0977L99.5767 97.0937Z'
+
+interface LogomarkProps extends IconProps {
+  /**
+   * Draws the outline and fills it in when the page opens, and traces it
+   * again while an ancestor with the `group/logo` class is hovered.
+   * Styles live in globals.css (`.logomark-animated`).
+   */
+  animated?: boolean
+}
+
+export function Logomark({ animated, className, ...props }: LogomarkProps) {
   return (
     <svg
       viewBox="0 0 185 155"
       fill="currentColor"
       aria-hidden="true"
+      className={cn(
+        'overflow-visible',
+        animated && 'logomark-animated',
+        className,
+      )}
       {...props}
     >
-      <path d="M51.9529 127.156L108.854 54.9111L184 33.2837V0L0.154622 49.8506V79.4542L60.7664 64.8825L0 139.12L0.154622 154.306H105.297L83.0319 127.156H51.9529Z" />
-      <path d="M99.5767 97.0937L143.489 154.199H184.127L120.76 70.0977L99.5767 97.0937Z" />
+      <path className="lm-fill lm-body" d={LOGO_BODY} />
+      <path className="lm-fill lm-leg" d={LOGO_LEG} />
+      {animated && (
+        <>
+          {/* Intro: outline draws itself once, then fades as the fill arrives. */}
+          <g className="lm-draw" fill="none" stroke="currentColor">
+            <path pathLength="1" d={LOGO_BODY} />
+            <path pathLength="1" d={LOGO_LEG} />
+          </g>
+          {/* Hover: a bright segment runs around both shapes. */}
+          <g className="lm-trace" fill="none" stroke="currentColor">
+            <path pathLength="1" d={LOGO_BODY} />
+            <path pathLength="1" d={LOGO_LEG} />
+          </g>
+        </>
+      )}
     </svg>
   )
 }

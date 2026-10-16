@@ -211,6 +211,101 @@ html[data-reveal-ready] [data-reveal]:not([data-visible]) {
   transition-delay: calc(var(--i, 0) * 70ms);
 }
 
+/* -------------------------------------------------------------------------- */
+/* Logomark: intro draw + hover trace                                          */
+/* -------------------------------------------------------------------------- */
+
+/* The outlines are normalised with pathLength="1"; strokes are in viewBox
+   units, so they are thick enough to read at ~18px tall. */
+.logomark-animated .lm-draw path,
+.logomark-animated .lm-trace path {
+  stroke-width: 9;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.logomark-animated .lm-trace path {
+  stroke-dasharray: 0.28 0.72;
+  stroke-dashoffset: 0.28;
+  opacity: 0;
+}
+
+.logomark-animated .lm-draw path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: lm-draw 900ms var(--ease-in-out-soft) 120ms both;
+}
+
+.logomark-animated .lm-draw path:nth-child(2) {
+  animation-delay: 300ms;
+}
+
+.logomark-animated .lm-fill {
+  animation: lm-fill 520ms var(--ease-out-soft) 760ms backwards;
+  transition: transform 420ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes lm-draw {
+  0% {
+    stroke-dashoffset: 1;
+    opacity: 1;
+  }
+  72% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes lm-fill {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes lm-trace {
+  0% {
+    stroke-dashoffset: 0.28;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: -1;
+    opacity: 0;
+  }
+}
+
+/* Hover: the leg springs out along its own diagonal and the body leans away,
+   while a highlight runs around the outline. */
+.group\/logo:hover .logomark-animated .lm-leg {
+  transform: translate(7px, -7px);
+}
+
+.group\/logo:hover .logomark-animated .lm-body {
+  transform: translate(-3px, 3px);
+}
+
+.group\/logo:hover .logomark-animated .lm-trace path {
+  animation: lm-trace 760ms var(--ease-in-out-soft) both;
+}
+
+.group\/logo:hover .logomark-animated .lm-trace path:nth-child(2) {
+  animation-delay: 90ms;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .enter,
   .enter-fade {
@@ -223,6 +318,16 @@ html[data-reveal-ready] [data-reveal]:not([data-visible]) {
   }
 
   [data-reveal] {
+    transition: none;
+  }
+
+  .logomark-animated .lm-draw,
+  .logomark-animated .lm-trace {
+    display: none;
+  }
+
+  .logomark-animated .lm-fill {
+    animation: none;
     transition: none;
   }
 }

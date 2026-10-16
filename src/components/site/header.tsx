@@ -133,9 +133,9 @@ export function Header({
         <Link
           href={`/${locale}`}
           aria-label={labels.home}
-          className="group -ml-1 flex items-center gap-2.5 rounded-md px-1 py-1"
+          className="group/logo -ml-1 flex items-center gap-2.5 rounded-md px-1 py-1"
         >
-          <Logomark className="h-[15px] w-auto text-foreground transition-transform duration-300 ease-(--ease-out-soft) group-hover:-rotate-6" />
+          <Logomark animated className="h-[18px] w-auto text-foreground" />
           <span className="text-[0.9375rem] font-medium tracking-[-0.01em]">
             Talles Amaral
           </span>

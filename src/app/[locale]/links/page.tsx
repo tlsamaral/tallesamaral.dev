@@ -11,6 +11,7 @@ import type { Locale } from '@/app/i18n/config'
 import { getDictionary, isLocale } from '@/app/i18n/get-dictonary'
 import { localizedAlternates, ogLocale, shareImage } from '@/app/i18n/metadata'
 import { Logomark, socialIcons } from '@/components/site/brand-icons'
+import { ProjectIcon } from '@/components/site/project-icons'
 import { arrowNudge } from '@/components/site/styles'
 import { ThemeToggle } from '@/components/site/theme-toggle'
 import { type SocialId, site, socials } from '@/content/site'
@@ -57,6 +58,8 @@ interface HubLink {
   detail: string
   icon: React.ReactNode
   external: boolean
+  /** The icon brings its own tile (project marks), so skip the neutral one. */
+  bareIcon?: boolean
 }
 
 function LinkRow({ link, index }: { link: HubLink; index: number }) {
@@ -65,9 +68,13 @@ function LinkRow({ link, index }: { link: HubLink; index: number }) {
 
   const content = (
     <>
-      <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-subtle text-muted-foreground transition-colors duration-200 group-hover:text-foreground">
-        {link.icon}
-      </span>
+      {link.bareIcon ? (
+        link.icon
+      ) : (
+        <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-subtle text-muted-foreground transition-colors duration-200 group-hover:text-foreground">
+          {link.icon}
+        </span>
+      )}
       <span className="min-w-0 flex-1">
         <span className="block font-medium tracking-[-0.01em]">
           {link.label}
@@ -141,28 +148,24 @@ export default async function LinksPage({ params }: PageProps) {
       href: 'https://github.com/tlsamaral/leryai',
       label: t.work.items.lery.title,
       detail: copy.leryDetail,
-      icon: <span className="font-mono text-[0.6875rem]">01</span>,
+      icon: <ProjectIcon id="lery" />,
+      bareIcon: true,
       external: true,
     },
     {
       href: 'https://colete-app.vercel.app',
       label: t.work.items.colete.title,
       detail: copy.coleteDetail,
-      icon: <span className="font-mono text-[0.6875rem]">02</span>,
+      icon: <ProjectIcon id="colete" />,
+      bareIcon: true,
       external: true,
     },
     {
       href: 'https://arestastudio.tech',
       label: t.work.items.aresta.title,
       detail: copy.arestaDetail,
-      icon: <span className="font-mono text-[0.6875rem]">03</span>,
-      external: true,
-    },
-    {
-      href: 'https://github.com/tlsamaral/nexus-trace',
-      label: t.work.items.nexustrace.title,
-      detail: copy.nexusDetail,
-      icon: <span className="font-mono text-[0.6875rem]">04</span>,
+      icon: <ProjectIcon id="aresta" />,
+      bareIcon: true,
       external: true,
     },
   ]
@@ -254,9 +257,9 @@ export default async function LinksPage({ params }: PageProps) {
       <footer className="mt-auto pt-12 text-center">
         <Link
           href={`/${locale}`}
-          className="inline-flex items-center gap-2 font-mono text-xs text-faint transition-colors hover:text-foreground"
+          className="group/logo inline-flex items-center gap-2 font-mono text-xs text-faint transition-colors hover:text-foreground"
         >
-          <Logomark className="h-2.5 w-auto" />
+          <Logomark animated className="h-3 w-auto" />
           tallesamaral.dev
         </Link>
       </footer>
