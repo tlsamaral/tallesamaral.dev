@@ -1,16 +1,22 @@
 import 'server-only'
-import type { Locale } from './config'
+import { i18n, type Locale } from './config'
+import type en from './en/common.json'
 
-const dictionaries = {
+export type Dictionary = typeof en
+
+const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
   en: () => import('./en/common.json').then((m) => m.default),
   pt: () => import('./pt/common.json').then((m) => m.default),
 }
 
-export const getDictionary = async (locale: Locale) => {
-  // 🔹 Protege contra chamadas erradas, tipo "favicon.ico"
-  if (locale !== 'en' && locale !== 'pt') {
-    console.warn(`[i18n] Invalid locale received: ${locale}`)
-    return dictionaries['pt']() // fallback padrão
+export function isLocale(value: string): value is Locale {
+  return (i18n.locales as readonly string[]).includes(value)
+}
+
+export const getDictionary = async (locale: string) => {
+  // Guard against non-locale segments (e.g. "favicon.ico")
+  if (!isLocale(locale)) {
+    return dictionaries[i18n.defaultLocale]()
   }
 
   return dictionaries[locale]()

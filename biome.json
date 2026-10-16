@@ -24,7 +24,8 @@
     "rules": {
       "recommended": true,
       "correctness": {
-        "noUnusedImports": "error"
+        "noUnusedImports": "error",
+        "useUniqueElementIds": "off"
       },
       "suspicious": {
         "noDebugger": "off",
@@ -51,6 +52,16 @@
     }
   },
   "overrides": [
+    {
+      "includes": ["**/*.css"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noUnknownAtRules": "off"
+          }
+        }
+      }
+    },
     {
       "formatter": {
         "indentWidth": 2

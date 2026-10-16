@@ -1,4 +1,3 @@
-/** biome-ignore-all lint/correctness/noUnknownTypeSelector: <explanation> */
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -7,21 +6,14 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-subtle: var(--subtle);
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-faint: var(--faint);
+  --color-hairline: var(--hairline);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -42,106 +34,422 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --animate-shiny-text: shiny-text 8s infinite;
-  @keyframes shiny-text {
-    0%,
-    90%,
-    100% {
-      background-position: calc(-100% - var(--shiny-width)) 0;
-    }
-    30%,
-    60% {
-      background-position: calc(100% + var(--shiny-width)) 0;
-    }
-  }
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
+/*
+ * Design tokens
+ * Warm off-white paper, near-black ink, a single restrained blue.
+ */
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.21 0.006 285.885);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.705 0.015 286.067);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.21 0.006 285.885);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.705 0.015 286.067);
+  --radius: 0.75rem;
+
+  --background: #fafaf8;
+  --surface: #ffffff;
+  --subtle: #f2f1ed;
+  --foreground: #171717;
+  --muted-foreground: #62615d;
+  --faint: #6f6e69;
+  --border: #e6e4df;
+  --hairline: #ecebe6;
+  --brand: #2c5bd6;
+  --brand-foreground: #ffffff;
+
+  --card: var(--surface);
+  --card-foreground: var(--foreground);
+  --popover: var(--surface);
+  --popover-foreground: var(--foreground);
+  --primary: var(--foreground);
+  --primary-foreground: var(--background);
+  --secondary: var(--subtle);
+  --secondary-foreground: var(--foreground);
+  --muted: var(--subtle);
+  --accent: var(--subtle);
+  --accent-foreground: var(--foreground);
+  --destructive: #c4321f;
+  --input: var(--border);
+  --ring: var(--brand);
+
+  --dur-fast: 160ms;
+  --dur-base: 240ms;
+  --dur-slow: 560ms;
+
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --content: 72rem;
 }
 
 .dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.92 0.004 286.32);
-  --primary-foreground: oklch(0.21 0.006 285.885);
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.552 0.016 285.938);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.552 0.016 285.938);
+  --background: #0f0f0e;
+  --surface: #161615;
+  --subtle: #1c1c1a;
+  --foreground: #ededea;
+  --muted-foreground: #aeada8;
+  --faint: #8a8983;
+  --border: #2a2a27;
+  --hairline: #222220;
+  --brand: #86a7ff;
+  --brand-foreground: #0f0f0e;
+  --destructive: #f07a66;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
 
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
-
-@media (max-width: 768px) {
   html {
-    font-size: 87.5%;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: 5rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--brand) 22%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@utility container-page {
+  width: 100%;
+  max-width: var(--content);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@utility eyebrow {
+  font-family: var(--font-geist-mono);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+@utility text-balance-pretty {
+  text-wrap: balance;
+}
+
+/* Animated underline used by inline links and navigation */
+@utility link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size var(--dur-base) var(--ease-out-soft);
+  &:hover,
+  &:focus-visible {
+    background-size: 100% 1px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Motion                                                                      */
+/* -------------------------------------------------------------------------- */
+
+/* Initial entrance: pure CSS so it runs before hydration and without JS. */
+/* Entrance animations start at 0.01, not 0: Chrome never reports an LCP
+   candidate for text that starts fully transparent, which would hide the
+   page's real Largest Contentful Paint from Core Web Vitals. */
+@keyframes enter-rise {
+  from {
+    opacity: 0.01;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes enter-fade {
+  from {
+    opacity: 0.01;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.enter {
+  animation: enter-rise 720ms var(--ease-out-soft) both;
+  animation-delay: calc(min(var(--i, 0), 9) * 70ms + 60ms);
+}
+
+.enter-fade {
+  animation: enter-fade 600ms var(--ease-out-soft) both;
+  animation-delay: calc(var(--i, 0) * 80ms);
+}
+
+/*
+ * Scroll reveals. Elements are only hidden once the observer has mounted
+ * (html[data-reveal-ready]), so content stays visible without JavaScript
+ * or if hydration fails.
+ */
+html[data-reveal-ready] [data-reveal]:not([data-visible]) {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+}
+
+[data-reveal] {
+  transition:
+    opacity var(--dur-slow) var(--ease-out-soft),
+    transform var(--dur-slow) var(--ease-out-soft);
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Logomark: intro draw + hover trace                                          */
+/* -------------------------------------------------------------------------- */
+
+/* The outlines are normalised with pathLength="1"; strokes are in viewBox
+   units, so they are thick enough to read at ~18px tall. */
+.logomark-animated .lm-draw path,
+.logomark-animated .lm-trace path {
+  stroke-width: 9;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.logomark-animated .lm-trace path {
+  stroke-dasharray: 0.28 0.72;
+  stroke-dashoffset: 0.28;
+  opacity: 0;
+}
+
+.logomark-animated .lm-draw path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: lm-draw 900ms var(--ease-in-out-soft) 120ms both;
+}
+
+.logomark-animated .lm-draw path:nth-child(2) {
+  animation-delay: 300ms;
+}
+
+.logomark-animated .lm-fill {
+  animation: lm-fill 520ms var(--ease-out-soft) 760ms backwards;
+  transition: transform 420ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes lm-draw {
+  0% {
+    stroke-dashoffset: 1;
+    opacity: 1;
+  }
+  72% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes lm-fill {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes lm-trace {
+  0% {
+    stroke-dashoffset: 0.28;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: -1;
+    opacity: 0;
+  }
+}
+
+/* Hover: the leg springs out along its own diagonal and the body leans away,
+   while a highlight runs around the outline. */
+.group\/logo:hover .logomark-animated .lm-leg {
+  transform: translate(7px, -7px);
+}
+
+.group\/logo:hover .logomark-animated .lm-body {
+  transform: translate(-3px, 3px);
+}
+
+.group\/logo:hover .logomark-animated .lm-trace path {
+  animation: lm-trace 760ms var(--ease-in-out-soft) both;
+}
+
+.group\/logo:hover .logomark-animated .lm-trace path:nth-child(2) {
+  animation-delay: 90ms;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Splash curtain                                                              */
+/* -------------------------------------------------------------------------- */
+
+/*
+ * Shown once per session on the home page, and only when a tiny inline
+ * script in <head> sets html[data-splash="show"] (it skips bots, automation,
+ * reduced motion and repeat visits). Without that attribute the curtain is
+ * display:none, so no-JS visitors and crawlers never see it. The page content
+ * is already in the DOM underneath; the curtain only lifts off of it.
+ */
+:root {
+  --splash-ms: 1200ms;
+}
+
+#splash {
+  display: none;
+}
+
+html[data-splash="show"] {
+  overflow: hidden;
+}
+
+html[data-splash="show"] #splash {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+  animation: splash-lift 460ms var(--ease-in-out-soft) 760ms forwards;
+}
+
+@keyframes splash-lift {
+  to {
+    transform: translate3d(0, -101%, 0);
+  }
+}
+
+/* The mark inside the curtain draws a little faster than the header one. */
+#splash .logomark-animated .lm-draw path {
+  animation-duration: 560ms;
+  animation-delay: 80ms;
+}
+
+#splash .logomark-animated .lm-draw path:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+#splash .logomark-animated .lm-fill {
+  animation-duration: 380ms;
+  animation-delay: 400ms;
+}
+
+/* Header and hero wait for the curtain, then overlap its last moments. */
+html[data-splash] .enter {
+  animation-delay: calc(
+    var(--splash-ms) -
+    240ms +
+    min(var(--i, 0), 9) *
+    70ms +
+    60ms
+  );
+}
+
+html[data-splash] .enter-fade {
+  animation-delay: calc(var(--splash-ms) - 320ms + var(--i, 0) * 80ms);
+}
+
+html[data-splash] header .logomark-animated .lm-draw path {
+  animation-delay: calc(var(--splash-ms) - 200ms);
+}
+
+html[data-splash] header .logomark-animated .lm-draw path:nth-child(2) {
+  animation-delay: calc(var(--splash-ms) - 20ms);
+}
+
+html[data-splash] header .logomark-animated .lm-fill {
+  animation-delay: calc(var(--splash-ms) + 400ms);
+}
+
+/* Skipped (click or key): drop the curtain and play the normal entrance. */
+html[data-splash="skip"] #splash {
+  display: none;
+}
+
+html[data-splash="skip"] {
+  overflow: auto;
+}
+
+html[data-splash="skip"] .enter {
+  animation-delay: calc(min(var(--i, 0), 9) * 70ms + 60ms);
+}
+
+html[data-splash="skip"] .enter-fade {
+  animation-delay: calc(var(--i, 0) * 80ms);
+}
+
+html[data-splash="skip"] header .logomark-animated .lm-draw path {
+  animation-delay: 120ms;
+}
+
+html[data-splash="skip"] header .logomark-animated .lm-draw path:nth-child(2) {
+  animation-delay: 300ms;
+}
+
+html[data-splash="skip"] header .logomark-animated .lm-fill {
+  animation-delay: 760ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-splash] #splash {
+    display: none;
+  }
+
+  html[data-splash] {
+    overflow: auto;
+  }
+
+  .enter,
+  .enter-fade {
+    animation: none;
+  }
+
+  html[data-reveal-ready] [data-reveal]:not([data-visible]) {
+    opacity: 1;
+    transform: none;
+  }
+
+  [data-reveal] {
+    transition: none;
+  }
+
+  .logomark-animated .lm-draw,
+  .logomark-animated .lm-trace {
+    display: none;
+  }
+
+  .logomark-animated .lm-fill {
+    animation: none;
+    transition: none;
   }
 }

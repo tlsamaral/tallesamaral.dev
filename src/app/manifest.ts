@@ -1,22 +1,22 @@
-// app/manifest.ts
 import type { MetadataRoute } from 'next'
+import { site } from '@/content/site'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Talles Amaral | Software Developer',
-    short_name: 'Talles Amaral',
+    id: '/',
+    name: site.name,
+    short_name: site.name,
     description:
-      'Portfólio de Talles Amaral — desenvolvedor de software especializado em soluções modernas e performáticas.',
+      'Full stack developer building web platforms, APIs and LLM-powered systems.',
+    lang: 'en',
     start_url: '/',
     display: 'standalone',
-    background_color: '#0a0a0a',
-    theme_color: '#000000',
+    background_color: '#fafaf8',
+    theme_color: '#171717',
+    categories: ['portfolio', 'technology'],
     icons: [
-      {
-        src: '/favicon.ico',
-        sizes: 'any',
-        type: 'image/x-icon',
-      },
+      { src: '/icon.svg', sizes: 'any', type: 'image/svg+xml' },
+      { src: '/apple-icon', sizes: '180x180', type: 'image/png' },
     ],
   }
 }
