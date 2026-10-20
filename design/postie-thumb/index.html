@@ -1,83 +1,102 @@
 <!doctype html>
-<!-- Postie portfolio cover (1600x1200). Open with ?l=en or ?l=pt and screenshot at 1600x1200. -->
-<html lang="en"><head><meta charset="UTF-8"/>
+<!-- Postie portfolio cover (1600x1200), in the style of the LinkedIn carousel. Open with ?l=en or ?l=pt and screenshot at 1600x1200. -->
+<html lang="pt-BR"><head><meta charset="UTF-8"/>
 <style>
-@font-face { font-family:"Fredoka"; src:url("fonts/fredoka-latin-wght-normal.woff2") format("woff2"); font-weight:300 700; }
-@font-face { font-family:"Figtree"; src:url("fonts/figtree-latin-wght-normal.woff2") format("woff2"); font-weight:300 900; }
-:root { --acc:#E8442A; --deep:#B3321C; --tint:#FFEDE8; --tint2:#FFF8F6; --hl:#FFCFC4; --blue:#3B5BFF; --ink:#1F2D35; --ink2:#5A6A72; --gray:#F3F6F7; }
-* { margin:0; padding:0; box-sizing:border-box; }
-html, body { width:1600px; height:1200px; overflow:hidden; background:#fff; }
-.slide { position:absolute; inset:0; background:#fff; overflow:hidden; font-family:"Figtree",sans-serif; color:var(--ink); }
-.brand { position:absolute; left:110px; top:96px; display:flex; align-items:center; gap:16px; font-family:"Fredoka",sans-serif; font-weight:600; font-size:40px; }
-.eyebrow { position:absolute; left:110px; top:300px; font-size:26px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--deep); }
-.h1 { position:absolute; left:110px; top:352px; width:760px; font-family:"Fredoka",sans-serif; font-weight:600; font-size:100px; line-height:1; letter-spacing:-.01em; }
-.h1 .l { display:block; }
-.hl { background:linear-gradient(transparent 60%, var(--hl) 60%, var(--hl) 92%, transparent 92%); padding:0 8px; margin:0 -8px; }
-.sub { position:absolute; left:110px; top:700px; width:620px; font-size:34px; line-height:1.38; color:var(--ink2); font-weight:500; }
-.chips { position:absolute; left:110px; bottom:110px; display:flex; gap:12px; }
-.chip { display:inline-flex; align-items:center; height:52px; padding:0 20px; border-radius:26px; background:var(--gray); font-size:22px; white-space:nowrap; font-weight:700; }
-.chip.c { background:var(--tint); color:var(--deep); }
-.fl { position:absolute; background:#fff; border-radius:32px; box-shadow:0 22px 54px rgba(31,45,53,.11); }
-.fl small { display:block; font-size:18px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--ink2); margin-bottom:8px; }
-.bub { padding:22px 30px 24px; font-size:31px; font-weight:600; line-height:1.25; }
-.bub.ac { background:var(--acc); color:#fff; }
-.bub.ac small { color:#FFD9D0; }
-.pill { display:inline-flex; align-items:center; height:42px; padding:0 16px; border-radius:21px; font-size:21px; font-weight:800; }
+@font-face { font-family:'Archivo'; font-style:normal; font-weight:100 900; font-stretch:62% 125%; src:url('fonts/Archivo-normal-100-900.woff2') format('woff2'); font-display:block; }
+@font-face { font-family:'Instrument Serif'; font-style:italic; font-weight:400; src:url('fonts/InstrumentSerif-italic-400.woff2') format('woff2'); font-display:block; }
+@font-face { font-family:'Instrument Serif'; font-style:normal; font-weight:400; src:url('fonts/InstrumentSerif-normal-400.woff2') format('woff2'); font-display:block; }
+@font-face { font-family:'JetBrains Mono'; font-style:normal; font-weight:400; src:url('fonts/JetBrainsMono-normal-400.woff2') format('woff2'); font-display:block; }
+@font-face { font-family:'JetBrains Mono'; font-style:normal; font-weight:500; src:url('fonts/JetBrainsMono-normal-500.woff2') format('woff2'); font-display:block; }
+@font-face { font-family:'JetBrains Mono'; font-style:normal; font-weight:700; src:url('fonts/JetBrainsMono-normal-700.woff2') format('woff2'); font-display:block; }
+:root{--paper:#f2ebdd;--paper-2:#e9e0cd;--ink:#15130f;--ink-2:#3a352d;--muted:#7d7464;--red:#e3402b;--blue:#1d3fcf;}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1600px;height:1200px;overflow:hidden;background:var(--paper)}
+.c{position:relative;width:1600px;height:1200px;background:var(--paper);overflow:hidden;font-family:'Archivo',sans-serif;color:var(--ink)}
+.c::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:50;opacity:.5;mix-blend-mode:multiply;
+ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .3  0 0 0 0 .22  0 0 0 .16 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
+.air{position:absolute;left:0;right:0;height:28px;z-index:5;background:repeating-linear-gradient(-45deg,var(--red) 0 28px,var(--paper) 28px 43px,var(--blue) 43px 71px,var(--paper) 71px 86px)}
+.air.t{top:0}.air.b{bottom:0}
+.meta{position:absolute;top:62px;left:96px;right:96px;display:flex;justify-content:space-between;align-items:center;font:500 21px/1 'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.brand{display:flex;align-items:center;gap:14px;font-weight:700;color:var(--ink)}
+.brand svg{width:36px;height:36px}
+.kicker{position:absolute;left:96px;top:132px;font:700 22px/1 'JetBrains Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:16px}
+.kicker::before{content:'';width:38px;height:3px;background:var(--red)}
+.h{position:absolute;left:92px;top:176px;font-family:'Archivo';font-weight:900;font-stretch:68%;text-transform:uppercase;line-height:.99;letter-spacing:-.01em;font-size:160px;z-index:3}
+.h .serif{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.01em;font-size:172px;color:var(--red);display:inline-block;line-height:.8;transform:translateY(-6px)}
+.en .h{font-size:148px;line-height:.95}.en .h .serif{font-size:166px}
+.body{position:absolute;left:96px;top:660px;width:620px;font:400 32px/1.38 'Archivo';color:var(--ink-2);z-index:3}
+.body b{color:var(--ink);font-weight:700}
+.stamp{position:absolute;padding:18px;background:var(--paper-2);right:120px;top:150px;width:350px;height:430px;transform:rotate(6deg);z-index:2;
+ -webkit-mask:linear-gradient(#000 0 0) content-box,radial-gradient(circle,#0000 7px,#000 7.6px) -10px -10px/20px 20px;
+ filter:drop-shadow(0 18px 24px rgba(0,0,0,.18))}
+.stamp-in{width:100%;height:100%;border:3px solid var(--ink);background:var(--blue);color:var(--paper);padding:22px 20px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.stamp-in .lbl{font:700 15px/1.3 'JetBrains Mono';letter-spacing:.14em;text-transform:uppercase}
+.stamp-in svg{width:100%;height:auto}
+.stamp-in .val{font:900 88px/.8 'Archivo';font-stretch:62%}
+.stamp-in .val small{font-size:34px;vertical-align:top}
+.pm{position:absolute;color:var(--ink);mix-blend-mode:multiply;z-index:7}
+.card{background:#fbf7ef;border:2.5px solid var(--ink);border-radius:14px;box-shadow:8px 8px 0 var(--ink);position:absolute}
+.step{top:832px;width:337px;height:206px;padding:18px 20px 16px}
+.step .n{font:700 17px/1 'JetBrains Mono';letter-spacing:.14em;color:var(--muted)}
+.step h4{font:900 42px/.9 'Archivo';font-stretch:66%;text-transform:uppercase;margin-top:10px}
+.step p{font:400 20px/1.3 'Archivo';color:var(--ink-2);margin-top:8px}
+.step .tags{position:absolute;left:20px;bottom:14px;display:flex;gap:8px}
+.tag{font:700 14px/1 'JetBrains Mono';letter-spacing:.05em;text-transform:uppercase;border:2px solid var(--ink);border-radius:999px;padding:5px 10px}
+.step.hot{background:#fff4ec;border-color:var(--red);box-shadow:8px 8px 0 var(--red)}
+.step.hot .n{color:var(--red)}
+.prio{left:896px;top:652px;width:608px;padding:20px 22px 22px}
+.prio .t{display:flex;justify-content:space-between;align-items:baseline}
+.prio .t b{font:900 34px/1 'Archivo';font-stretch:66%;text-transform:uppercase}
+.prio .t span{font:500 16px/1 'JetBrains Mono';letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.scale{display:flex;margin-top:14px;border:2.5px solid var(--ink);border-radius:10px;overflow:hidden}
+.scale div{flex:1;padding:12px 12px 10px;font:700 14px/1.3 'JetBrains Mono';letter-spacing:.05em;text-transform:uppercase}
+.scale div strong{display:block;font:900 24px/1 'Archivo';font-stretch:66%;margin-bottom:2px}
+.foot{position:absolute;bottom:64px;left:96px;right:96px;display:flex;justify-content:space-between;font:500 21px/1 'JetBrains Mono';letter-spacing:.06em;color:var(--ink-2)}
 </style></head><body>
-<div id="s" class="slide"></div>
+<svg width="0" height="0" style="position:absolute"><defs>
+ <symbol id="logo" viewBox="0 0 32 32"><rect x="2" y="7" width="28" height="19" rx="2" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M3 9 L16 18 L29 9" fill="none" stroke="currentColor" stroke-width="2.6"/><circle cx="26" cy="7" r="5" fill="#e3402b"/></symbol>
+ <symbol id="postmark" viewBox="0 0 300 300"><defs><path id="pmc" d="M150,150 m-108,0 a108,108 0 1,1 216,0 a108,108 0 1,1 -216,0"/></defs>
+  <circle cx="150" cy="150" r="128" fill="none" stroke="currentColor" stroke-width="5"/><circle cx="150" cy="150" r="86" fill="none" stroke="currentColor" stroke-width="3"/>
+  <text font-family="JetBrains Mono" font-weight="700" font-size="22" letter-spacing="5" fill="currentColor"><textPath href="#pmc">OPEN SOURCE ✦ POSTIE ✦ AI AGENT ✦ </textPath></text>
+  <text x="150" y="142" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="46" fill="currentColor" style="font-stretch:65%">2026</text>
+  <text x="150" y="178" text-anchor="middle" font-family="JetBrains Mono" font-weight="700" font-size="17" letter-spacing="3" fill="currentColor">GITHUB</text></symbol>
+ <symbol id="waves" viewBox="0 0 400 90"><g fill="none" stroke="currentColor" stroke-width="5"><path d="M0 15 q25 -14 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0"/><path d="M0 45 q25 -14 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0"/><path d="M0 75 q25 -14 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0 t50 0"/></g></symbol>
+</defs></svg>
+<div id="root" class="c"></div>
 <script>
-function stripes(x,y,w,h,r,sw){
-  const per=2*(w+h-4*r)+2*Math.PI*r;
-  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="#fff"/>
-  <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="none" stroke="#E8442A" stroke-width="${sw}" stroke-dasharray="26 26"/>
-  <rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="none" stroke="#3B5BFF" stroke-width="${sw}" stroke-dasharray="26 26" stroke-dashoffset="-26"/>`;
-}
-function envelope(){
-  const W=470,H=330;
-  return `<svg viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" style="overflow:visible;filter:drop-shadow(0 24px 40px rgba(31,45,53,.18))">
-    ${stripes(8,8,W-16,H-16,26,14)}
-    <rect x="22" y="22" width="${W-44}" height="${H-44}" rx="16" fill="#fff"/>
-    <path d="M30 40 L${W/2} 190 L${W-30} 40" fill="none" stroke="#E6E9F2" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
-    <path d="M30 ${H-40} L168 150 M${W-30} ${H-40} L${W-168} 150" fill="none" stroke="#E6E9F2" stroke-width="7" stroke-linecap="round"/>
-    <g transform="translate(${W-136},44)"><rect width="84" height="100" rx="10" fill="#E8442A"/><rect x="8" y="8" width="68" height="84" rx="6" fill="none" stroke="#fff" stroke-width="3" stroke-dasharray="7 6"/><text x="42" y="68" text-anchor="middle" font-family="Fredoka" font-weight="600" font-size="52" fill="#fff">P</text></g>
-  </svg>`;
-}
-function mark(){return `<svg viewBox="0 0 64 56" width="64" height="56"><rect x="3" y="6" width="58" height="44" rx="9" fill="#fff" stroke="#E8442A" stroke-width="6"/><path d="M8 14 L32 33 L56 14" fill="none" stroke="#3B5BFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="54" cy="10" r="9" fill="#E8442A" stroke="#fff" stroke-width="4"/></svg>`}
-function ripples(){return [300,400,500].map((r,i)=>`<ellipse cx="0" cy="0" rx="${r}" ry="${r*.66}" fill="none" stroke="#E8442A" stroke-width="5" stroke-opacity="${[.22,.13,.07][i]}"/>`).join('')}
 const T={
- en:{lang:'en',eyebrow:'Autonomous ticket triage',h:['From chaotic','email to the','<span class="hl">right issue</span>'],sub:'An open-source agent that reads, understands, routes and deduplicates support email into GitHub Issues.',
-  chips:[['Open source',1],['Gemini + GPT-4o',0],['Hexagonal',0],['Docker',0]],tag:'Open source · TypeScript',
-  mail:'New email',mailTxt:"Checkout won't load",att:'+ screenshot',tri:'Triage',bug:'Bug',high:'HIGH',scope:'web-app',
-  dup:'Deduplication',dupTxt:'Same root cause as #128: comment and escalate.',prio:'3 reports',sample:'Sample data'},
- pt:{lang:'pt',eyebrow:'Triagem autônoma de chamados',h:['Do e-mail','caótico à','<span class="hl">issue certa</span>'],sub:'Um agente open source que lê, entende, roteia e deduplica chamados por e-mail em issues do GitHub.',
-  chips:[['Open source',1],['Gemini + GPT-4o',0],['Hexagonal',0],['Docker',0]],tag:'Open source · TypeScript',
-  mail:'Novo e-mail',mailTxt:'Checkout não carrega',att:'+ print de tela',tri:'Triagem',bug:'Bug',high:'HIGH',scope:'web-app',
-  dup:'Deduplicação',dupTxt:'Mesma causa-raiz da #128: comenta e escala.',prio:'3 relatos',sample:'Dados de exemplo'}
+ pt:{lang:'pt-BR',kicker:'Um projeto open source',h:'Do e-mail<br>caótico<br><span class="serif">à issue certa.</span>',
+  body:'Um <b>agente de IA</b> que lê o e-mail, entende o print, acha o repositório certo e abre a issue no GitHub. <b>Sem duplicar.</b>',
+  tag:'Licença ISC',stampLbl:'Correio · AI Agent',cur:'R$',val:'0,00',stampFoot:'Custo de licença',
+  prio:'Priority engine',prioSub:'escala por nº de relatos',scale:[['Low','1 relato'],['Medium','2 relatos'],['High','3+ relatos'],['Critical','5+ relatos']],
+  steps:[['01','Ingestão','Lê a caixa, limpa Fwd/Enc e extrai anexos.',['Polling','Graph','IMAP']],['02','Triagem IA','Lê texto e imagem. Bug, dúvida ou fora de escopo.',['Gemini','GPT-4o']],['03','Roteamento','Guardrails de escopo escolhem o repositório.',['Catálogo','Escopo']],['04','Deduplicação','Jaccard sem stopwords + IA confirma a causa-raiz.',['Léxica','Semântica']]],
+  foot:'TypeScript · Zod · Vitest · Docker'},
+ en:{lang:'en',kicker:'An open source project',h:'From chaotic<br>email to the<br><span class="serif">right issue.</span>',
+  body:'An <b>AI agent</b> that reads the email and the screenshot, finds the right repo and opens the issue. <b>No duplicates.</b>',
+  tag:'ISC license',stampLbl:'Air mail · AI Agent',cur:'$',val:'0.00',stampFoot:'License cost',
+  prio:'Priority engine',prioSub:'scales with number of reports',scale:[['Low','1 report'],['Medium','2 reports'],['High','3+ reports'],['Critical','5+ reports']],
+  steps:[['01','Ingestion','Polls the inbox, cleans Fwd/Re and extracts attachments.',['Polling','Graph','IMAP']],['02','AI triage','Reads text and image. Bug, question or out of scope.',['Gemini','GPT-4o']],['03','Routing','Scope guardrails pick the repository.',['Catalog','Scope']],['04','Deduplication','Jaccard without stopwords + AI confirms the root cause.',['Lexical','Semantic']]],
+  foot:'TypeScript · Zod · Vitest · Docker'}
 };
 function build(t){
-  document.documentElement.lang=t.lang;
-  const seg=['LOW','MED','HIGH','CRIT'].map((n,i)=>`<div style="flex:1;height:18px;border-radius:9px;background:${i<3?['#E6E9F2','#FFD9A8','#E8442A'][i]:'#E6E9F2'}"></div>`).join('');
-  document.getElementById('s').innerHTML=`
-  <div style="position:absolute;left:0;top:0;right:0;height:14px;background:repeating-linear-gradient(135deg,#E8442A 0 28px,#fff 28px 42px,#3B5BFF 42px 70px,#fff 70px 84px)"></div>
-  <div style="position:absolute;left:640px;top:40px;width:1120px;height:1120px;border-radius:50%;background:var(--tint2)"></div>
-  <div style="position:absolute;left:800px;top:200px;width:800px;height:800px;border-radius:50%;background:var(--tint)"></div>
-  <div class="brand"><span style="width:64px;height:56px;display:block">${mark()}</span>Postie</div>
-  <div style="position:absolute;right:110px;top:112px;font-size:26px;font-weight:700;color:var(--ink2)">${t.tag}</div>
-  <div class="eyebrow">${t.eyebrow}</div>
-  <div class="h1">${t.h.map(l=>`<span class="l">${l}</span>`).join('')}</div>
-  <div class="sub">${t.sub}</div>
-  <div class="chips">${t.chips.map(([c,on])=>`<span class="chip ${on?'c':''}">${c}</span>`).join('')}</div>
-  <svg style="position:absolute;left:1180px;top:560px;overflow:visible" width="2" height="2" viewBox="0 0 2 2">${ripples()}</svg>
-  <div style="position:absolute;left:945px;top:395px">${envelope()}</div>
-  <div class="fl bub" style="left:820px;top:236px;font-size:29px"><small>${t.mail}</small>${t.mailTxt}<div style="margin-top:6px;font-size:22px;font-weight:700;color:var(--ink2)">${t.att}</div></div>
-  <div class="fl" style="right:96px;top:226px;width:290px;padding:22px 24px 24px"><small>${t.tri}</small>
-    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:6px">
-      <span class="pill" style="background:#FFE3DE;color:#B3321C">${t.bug}</span>
-      <span class="pill" style="background:#FFE9C7;color:#9A5B00">${t.high}</span>
-      <span class="pill" style="background:#E3E8FF;color:#2A3FC9">${t.scope}</span></div></div>
-  <div class="fl bub ac" style="right:96px;top:742px;width:480px"><small>${t.dup}</small>${t.dupTxt}</div>
-  <div class="fl" style="left:860px;top:922px;padding:22px 30px 22px;width:340px"><small>${t.prio}</small><div style="display:flex;gap:8px;margin-top:10px">${seg}</div></div>
-  <div class="fl" style="right:96px;top:972px;padding:16px 26px;display:flex;align-items:center;gap:14px"><span style="width:14px;height:14px;border-radius:7px;background:#E8442A"></span><span style="font-size:22px;font-weight:700;color:var(--ink2)">${t.sample}</span></div>`;
+ document.documentElement.lang=t.lang;document.getElementById('root').className='c '+t.lang;
+ const cols=['#efe6d2','#e8b23a','#ee7a3c','#e3402b'], txt=['var(--ink)','var(--ink)','#fff','#fff'];
+ const xs=[96,449,802,1155];
+ document.getElementById('root').innerHTML=`
+ <div class="air t"></div><div class="air b"></div>
+ <div class="meta"><div class="brand"><svg><use href="#logo"/></svg>Postie</div><div>${t.tag}</div></div>
+ <div class="kicker">${t.kicker}</div>
+ <h1 class="h">${t.h}</h1>
+ <p class="body">${t.body}</p>
+ <div class="stamp"><div class="stamp-in"><div class="lbl">${t.stampLbl}</div>
+  <svg viewBox="0 0 240 150"><rect x="8" y="10" width="224" height="130" rx="6" fill="none" stroke="#f2ebdd" stroke-width="7"/><path d="M12 16 L120 88 L228 16" fill="none" stroke="#f2ebdd" stroke-width="7"/><circle cx="210" cy="22" r="22" fill="#e3402b"/><text x="210" y="31" text-anchor="middle" font-family="Archivo" font-weight="900" font-size="26" fill="#fff">1</text></svg>
+  <div class="val"><small>${t.cur}</small>${t.val}</div><div class="lbl">${t.stampFoot}</div></div></div>
+ <svg class="pm" style="right:430px;top:330px;width:250px;transform:rotate(-14deg);opacity:.42" viewBox="0 0 300 300"><use href="#postmark"/></svg>
+ <svg class="pm" style="right:40px;top:520px;width:320px;transform:rotate(-12deg);opacity:.38" viewBox="0 0 400 90"><use href="#waves"/></svg>
+ <div class="card prio"><div class="t"><b>${t.prio}</b><span>${t.prioSub}</span></div>
+  <div class="scale">${t.scale.map(([a,b],i)=>`<div style="background:${cols[i]};color:${txt[i]}"><strong>${a}</strong>${b}</div>`).join('')}</div></div>
+ ${t.steps.map(([n,h,p,tags],i)=>`<div class="card step ${i===1?'hot':''}" style="left:${xs[i]}px"><div class="n">${n}</div><h4>${h}</h4><p>${p}</p><div class="tags">${tags.map(x=>`<span class="tag">${x}</span>`).join('')}</div></div>`).join('')}
+ <div class="foot"><span>github.com/tlsamaral/postie</span><span>${t.foot}</span></div>`;
 }
-build(T[new URLSearchParams(location.search).get('l')||'en']);
+build(T[new URLSearchParams(location.search).get('l')||'pt']);
 </script></body></html>

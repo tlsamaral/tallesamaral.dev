@@ -85,7 +85,7 @@
           "Arquitetura hexagonal: provedor de e-mail (Microsoft Graph ou IMAP), modelo (Gemini ou OpenAI) e issue tracker ficam atrás de portas e trocam por configuração. O domínio é TypeScript puro validado com Zod e coberto por 19 testes com Vitest."
         ],
         "gallery": [
-          "Capa do Postie: “Do e-mail caótico à issue certa”, com um envelope airmail e cartões mostrando um novo e-mail com print, o resultado da triagem (bug, prioridade alta, web-app), uma barra de prioridade e um duplicado sinalizado e escalado. Dados de exemplo."
+          "Capa do Postie no estilo do carrossel do LinkedIn: “Do e-mail caótico à issue certa”, um selo airmail com um envelope e “R$ 0,00 de custo de licença”, uma escala de prioridade (low, medium, high, critical) e as quatro etapas: ingestão, triagem por IA, roteamento e deduplicação."
         ]
       },
       "boua": {

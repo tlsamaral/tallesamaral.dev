@@ -85,7 +85,7 @@
           "Hexagonal architecture: the email provider (Microsoft Graph or IMAP), the model (Gemini or OpenAI) and the issue tracker sit behind ports and swap by configuration. The domain is pure TypeScript validated with Zod and covered by 19 Vitest tests."
         ],
         "gallery": [
-          "Postie cover: “From chaotic email to the right issue”, with an airmail envelope and cards showing a new email with a screenshot, the triage result (bug, high priority, web-app), a priority bar and a duplicate flagged and escalated. Sample data."
+          "Postie cover in the style of its LinkedIn carousel: “From chaotic email to the right issue”, an airmail stamp with an envelope and “$0.00 license cost”, a priority scale (low, medium, high, critical) and the four steps: ingestion, AI triage, routing and deduplication."
         ]
       },
       "boua": {

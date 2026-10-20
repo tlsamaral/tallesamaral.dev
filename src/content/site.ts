@@ -189,8 +189,8 @@ export const featuredProjects: FeaturedProjectMeta[] = [
       images: [
         localizedShot(
           {
-            en: '/projects/postie/thumb-en.jpg',
-            pt: '/projects/postie/thumb-pt.jpg',
+            en: '/projects/postie/cover-en.jpg',
+            pt: '/projects/postie/cover-pt.jpg',
           },
           1600,
           1200,
