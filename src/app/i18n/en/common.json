@@ -72,6 +72,22 @@
           "Lery AI architecture overview, “Under the hood of Lery”: the Raspberry Pi device (wake word, Whisper, bridge mode, Gemini, Edge TTS, LED and mascot), the multi-agent brain, the Fastify and Prisma API with PostgreSQL, a React dashboard and an Expo app, plus the research it rests on and project numbers."
         ]
       },
+      "postie": {
+        "title": "Postie",
+        "kind": "Personal project · Open source",
+        "summary": "An autonomous agent that turns chaotic support email into the right GitHub issue.",
+        "problem": "Triaging support email is invisible work: read the thread, open the screenshot, work out which repository the module belongs to, check whether an issue already exists, then file the card. Postie does all of it, end to end, and runs in the background in a container.",
+        "role": "Design and development; open sourced with documentation in English and Portuguese.",
+        "highlights": [
+          "Multimodal triage: attached screenshots go to Gemini alongside the text, so the real error is read from the image and bugs are told apart from questions and out-of-scope mail.",
+          "Routing by declarative guardrails: each project in the catalog defines its scope and the actions the agent may take (create an issue, update priority, comment, auto-close).",
+          "Two-stage deduplication: lexical similarity with the project's own words filtered out, then the model as a semantic judge only when a close candidate exists, which keeps LLM calls cheap. Priority rises with repeat reports (3+ HIGH, 5+ CRITICAL) and never goes down.",
+          "Hexagonal architecture: the email provider (Microsoft Graph or IMAP), the model (Gemini or OpenAI) and the issue tracker sit behind ports and swap by configuration. The domain is pure TypeScript validated with Zod and covered by 19 Vitest tests."
+        ],
+        "gallery": [
+          "Postie cover: “From chaotic email to the right issue”, with an airmail envelope and cards showing a new email with a screenshot, the triage result (bug, high priority, web-app), a priority bar and a duplicate flagged and escalated. Sample data."
+        ]
+      },
       "boua": {
         "title": "Boua",
         "kind": "Personal product",
@@ -388,11 +404,11 @@
       },
       {
         "q": "Does he work with AI and LLMs?",
-        "a": "Yes. His AI work is about the engineering around the model: context engineering, tool calling, structured output, evals and observability. Lery, his Computer Engineering thesis, is a voice-first English tutor built this way, and NexusTrace pairs a graph-based risk engine with an AI analyst."
+        "a": "Yes. His AI work is about the engineering around the model: context engineering, tool calling, structured output, evals and observability. Lery, his Computer Engineering thesis, is a voice-first English tutor built this way. Postie, an open-source agent, applies it to routing and deduplicating support email, and NexusTrace pairs a graph-based risk engine with an AI analyst."
       },
       {
         "q": "What has he built?",
-        "a": "At UNISAL: SIGA, a real-time queue system, and a Social Service platform serving 678 students. Personally: Lery AI (voice-first English tutor), Boua (social app for nights out), Colete (app for organizing weekly football games) and Aresta Studio (his software studio's website). With a team: NexusTrace, fraud detection with graph analytics."
+        "a": "At UNISAL: SIGA, a real-time queue system, and a Social Service platform serving 678 students. Personally: Lery AI (voice-first English tutor), Postie (an open-source agent that triages support email into GitHub issues), Boua (social app for nights out), Colete (app for organizing weekly football games) and Aresta Studio (his software studio's website). With a team: NexusTrace, fraud detection with graph analytics."
       },
       {
         "q": "How much experience does he have?",

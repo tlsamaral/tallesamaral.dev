@@ -97,6 +97,7 @@ export const isDevicesSlide = (slide: ProjectSlide): slide is DevicesSlide =>
 
 export type FeaturedProjectId =
   | 'lery'
+  | 'postie'
   | 'boua'
   | 'colete'
   | 'nexustrace'
@@ -161,6 +162,35 @@ export const featuredProjects: FeaturedProjectMeta[] = [
           {
             en: '/projects/lery/system-en.jpg',
             pt: '/projects/lery/system-pt.jpg',
+          },
+          1600,
+          1200,
+        ),
+      ],
+    },
+  },
+  {
+    id: 'postie',
+    year: '2026',
+    stack: [
+      'TypeScript',
+      'Zod',
+      'Gemini',
+      'OpenAI',
+      'Microsoft Graph',
+      'GitHub API',
+      'Vitest',
+      'Docker',
+    ],
+    links: [{ kind: 'repo', href: 'https://github.com/tlsamaral/postie' }],
+    gallery: {
+      aspect: 4 / 3,
+      tone: 'light',
+      images: [
+        localizedShot(
+          {
+            en: '/projects/postie/thumb-en.jpg',
+            pt: '/projects/postie/thumb-pt.jpg',
           },
           1600,
           1200,

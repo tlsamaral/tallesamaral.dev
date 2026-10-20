@@ -72,6 +72,22 @@
           "Visão da arquitetura do Lery AI, “Por dentro do Lery”: o aparelho com Raspberry Pi (wake word, Whisper, modo ponte, Gemini, Edge TTS, LED e mascote), o cérebro multiagente, a API Fastify e Prisma com PostgreSQL, um painel web em React e um app Expo, além da base pedagógica e dos números do projeto."
         ]
       },
+      "postie": {
+        "title": "Postie",
+        "kind": "Projeto pessoal · Open source",
+        "summary": "Um agente autônomo que transforma e-mail caótico na issue certa do GitHub.",
+        "problem": "Triar e-mail de suporte é trabalho invisível: ler a conversa, abrir o print, descobrir de qual repositório é o módulo, checar se já existe uma issue e só então abrir o card. O Postie faz tudo isso de ponta a ponta e roda em segundo plano num container.",
+        "role": "Projeto e desenvolvimento; código aberto com documentação em português e inglês.",
+        "highlights": [
+          "Triagem multimodal: os prints anexados vão para o Gemini junto com o texto, então o erro real é lido da imagem e bugs são separados de dúvidas e de e-mails fora de escopo.",
+          "Roteamento por guardrails declarativos: cada projeto do catálogo define seu escopo e as ações que o agente pode tomar (criar issue, atualizar prioridade, comentar, fechar sozinho).",
+          "Deduplicação em duas etapas: similaridade léxica descartando as palavras do próprio projeto e, só quando há um candidato próximo, o modelo como juiz semântico, o que mantém as chamadas ao LLM baratas. A prioridade sobe com relatos repetidos (3+ HIGH, 5+ CRITICAL) e nunca desce.",
+          "Arquitetura hexagonal: provedor de e-mail (Microsoft Graph ou IMAP), modelo (Gemini ou OpenAI) e issue tracker ficam atrás de portas e trocam por configuração. O domínio é TypeScript puro validado com Zod e coberto por 19 testes com Vitest."
+        ],
+        "gallery": [
+          "Capa do Postie: “Do e-mail caótico à issue certa”, com um envelope airmail e cartões mostrando um novo e-mail com print, o resultado da triagem (bug, prioridade alta, web-app), uma barra de prioridade e um duplicado sinalizado e escalado. Dados de exemplo."
+        ]
+      },
       "boua": {
         "title": "Boua",
         "kind": "Produto pessoal",
@@ -388,11 +404,11 @@
       },
       {
         "q": "Ele trabalha com IA e LLMs?",
-        "a": "Sim. Seu trabalho com IA é a engenharia em volta do modelo: context engineering, tool calling, saída estruturada, evals e observabilidade. O Lery, seu TCC de Engenharia de Computação, é um tutor de inglês por voz construído assim, e o NexusTrace une um motor de risco baseado em grafos a um analista de IA."
+        "a": "Sim. Seu trabalho com IA é a engenharia em volta do modelo: context engineering, tool calling, saída estruturada, evals e observabilidade. O Lery, seu TCC de Engenharia de Computação, é um tutor de inglês por voz construído assim. O Postie, um agente open source, aplica isso a roteamento e deduplicação de e-mails de suporte, e o NexusTrace une um motor de risco baseado em grafos a um analista de IA."
       },
       {
         "q": "O que ele já construiu?",
-        "a": "No UNISAL: o SIGA, um sistema de filas em tempo real, e uma plataforma de Serviço Social que atende 678 alunos. Por conta própria: Lery AI (tutor de inglês por voz), Boua (app social de rolês), Colete (app para organizar o rachão da semana) e Aresta Studio (o site do seu estúdio de software). Em grupo: NexusTrace, detecção de fraudes com análise de grafos."
+        "a": "No UNISAL: o SIGA, um sistema de filas em tempo real, e uma plataforma de Serviço Social que atende 678 alunos. Por conta própria: Lery AI (tutor de inglês por voz), Postie (agente open source que tria e-mails de suporte em issues do GitHub), Boua (app social de rolês), Colete (app para organizar o rachão da semana) e Aresta Studio (o site do seu estúdio de software). Em grupo: NexusTrace, detecção de fraudes com análise de grafos."
       },
       {
         "q": "Quanta experiência ele tem?",

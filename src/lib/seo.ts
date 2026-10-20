@@ -96,6 +96,7 @@ function websiteNode() {
 
 const PROJECT_TYPE: Record<FeaturedProjectId, Record<string, unknown>> = {
   lery: { '@type': 'SoftwareSourceCode' },
+  postie: { '@type': 'SoftwareSourceCode' },
   boua: {
     '@type': 'SoftwareApplication',
     applicationCategory: 'SocialNetworkingApplication',
