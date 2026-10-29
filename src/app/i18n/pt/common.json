@@ -27,7 +27,7 @@
       "da modelagem de dados",
       "ao último pixel."
     ],
-    "intro": "Sou Talles Amaral, Desenvolvedor Full Stack no UNISAL, com mais de 3 anos colocando sistemas em produção — e, mais recentemente, aplicações com LLMs. No tempo livre construo produtos como o Lery, um tutor de inglês por voz com IA, e o Boua, um app social para descobrir e criar rolês.",
+    "intro": "Sou Talles Amaral, Desenvolvedor Full Stack no UNISAL, com mais de 3 anos colocando sistemas em produção — e, mais recentemente, aplicações com LLMs. No tempo livre construo produtos como o Lery, um tutor de inglês por voz com IA, e o Colete, um app para organizar o rachão da semana.",
     "primary": "Ver projetos",
     "secondary": "Entrar em contato",
     "meta": [
@@ -396,7 +396,7 @@
     "items": [
       {
         "q": "Quem é Talles Amaral?",
-        "a": "Talles Amaral é Desenvolvedor Full Stack de Potim, SP. Desde abril de 2025 atua no UNISAL, onde desenha, constrói e evolui os sistemas internos da instituição, e no tempo livre cria produtos como Lery, Boua, Colete e Aresta Studio."
+        "a": "Talles Amaral é Desenvolvedor Full Stack de Potim, SP. Desde abril de 2025 atua no UNISAL, onde desenha, constrói e evolui os sistemas internos da instituição, e no tempo livre cria produtos como Lery, Colete e Aresta Studio."
       },
       {
         "q": "Com quais tecnologias ele trabalha?",
@@ -408,7 +408,7 @@
       },
       {
         "q": "O que ele já construiu?",
-        "a": "No UNISAL: o SIGA, um sistema de filas em tempo real, e uma plataforma de Serviço Social que atende 678 alunos. Por conta própria: Lery AI (tutor de inglês por voz), Postie (agente open source que tria e-mails de suporte em issues do GitHub), Boua (app social de rolês), Colete (app para organizar o rachão da semana) e Aresta Studio (o site do seu estúdio de software). Em grupo: NexusTrace, detecção de fraudes com análise de grafos."
+        "a": "No UNISAL: o SIGA, um sistema de filas em tempo real, e uma plataforma de Serviço Social que atende 678 alunos. Por conta própria: Lery AI (tutor de inglês por voz), Postie (agente open source que tria e-mails de suporte em issues do GitHub), Colete (app para organizar o rachão da semana) e Aresta Studio (o site do seu estúdio de software). Em grupo: NexusTrace, detecção de fraudes com análise de grafos."
       },
       {
         "q": "Quanta experiência ele tem?",

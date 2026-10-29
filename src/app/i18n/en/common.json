@@ -27,7 +27,7 @@
       "from the data model",
       "to the last pixel."
     ],
-    "intro": "I'm Talles Amaral, a Full Stack Developer at UNISAL with 3+ years shipping production systems — lately with LLMs. On my own time I build products like Lery, a voice-first AI English tutor, and Boua, a social app for nights out.",
+    "intro": "I'm Talles Amaral, a Full Stack Developer at UNISAL with 3+ years shipping production systems — lately with LLMs. On my own time I build products like Lery, a voice-first AI English tutor, and Colete, an app for organizing weekly football games.",
     "primary": "See selected work",
     "secondary": "Get in touch",
     "meta": [
@@ -396,7 +396,7 @@
     "items": [
       {
         "q": "Who is Talles Amaral?",
-        "a": "Talles Amaral is a Full Stack Developer from Potim, Brazil. Since April 2025 he works at UNISAL, where he designs, builds and evolves the university's internal systems, and on his own time he builds products such as Lery, Boua, Colete and Aresta Studio."
+        "a": "Talles Amaral is a Full Stack Developer from Potim, Brazil. Since April 2025 he works at UNISAL, where he designs, builds and evolves the university's internal systems, and on his own time he builds products such as Lery, Colete and Aresta Studio."
       },
       {
         "q": "Which technologies does he work with?",
@@ -408,7 +408,7 @@
       },
       {
         "q": "What has he built?",
-        "a": "At UNISAL: SIGA, a real-time queue system, and a Social Service platform serving 678 students. Personally: Lery AI (voice-first English tutor), Postie (an open-source agent that triages support email into GitHub issues), Boua (social app for nights out), Colete (app for organizing weekly football games) and Aresta Studio (his software studio's website). With a team: NexusTrace, fraud detection with graph analytics."
+        "a": "At UNISAL: SIGA, a real-time queue system, and a Social Service platform serving 678 students. Personally: Lery AI (voice-first English tutor), Postie (an open-source agent that triages support email into GitHub issues), Colete (app for organizing weekly football games) and Aresta Studio (his software studio's website). With a team: NexusTrace, fraud detection with graph analytics."
       },
       {
         "q": "How much experience does he have?",

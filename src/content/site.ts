@@ -198,6 +198,9 @@ export const featuredProjects: FeaturedProjectMeta[] = [
       ],
     },
   },
+  // Boua — ocultado temporariamente até o lançamento oficial.
+  // Para reativar nos projetos em destaque, basta descomentar este bloco:
+  /*
   {
     id: 'boua',
     year: '2026',
@@ -254,6 +257,7 @@ export const featuredProjects: FeaturedProjectMeta[] = [
       ],
     },
   },
+  */
   {
     id: 'colete',
     year: '2026',
